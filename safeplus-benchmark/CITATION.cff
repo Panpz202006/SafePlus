@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+title: SafePlus Benchmark
+message: Please cite SAFE and the eventual SafePlus paper when using this framework.
+type: software
+authors:
+  - family-names: Zheng
+    given-names: Panpan
+version: 0.1.0
+date-released: 2026-09-23
+references:
+  - type: conference-paper
+    title: "SAFE: A Neural Survival Analysis Model for Fraud Early Detection"
+    authors:
+      - family-names: Zheng
+        given-names: Panpan
+      - family-names: Yuan
+        given-names: Shuhan
+      - family-names: Wu
+        given-names: Xintao
+    year: 2019
+    conference:
+      name: AAAI Conference on Artificial Intelligence

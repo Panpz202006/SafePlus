@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "safeplus-benchmark"
+version = "0.1.0"
+description = "Reproducible benchmark for joint latent fraud-onset and delayed-detection modeling"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "pyyaml>=6.0",
+  "scikit-learn>=1.3",
+  "torch>=2.1",
+]
+
+[project.scripts]
+safeplus = "safeplus.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "ruff>=0.4"]
+
+[tool.setuptools.packages.find]
+include = ["safeplus*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+

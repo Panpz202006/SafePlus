@@ -1,0 +1,132 @@
+Metadata-Version: 2.4
+Name: safeplus-benchmark
+Version: 0.1.0
+Summary: Reproducible benchmark for joint latent fraud-onset and delayed-detection modeling
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.24
+Requires-Dist: pandas>=2.0
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: scikit-learn>=1.3
+Requires-Dist: torch>=2.1
+Provides-Extra: dev
+Requires-Dist: pytest>=7.4; extra == "dev"
+Requires-Dist: ruff>=0.4; extra == "dev"
+Dynamic: license-file
+
+# SafePlus Benchmark
+
+Reproducible performance-review framework for **SafePlus**, the joint latent
+fraud-commission and delayed-detection model proposed as a successor to SAFE.
+
+The repository separates three empirical questions:
+
+1. **Fraud discrimination** — does the model rank fraudulent entities well?
+2. **Early detection** — does it identify them before the operational response time?
+3. **Latent-onset recovery** — when ground-truth action time is available but hidden
+   during training, does the posterior recover it?
+
+## Model contract
+
+For entity history `x[0:T]`, SafePlus predicts two discrete hazards:
+
+- `h_f(t|x)`: fraud is commissioned at time `t`;
+- `h_d(t|x,t_f)`: fraud is detected at `t`, active only after commission.
+
+For a detected entity, the observed likelihood marginalizes the latent onset:
+
+```text
+p(t_d=d|x) = sum_{k<=d} p(t_f=k|x) p(t_d=d|t_f=k,x)
+```
+
+For an entity not detected by horizon `T`, it includes both legitimate/not-yet-
+fraudulent histories and committed-but-undetected histories. The reference model
+computes this marginal exactly in discrete time. A posterior over `t_f` is returned
+for interpretability and controlled onset-recovery evaluation.
+
+## Repository map
+
+```text
+configs/                 experiment YAMLs
+safeplus/data/           canonical schema, CSV loader, synthetic generator
+safeplus/models/         SAFE, SafePlus, GRU classifier
+safeplus/evaluation/     discrimination, prefix, onset and calibration metrics
+safeplus/training/       deterministic trainer and checkpoint selection
+safeplus/reporting/      aggregate runs and emit paper-ready CSV/LaTeX tables
+scripts/                 train/evaluate/aggregate entry points
+tests/                   likelihood, censoring, posterior and smoke tests
+docs/                    benchmark protocol and dataset adapter guide
+```
+
+## Quick start
+
+Requires Python 3.10+.
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -e ".[dev]"
+python scripts/make_synthetic.py --output data/processed/synthetic_demo.npz
+python scripts/train.py --config configs/synthetic/safeplus.yaml
+python scripts/evaluate.py --run-dir runs/synthetic/safeplus/seed_0
+python scripts/aggregate.py --runs runs --output reports
+pytest -q
+```
+
+For a no-install smoke test:
+
+```bash
+bash scripts/smoke_test.sh
+```
+
+## Canonical data format
+
+Each `.npz` split contains padded arrays:
+
+| Key | Shape | Meaning |
+|---|---:|---|
+| `x` | `[N,L,D]` | time-varying covariates |
+| `lengths` | `[N]` | valid sequence lengths |
+| `detected` | `[N]` | whether detection/blocking occurred |
+| `t_detect` | `[N]` | zero-based detection time; horizon if censored |
+| `t_onset` | `[N]` | true onset for controlled evaluation, `-1` if unknown |
+| `entity_id` | `[N]` | stable entity identifier |
+
+Raw datasets are never committed. Adapters must preserve chronological ordering,
+fit preprocessing on the training split only, and document whether a timestamp is
+an action time (`t_a`), a detection time (`t_d`), or a proxy.
+
+## Recommended review matrix
+
+| Track | Datasets | Models | Primary metrics |
+|---|---|---|---|
+| SAFE reproduction | SAFE–Twitter, SAFE–Wiki | SVM, Cox, GRU, SAFE | F1/Accuracy@1…5, early-detected rate/steps |
+| Delayed detection | Twitter, Wiki, transaction sequences | GRU, SAFE-r, SAFE, SafePlus | AUPRC, AUROC, detection NLL, lead time |
+| Onset recovery | BankSim, PaySim, Sparkov, Handbook, synthetic | SAFE proxy, SafePlus | onset MAE, posterior NLL, interval coverage |
+| Robustness | controlled data | SafePlus variants | metrics by delay/censoring bucket |
+
+Use at least five seeds. Select thresholds only on validation data. Report bootstrap
+95% confidence intervals and paired seed-level comparisons. Never describe a
+transaction timestamp as the true onset of fraudulent intent.
+
+## Adding a dataset
+
+Implement an adapter that emits the canonical `.npz` format, then copy
+`configs/template.yaml`. See `docs/DATASETS.md` and `docs/PROTOCOL.md`.
+
+## Reproducibility
+
+- configuration and seed are copied into every run directory;
+- checkpoints are selected by validation AUPRC;
+- test data are evaluated once after selection;
+- results are stored as machine-readable JSON;
+- aggregation emits `summary.csv` and `summary.tex`.
+
+## Status
+
+This is a research scaffold, not a claim that all ten candidate datasets provide
+verified `t_f` and `t_d`. Twitter/Wiki provide operational endpoints; controlled
+datasets enable direct recovery tests by hiding known injected action times and
+simulating detection delays.
+

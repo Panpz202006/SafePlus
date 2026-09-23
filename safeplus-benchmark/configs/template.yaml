@@ -1,0 +1,16 @@
+seed: 0
+data:
+  name: replace_me
+  path: data/processed/replace_me.npz
+  split: [0.7, 0.1, 0.2]
+model:
+  name: safeplus  # gru | safe | safeplus
+  hidden_dim: 32
+training:
+  batch_size: 64
+  learning_rate: 0.001
+  epochs: 50
+  patience: 8
+  device: cpu
+output_dir: runs/replace_me/safeplus
+
