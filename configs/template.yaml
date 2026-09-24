@@ -4,7 +4,7 @@ data:
   path: data/processed/replace_me.npz
   split: [0.7, 0.1, 0.2]
 model:
-  name: safeplus  # gru | safe | safeplus
+  name: safeplus  # gru | safe-r | safe | safeplus
   hidden_dim: 32
 training:
   batch_size: 64

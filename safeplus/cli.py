@@ -147,7 +147,9 @@ def predict(args):
     with torch.inference_mode():
         for start in range(0, len(x), args.batch_size):
             xb = torch.as_tensor(x[start : start + args.batch_size], device=args.device)
-            lb = torch.as_tensor(lengths[start : start + args.batch_size], device=args.device)
+            lb = torch.as_tensor(
+                lengths[start : start + args.batch_size], dtype=torch.long, device=args.device
+            )
             risk = model(xb, lb)["risk"]
             final = risk.gather(1, (lb - 1)[:, None])
             valid = torch.arange(x.shape[1], device=args.device)[None] < lb[:, None]

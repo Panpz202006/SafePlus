@@ -8,7 +8,8 @@ import yaml
 from safeplus.cli import main
 
 
-def test_cli_workflow(tmp_path, capsys):
+@pytest.mark.parametrize("length_dtype", [np.int64, np.int16, np.uint32])
+def test_cli_workflow(tmp_path, capsys, length_dtype):
     data = tmp_path / "data.npz"
     main(["synthetic", "--output", str(data), "--n", "40", "--length", "6", "--features", "2"])
     config = {
@@ -39,7 +40,7 @@ def test_cli_workflow(tmp_path, capsys):
         assert "auprc" in json.loads(capsys.readouterr().out)
         with np.load(data) as content:
             unlabeled = tmp_path / "unlabeled.npz"
-            lengths = content["lengths"].copy()
+            lengths = content["lengths"].astype(length_dtype)
             lengths[0] = 3
             np.savez(unlabeled, x=content["x"], lengths=lengths)
         output = tmp_path / "predictions.npz"

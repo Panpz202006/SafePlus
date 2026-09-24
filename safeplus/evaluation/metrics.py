@@ -23,6 +23,14 @@ def evaluate_predictions(
     t_onset: np.ndarray | None = None,
     onset_posterior: np.ndarray | None = None,
 ) -> dict[str, float]:
+    """Score carried-forward risks against observed detection labels.
+
+    Callers must repeat the final valid risk through padding before calling.
+    Early rate counts first alarms strictly before detection; lead time averages
+    all observed-positive entities that ever alarm, including late alarms.
+    Onset metrics require independently known in-range onset bins and use the
+    observation-conditioned posterior, not the causal online score.
+    """
     final_risk = risk[:, -1]
     pred = final_risk >= threshold
     result = {
@@ -35,9 +43,11 @@ def evaluate_predictions(
     }
     if t_detect is not None:
         crossings = np.argmax(risk >= threshold, axis=1)
+        # argmax returns zero even if there is no crossing; guard with any().
         crossed = (risk >= threshold).any(axis=1)
         positive = y_true.astype(bool) & crossed
-        result["early_detected_rate"] = float(positive.sum() / max(1, y_true.sum()))
+        early = positive & (crossings < t_detect)
+        result["early_detected_rate"] = float(early.sum() / max(1, y_true.sum()))
         result["mean_lead_time"] = (
             float(np.mean(t_detect[positive] - crossings[positive]))
             if positive.any()
@@ -50,6 +60,8 @@ def evaluate_predictions(
             float(np.abs(estimate[known] - t_onset[known]).mean()) if known.any() else float("nan")
         )
         if known.any():
+            # Preserve no-commission mass for censored entities: renormalizing
+            # onset bins would change this to a conditional-on-commission NLL.
             prob = onset_posterior[np.arange(len(t_onset))[known], t_onset[known]]
             result["onset_nll"] = float(-np.log(np.clip(prob, 1e-12, 1)).mean())
     return result

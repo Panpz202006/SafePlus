@@ -1,0 +1,72 @@
+             auprc               auroc                  f1           early_detected_rate           mean_lead_time           onset_mae           onset_nll           wall_seconds           epochs_completed            inference_batch64_median_ms           inference_batch64_p95_ms           parameters     
+              mean       std      mean       std      mean       std                mean       std           mean       std      mean       std      mean       std         mean       std             mean        std                        mean       std                     mean       std       mean  std
+model                                                                                                                                                                                                                                                                                                          
+gru       0.773948  0.040250  0.946352  0.011086  0.856899  0.026110            0.519081  0.379137       3.256897  7.240887       NaN       NaN       NaN       NaN     1.378695  0.276980             11.2   1.788854                    0.648246  0.008349                 0.689330  0.004577     4065.0  0.0
+safe      0.270375  0.035516  0.510825  0.039457  0.396476  0.028431            0.870161  0.195876       9.144126  4.011279       NaN       NaN       NaN       NaN     2.447609  0.611196             17.4   5.128353                    0.646379  0.008736                 0.734640  0.086586     4065.0  0.0
+safe-r    0.759628  0.037965  0.946396  0.010920  0.835049  0.020795            0.042441  0.018936      -6.534484  0.667572       NaN       NaN       NaN       NaN     3.768422  0.175336             38.8   1.788854                    0.659625  0.007913                 0.693232  0.012489     4065.0  0.0
+safeplus  0.695549  0.143663  0.900737  0.098192  0.737111  0.196977            0.224282  0.433926      -3.974434  9.088573  9.439156  0.736826  3.558085  0.442715     3.076864  1.228982             29.0  13.304135                    0.677571  0.007610                 0.719456  0.006428     4098.0  0.0
+[
+  {
+    "metric": "auprc",
+    "comparison": "safeplus - gru",
+    "mean_difference": -0.07839889661183139,
+    "bootstrap_95_low": -0.17571268529774342,
+    "bootstrap_95_high": -0.02294250251706924
+  },
+  {
+    "metric": "auprc",
+    "comparison": "safeplus - safe",
+    "mean_difference": 0.4251741569111217,
+    "bootstrap_95_low": 0.2972682085955455,
+    "bootstrap_95_high": 0.511473476601001
+  },
+  {
+    "metric": "auprc",
+    "comparison": "safeplus - safe-r",
+    "mean_difference": -0.06407882361897829,
+    "bootstrap_95_low": -0.16240879570247618,
+    "bootstrap_95_high": -0.009192082534060609
+  },
+  {
+    "metric": "auroc",
+    "comparison": "safeplus - gru",
+    "mean_difference": -0.04561490760351099,
+    "bootstrap_95_low": -0.12471865679824543,
+    "bootstrap_95_high": -0.005190806511935442
+  },
+  {
+    "metric": "auroc",
+    "comparison": "safeplus - safe",
+    "mean_difference": 0.3899120841673153,
+    "bootstrap_95_low": 0.29380894512923783,
+    "bootstrap_95_high": 0.46139206292003243
+  },
+  {
+    "metric": "auroc",
+    "comparison": "safeplus - safe-r",
+    "mean_difference": -0.045658953638439484,
+    "bootstrap_95_low": -0.12419922388926703,
+    "bootstrap_95_high": -0.0038790358189662033
+  },
+  {
+    "metric": "f1",
+    "comparison": "safeplus - gru",
+    "mean_difference": -0.11978793785167341,
+    "bootstrap_95_low": -0.2796376641752823,
+    "bootstrap_95_high": -0.027674277821745186
+  },
+  {
+    "metric": "f1",
+    "comparison": "safeplus - safe",
+    "mean_difference": 0.340635254972763,
+    "bootstrap_95_low": 0.16302702357616047,
+    "bootstrap_95_high": 0.4522324940100714
+  },
+  {
+    "metric": "f1",
+    "comparison": "safeplus - safe-r",
+    "mean_difference": -0.09793748196379089,
+    "bootstrap_95_low": -0.26322569776506516,
+    "bootstrap_95_high": -0.005202226627709283
+  }
+]

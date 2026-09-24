@@ -1,0 +1,18 @@
+data:
+  name: synthetic_demo
+  path: /Users/panpanzheng/Research/SafePlus/data/processed/synthetic_demo.npz
+  split:
+  - 0.7
+  - 0.1
+  - 0.2
+model:
+  hidden_dim: 32
+  name: gru
+output_dir: /Users/panpanzheng/Research/SafePlus/reports/performance_review_20260924/runs/gru
+seed: 2
+training:
+  batch_size: 64
+  device: cpu
+  epochs: 40
+  learning_rate: 0.001
+  patience: 7

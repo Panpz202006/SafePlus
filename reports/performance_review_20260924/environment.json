@@ -1,0 +1,23 @@
+{
+  "python": "3.11.9 (main, Apr 19 2024, 11:43:47) [Clang 14.0.6 ]",
+  "executable": "/opt/anaconda3/envs/transformer/bin/python",
+  "torch": "2.10.0",
+  "platform": "macOS-14.5-arm64-arm-64bit",
+  "device": "cpu",
+  "torch_threads": 1,
+  "data_sha256": "e15eba5383be7f6854b2bd8fccdc3660e4294fe84c0f082417fc7f4653bd8c6a",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "models": [
+    "gru",
+    "safe",
+    "safe-r",
+    "safeplus"
+  ],
+  "timing_scope": "CLI train: data loading, training, threshold selection, test evaluation and saving"
+}

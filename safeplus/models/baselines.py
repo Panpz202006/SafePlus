@@ -8,6 +8,12 @@ from .common import SequenceEncoder, time_mask
 
 
 class GRUClassifier(nn.Module):
+    """Causal prefix classifier, supervised by the entity's detection indicator.
+
+    Each valid step predicts the same eventual observed label with BCE. Scores
+    need not increase with time and are not survival hazards. Censored fraud is
+    a negative under this target; true onset is never used for supervision.
+    """
     def __init__(self, input_dim: int, hidden_dim: int):
         super().__init__()
         self.encoder = SequenceEncoder(input_dim, hidden_dim)
@@ -20,17 +26,29 @@ class GRUClassifier(nn.Module):
     def loss(self, batch):
         out = self(batch["x"], batch["lengths"])
         mask = time_mask(batch["lengths"], batch["x"].shape[1])
+        # Reduce over valid time steps, not entities: longer histories receive
+        # more weight. Preserve this distinction when comparing survival losses,
+        # which average one log likelihood per entity.
         target = batch["detected"].float()[:, None].expand_as(out["logits"])
         loss = F.binary_cross_entropy_with_logits(out["logits"][mask], target[mask])
         return loss, out
 
 
 class SAFER(GRUClassifier):
-    """Ordinary detection-time survival likelihood (draft Section 2.1)."""
+    """Detection-time survival baseline; registry name: ``safe-r``.
+
+    A head logit defines h(t), the conditional detection hazard. For detection
+    at d, L = h(d) * product_{j<d}(1-h(j)); for censoring at c,
+    L = product_{j<=c}(1-h(j)). Risk is the cumulative detection probability.
+    The inherited classifier head is reused, but its BCE objective is not.
+    """
 
     def forward(self, x, lengths):
         out = super().forward(x, lengths)
         mask = time_mask(lengths, x.shape[1])
+        # Zero log-survival increments make padding multiplicatively neutral.
+        # logsigmoid avoids log(sigmoid(...)) saturation; -expm1(s) accurately
+        # computes 1-exp(s) when cumulative risk is close to zero.
         log_survival = F.logsigmoid(-out["logits"]).masked_fill(~mask, 0).cumsum(1)
         out["risk"] = -torch.expm1(log_survival)
         out["log_survival"] = log_survival

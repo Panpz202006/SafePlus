@@ -1,0 +1,16 @@
+seed: 0
+data:
+  name: synthetic_demo
+  path: data/processed/synthetic_demo.npz
+  split: [0.7, 0.1, 0.2]
+model:
+  name: safe-r
+  hidden_dim: 32
+training:
+  batch_size: 64
+  learning_rate: 0.001
+  epochs: 40
+  patience: 7
+  device: cpu
+output_dir: runs/synthetic/safe-r
+

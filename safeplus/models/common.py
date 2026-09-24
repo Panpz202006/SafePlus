@@ -5,6 +5,13 @@ from torch import nn
 
 
 class SequenceEncoder(nn.Module):
+    """Shared unidirectional GRU: x[B,L,D] -> hidden states [B,L,H].
+
+    A valid output at t depends only on x[:t+1]. Packing excludes padded
+    observations from recurrence; lengths must be positive and at most L.
+    Unpacked padding is zero, but downstream head biases can make padded
+    logits nonzero, so each objective must still mask/select valid steps.
+    """
     def __init__(self, input_dim: int, hidden_dim: int):
         super().__init__()
         self.gru = nn.GRU(input_dim, hidden_dim, batch_first=True)

@@ -8,6 +8,12 @@ from sklearn.metrics import average_precision_score
 
 
 class Trainer:
+    """Optimize model-specific losses; select checkpoints by detection-label AP.
+
+    SafePlus commission risk is ranked against observed detection indicators,
+    not independently observed fraud status. Loss and selection metric can
+    therefore improve at different times. Inspect both curves before tuning.
+    """
     def __init__(self, model, device, learning_rate=1e-3, weight_decay=0.0):
         self.model = model.to(device)
         self.device = torch.device(device)
@@ -28,6 +34,8 @@ class Trainer:
                 if train:
                     self.optimizer.zero_grad()
                     loss.backward()
+                    # Clip the global gradient norm. When debugging instability,
+                    # inspect pre-clip norms and each hazard head's gradients.
                     torch.nn.utils.clip_grad_norm_(self.model.parameters(), 5.0)
                     self.optimizer.step()
             losses.append((float(loss.detach()), len(batch["x"])))
@@ -60,6 +68,9 @@ class Trainer:
             train = self.run_epoch(train_loader, train=True)
             val = self.run_epoch(val_loader, train=False)
             score = average_precision_score(val["labels"], val["risk"][:, -1])
+            # Strict improvement resets patience; ties consume it. A slow-starting
+            # model can restore an early checkpoint despite falling NLL. Tune
+            # patience/selection on validation only, keeping test results held out.
             history.append(
                 {
                     "epoch": epoch,

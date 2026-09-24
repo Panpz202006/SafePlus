@@ -12,6 +12,10 @@ class SafePlus(nn.Module):
 
     Within a bin, commission precedes detection, allowing same-bin detection.
     Exact inference is linear in batch size times padded sequence length.
+    Both heads consume the same causal GRU state. Detection logits depend on
+    calendar bin and history, not explicitly on onset k or elapsed delay t-k;
+    onset only determines when detection survival starts. This restriction
+    enables the suffix-sum inference below.
     """
 
     def __init__(self, input_dim: int, hidden_dim: int, inference="exact", em_samples=1):
@@ -46,6 +50,8 @@ class SafePlus(nn.Module):
         lf = self.commission_head(h).squeeze(-1)
         ld = self.detection_head(h).squeeze(-1)
         mask = time_mask(lengths, x.shape[1])
+        # Online risk integrates commission hazards only. Unlike the posterior
+        # in loss(), it cannot use a future detection/censoring observation.
         log_sf = F.logsigmoid(-lf).masked_fill(~mask, 0).cumsum(1)
         return {
             "commission_logits": lf,
@@ -57,18 +63,32 @@ class SafePlus(nn.Module):
 
     @staticmethod
     def _log_joint(log_hf, log_sf, log_hd, log_sd, detected, endpoints):
-        """Return onset bins plus a final no-commission state, in log space."""
+        """Unnormalized joint log masses [B,L+1] for the observed endpoint.
+
+        Inputs log_h* / log_s* are per-bin log(h) / log(1-h), not cumulative.
+        For onset k and detection d:
+          log p(k,d) = sum_{j<k} log_sf[j] + log_hf[k]
+                       + sum_{k<=j<d} log_sd[j] + log_hd[d].
+        For censoring at c, include detection survival through c and omit the
+        detection event factor. The last column is survival of commission
+        through c; it is impossible (-inf) for a detected entity.
+        """
         steps = torch.arange(log_hf.shape[1], device=log_hf.device)[None, :]
         valid = steps <= endpoints[:, None]
         # Reverse cumulative sums avoid subtracting large nearly equal sums.
         detection_survival = (steps < endpoints[:, None]) | (valid & ~detected[:, None])
+        # Include endpoint survival only for censoring. At same-bin detection
+        # (k=d), the detection-survival product is empty and therefore one.
         terms = log_sd.masked_fill(~detection_survival, 0)
         suffix = terms.flip(1).cumsum(1).flip(1)
         before = torch.cat([log_sf.new_zeros((len(log_sf), 1)), log_sf[:, :-1]], 1)
         before = before.cumsum(1)
+        # Shift before summation: commission survival ends at k-1, not k.
         event = log_hd.gather(1, endpoints[:, None]).squeeze(1)
         joint = log_hf + before + suffix + torch.where(detected, event, 0)[:, None]
         joint = joint.masked_fill(~valid, -torch.inf)
+        # Impossible onset bins carry exactly zero posterior mass. Do not use
+        # a finite sentinel here: it would admit events after the endpoint.
         no_commission = log_sf.masked_fill(~valid, 0).sum(1)
         no_commission = no_commission.masked_fill(detected, -torch.inf)
         return torch.cat([joint, no_commission[:, None]], 1)
@@ -100,6 +120,8 @@ class SafePlus(nn.Module):
     @staticmethod
     def sample_onsets(posterior, samples=1):
         """Sample full posterior states; final column means onset after horizon."""
+        # Detach the E-step distribution: gradients flow through selected joint
+        # log masses in the M-step, not through the categorical sampling law.
         return torch.multinomial(posterior.detach(), samples, replacement=True)
 
     def loss(self, batch):
@@ -118,6 +140,8 @@ class SafePlus(nn.Module):
             endpoints,
         )
         log_likelihood = torch.logsumexp(joint, 1)
+        # Normalize across all L+1 states. For censored entities onset-only
+        # probabilities need not sum to one: the remaining mass is no commission.
         posterior = (joint - log_likelihood[:, None]).exp()
         out.update(
             log_likelihood=log_likelihood,
@@ -126,6 +150,9 @@ class SafePlus(nn.Module):
             no_commission_posterior=posterior[:, -1],
         )
         if self.training and self.inference == "stochastic_em":
+            # Monte Carlo complete-data objective; increasing samples reduces
+            # sampling noise but does not avoid the full exact posterior above.
+            # Its loss value is not directly comparable to marginal NLL.
             samples = self.sample_onsets(posterior, self.em_samples)
             loss = -joint.gather(1, samples).mean()
         else:

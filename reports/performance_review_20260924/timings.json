@@ -1,0 +1,142 @@
+[
+  {
+    "model": "gru",
+    "seed": 0,
+    "wall_seconds": 1.8251072079874575,
+    "epochs_completed": 13,
+    "best_epoch": 6
+  },
+  {
+    "model": "gru",
+    "seed": 1,
+    "wall_seconds": 1.2784796659834683,
+    "epochs_completed": 11,
+    "best_epoch": 4
+  },
+  {
+    "model": "gru",
+    "seed": 2,
+    "wall_seconds": 1.4553509590332396,
+    "epochs_completed": 13,
+    "best_epoch": 6
+  },
+  {
+    "model": "gru",
+    "seed": 3,
+    "wall_seconds": 1.200925457989797,
+    "epochs_completed": 10,
+    "best_epoch": 3
+  },
+  {
+    "model": "gru",
+    "seed": 4,
+    "wall_seconds": 1.1336103749927133,
+    "epochs_completed": 9,
+    "best_epoch": 2
+  },
+  {
+    "model": "safe",
+    "seed": 0,
+    "wall_seconds": 1.6942232919973321,
+    "epochs_completed": 11,
+    "best_epoch": 4
+  },
+  {
+    "model": "safe",
+    "seed": 1,
+    "wall_seconds": 2.2125962920254096,
+    "epochs_completed": 15,
+    "best_epoch": 8
+  },
+  {
+    "model": "safe",
+    "seed": 2,
+    "wall_seconds": 3.276477082981728,
+    "epochs_completed": 24,
+    "best_epoch": 17
+  },
+  {
+    "model": "safe",
+    "seed": 3,
+    "wall_seconds": 2.234395291947294,
+    "epochs_completed": 16,
+    "best_epoch": 9
+  },
+  {
+    "model": "safe",
+    "seed": 4,
+    "wall_seconds": 2.8203553750063293,
+    "epochs_completed": 21,
+    "best_epoch": 14
+  },
+  {
+    "model": "safe-r",
+    "seed": 0,
+    "wall_seconds": 3.900368625007104,
+    "epochs_completed": 40,
+    "best_epoch": 39
+  },
+  {
+    "model": "safe-r",
+    "seed": 1,
+    "wall_seconds": 3.925284625031054,
+    "epochs_completed": 40,
+    "best_epoch": 40
+  },
+  {
+    "model": "safe-r",
+    "seed": 2,
+    "wall_seconds": 3.785031749983318,
+    "epochs_completed": 40,
+    "best_epoch": 40
+  },
+  {
+    "model": "safe-r",
+    "seed": 3,
+    "wall_seconds": 3.485253124963492,
+    "epochs_completed": 36,
+    "best_epoch": 29
+  },
+  {
+    "model": "safe-r",
+    "seed": 4,
+    "wall_seconds": 3.746171249949839,
+    "epochs_completed": 38,
+    "best_epoch": 31
+  },
+  {
+    "model": "safeplus",
+    "seed": 0,
+    "wall_seconds": 1.1209216249990277,
+    "epochs_completed": 8,
+    "best_epoch": 1
+  },
+  {
+    "model": "safeplus",
+    "seed": 1,
+    "wall_seconds": 3.3607775840209797,
+    "epochs_completed": 32,
+    "best_epoch": 25
+  },
+  {
+    "model": "safeplus",
+    "seed": 2,
+    "wall_seconds": 4.05253495904617,
+    "epochs_completed": 40,
+    "best_epoch": 37
+  },
+  {
+    "model": "safeplus",
+    "seed": 3,
+    "wall_seconds": 2.7391589999897406,
+    "epochs_completed": 25,
+    "best_epoch": 18
+  },
+  {
+    "model": "safeplus",
+    "seed": 4,
+    "wall_seconds": 4.110927375033498,
+    "epochs_completed": 40,
+    "best_epoch": 37
+  }
+]
