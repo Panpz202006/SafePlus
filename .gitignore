@@ -1,0 +1,10 @@
+# Python generated files
+__pycache__/
+*.py[cod]
+
+# Test cache
+.pytest_cache/
+
+# Python package metadata
+*.egg-info/
+runs/
