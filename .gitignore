@@ -1,0 +1,10 @@
+# Local third-party inputs and generated adapter outputs are intentionally excluded.
+data/third_party/
+data/adapted/
+
+# Python and experiment artifacts.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+*.pt

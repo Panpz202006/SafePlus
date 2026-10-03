@@ -1,0 +1,29 @@
+{
+  "dataset": "twitter",
+  "source": "https://github.com/PanpanZheng/SAFE/tree/master/twitter",
+  "redistribution": "raw and adapted arrays are not included",
+  "max_length": 21,
+  "feature_dim": 5,
+  "splits": {
+    "train": {"n": 3870, "events": 1935, "censored": 1935, "event_rate": 0.5, "length_min": 12, "length_max": 21, "feature_dim": 5},
+    "valid": {"n": 556, "events": 278, "censored": 278, "event_rate": 0.5, "length_min": 12, "length_max": 21, "feature_dim": 5},
+    "test": {"n": 1114, "events": 557, "censored": 557, "event_rate": 0.5, "length_min": 12, "length_max": 21, "feature_dim": 5}
+  },
+  "semantics": {
+    "C=1": "platform suspension/event observed at T",
+    "C=0": "right-censored at last observation T",
+    "t_detect": "zero-based T-1 for C=1; -1 for censored",
+    "t_onset": "unknown (-1) for every entity; must not be used as ground truth"
+  },
+  "source_sha256": {
+    "C_test_var.npy": "0732dbb8d87e37d3f63a636b786fac38ffd5fea3730b5dbc6885b88e2576d30b",
+    "C_train_var.npy": "92c13c40740825bdb83a44369228e5d70a8d3d1d51155088a9a8094e82d7ec49",
+    "C_valid_var.npy": "834adca17fc59adc269874374568dd251463751182a5c30eecd69af77d47fd93",
+    "T_test_var.npy": "914627aae33c85ef3cc815a2a4789bacc2f4d03c3a6d0a3521cb5ee5d4a3d647",
+    "T_train_var.npy": "0abbe08f2d832d2adff62368928c56353a86a1727ab5810aeb88a3a7b15320a9",
+    "T_valid_var.npy": "178b34978debd5ee03065481b37a16fa2aee76472a6a531315085c518aa1913b",
+    "X_test_var.npy": "1ca2f0119532303d0cab17202c423903e0892ee14d209e9052390ae8a8cb5c7b",
+    "X_train_var.npy": "e617a723628146ed72da43ce4a6eb6df8be20c645fd14e63477335e426f4b81c",
+    "X_valid_var.npy": "02d49832eecd4c7f3a4d061e2dca1aeaa1e288445bafa6576b6af1248123b429"
+  }
+}

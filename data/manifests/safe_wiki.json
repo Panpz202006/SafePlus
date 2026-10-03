@@ -1,0 +1,31 @@
+{
+  "dataset": "wiki",
+  "source": "https://github.com/PanpanZheng/SAFE/tree/master/wiki",
+  "redistribution": "raw and adapted arrays are not included",
+  "max_length": 20,
+  "feature_dim": 8,
+  "splits": {
+    "train": {"n": 1231, "events": 598, "censored": 633, "event_rate": 0.48578391551584077, "length_min": 12, "length_max": 20, "feature_dim": 8},
+    "valid": {"n": 175, "events": 87, "censored": 88, "event_rate": 0.49714285714285716, "length_min": 12, "length_max": 20, "feature_dim": 8},
+    "test": {"n": 353, "events": 174, "censored": 179, "event_rate": 0.49291784702549574, "length_min": 12, "length_max": 20, "feature_dim": 8}
+  },
+  "semantics": {
+    "C=1": "platform suspension/event observed at T",
+    "C=0": "right-censored at last observation T",
+    "t_detect": "zero-based T-1 for C=1; -1 for censored",
+    "t_onset": "unknown (-1) for every entity; must not be used as ground truth"
+  },
+  "source_sha256": {
+    "C_test.npy": "317a26598a2412e2bcc3c52427ed5965f41b9eee0375a3a6466e072b0c2f0c91",
+    "C_train.npy": "d99e6c1207d1405050a5c82bc2e054939eaf0cd9d9eee04eb29fad4de998dcfb",
+    "C_valid.npy": "2867185085294eda2b75629b1f644ddbcac6a01d0f54ec444cdb8b6ec1309888",
+    "T_test.npy": "5e5d77a983918d10dab45c1e7ead92ef0c2110eeb4d9ca36f8852c6f1eea42fb",
+    "T_train.npy": "9d639b793d3c095987d48aad386118d7284e1e163058ffafff6e89599de5bf60",
+    "T_valid.npy": "e360f0d7a0c1485e37ab784e4279fc27d69850b5d6ce0fbe561fc3b82619a74f",
+    "X_test.npy": "e801a6307150c10f4271975378744268faf568db40d0faae9ebd007ce993053e",
+    "X_train.npy": "cb5289ca8fbc86ea158dc1492ae8d453afb38ac76ee090a066f3b5b2e1d0ed22",
+    "X_v8_5_20_Ben.npy": "25aad54d240f662a8dd47bcd591c2931e2bdd67ba70ff9ec0a5be88719066a56",
+    "X_v8_5_20_Van.npy": "83c436529650b282f0d0d90ccfee366d75793ee905c194cb2a39db4e5a3d1365",
+    "X_valid.npy": "aabc33deebc1443e5becaacbe4820855edca024981d8b60cb839c3b5d5e87515"
+  }
+}
