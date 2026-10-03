@@ -4,7 +4,12 @@ from .baselines import (
     LSTMSAFER,
     SAFER,
 )
-from .safe import SAFE
+
+from .safe import (
+    SAFE,
+    LSTMSAFE,
+)
+
 from .safeplus import SafePlus
 
 
@@ -17,9 +22,16 @@ def build_model(
     models = {
         "gru": GRUClassifier,
         "lstm": LSTMClassifier,
-        "safe": SAFE,
+
+        # Detection-time survival baselines
         "safe-r": SAFER,
         "lstm-r": LSTMSAFER,
+
+        # Fraud-onset-only baselines
+        "safe": SAFE,
+        "lstm-safe": LSTMSAFE,
+
+        # Joint model
         "safeplus": SafePlus,
     }
 
@@ -38,6 +50,7 @@ def build_model(
 
 __all__ = [
     "SAFE",
+    "LSTMSAFE",
     "SAFER",
     "GRUClassifier",
     "LSTMClassifier",
