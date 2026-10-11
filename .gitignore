@@ -7,4 +7,14 @@ __pycache__/
 
 # Python package metadata
 *.egg-info/
+
+# Generated experiment runs
 runs/
+
+# Reproducible generated datasets
+data/processed/synthetic_consistent_delay8.npz
+data/processed/synthetic_same_delay_consistent.npz
+
+# Large / reproducible Experiment 03 artifacts
+reports/experiment03/**/*.pt
+reports/experiment03/**/*.npz
