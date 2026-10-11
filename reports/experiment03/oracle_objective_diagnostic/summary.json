@@ -1,0 +1,42 @@
+{
+  "fraud_only": {
+    "objective": "fraud_only",
+    "best_epoch": 19,
+    "best_val_posterior_mean_mae": 2.450759850649694,
+    "n_fraud": 135,
+    "n_normal": 265,
+    "mode_mae": 4.45925925925926,
+    "posterior_mean_mae": 2.700384469642893,
+    "expected_abs_error": 4.168458386274846,
+    "mean_true_tf_probability": 0.08519539704753293,
+    "onset_nll": 2.638597589097631,
+    "mode_signed_error": -2.311111111111111,
+    "mean_signed_error": -1.0413314114003491,
+    "mode_before_tf_rate": 0.5259259259259259,
+    "mode_exact_tf_rate": 0.08888888888888889,
+    "mode_after_tf_rate": 0.3851851851851852,
+    "detected_fraud_mean_mae": 2.630919957429446,
+    "censored_fraud_mean_mae": 2.871374038168299,
+    "normal_no_commission_probability": 0.00024062174742419233
+  },
+  "balanced": {
+    "objective": "balanced",
+    "best_epoch": 21,
+    "best_val_posterior_mean_mae": 2.553816649264216,
+    "n_fraud": 135,
+    "n_normal": 265,
+    "mode_mae": 8.985185185185186,
+    "posterior_mean_mae": 2.983445646363598,
+    "expected_abs_error": 7.158600670064765,
+    "mean_true_tf_probability": 0.026022660321797484,
+    "onset_nll": 3.744886345601191,
+    "mode_signed_error": -8.985185185185186,
+    "mean_signed_error": 0.29336262374605826,
+    "mode_before_tf_rate": 1.0,
+    "mode_exact_tf_rate": 0.0,
+    "mode_after_tf_rate": 0.0,
+    "detected_fraud_mean_mae": 3.049050664494344,
+    "censored_fraud_mean_mae": 2.821956370964841,
+    "normal_no_commission_probability": 0.4141653703068787
+  }
+}

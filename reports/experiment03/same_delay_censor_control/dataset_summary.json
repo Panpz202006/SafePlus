@@ -1,0 +1,14 @@
+{
+  "source_dataset": "data\\processed\\synthetic_demo.npz",
+  "corrected_dataset": "data\\processed\\synthetic_same_delay_consistent.npz",
+  "x_unchanged": true,
+  "t_onset_unchanged": true,
+  "detection_delay_unchanged": true,
+  "candidate_t_detect_unchanged": true,
+  "split_unchanged": true,
+  "old_test_detected_fraud": 96,
+  "old_test_censored_fraud": 39,
+  "new_test_detected_fraud": 132,
+  "new_test_natural_censored_fraud": 3,
+  "paired_random_censored_revealed": 36
+}

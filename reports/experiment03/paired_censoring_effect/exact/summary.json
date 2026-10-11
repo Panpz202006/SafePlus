@@ -1,0 +1,62 @@
+{
+  "inference": "exact",
+  "n_paired_entities": 36,
+  "metrics": {
+    "posterior_mean_absolute_error": {
+      "metric": "posterior_mean_absolute_error",
+      "old_mean": 7.029217820394136,
+      "new_mean": 1.702233081498066,
+      "mean_improvement": 5.32698473889607,
+      "median_improvement": 4.120666977478031,
+      "bootstrap_95_ci_low": 3.9234526749877956,
+      "bootstrap_95_ci_high": 6.807541576009337,
+      "improved_entities": 35,
+      "unchanged_entities": 0,
+      "worsened_entities": 1
+    },
+    "posterior_mode_absolute_error": {
+      "metric": "posterior_mode_absolute_error",
+      "old_mean": 7.638888888888889,
+      "new_mean": 1.9722222222222223,
+      "mean_improvement": 5.666666666666667,
+      "median_improvement": 3.5,
+      "bootstrap_95_ci_low": 3.7222222222222223,
+      "bootstrap_95_ci_high": 7.75,
+      "improved_entities": 23,
+      "unchanged_entities": 13,
+      "worsened_entities": 0
+    },
+    "sampled_tf_mae": {
+      "metric": "sampled_tf_mae",
+      "old_mean": 7.541583333333332,
+      "new_mean": 2.0630833333333336,
+      "mean_improvement": 5.4785,
+      "median_improvement": 4.1525,
+      "bootstrap_95_ci_low": 4.155461805555555,
+      "bootstrap_95_ci_high": 6.9151284722222215,
+      "improved_entities": 36,
+      "unchanged_entities": 0,
+      "worsened_entities": 0
+    },
+    "posterior_expected_absolute_error": {
+      "metric": "posterior_expected_absolute_error",
+      "old_mean": 7.520672700900958,
+      "new_mean": 2.0642171909304037,
+      "mean_improvement": 5.456455509970555,
+      "median_improvement": 4.211132322777303,
+      "bootstrap_95_ci_low": 4.143610020885416,
+      "bootstrap_95_ci_high": 6.879117322923025,
+      "improved_entities": 36,
+      "unchanged_entities": 0,
+      "worsened_entities": 0
+    }
+  },
+  "posterior_state_change": {
+    "old_mean_no_commission": 0.9617747338888888,
+    "new_mean_no_commission": 0.0,
+    "mean_no_commission_reduction": 0.9617747338888888,
+    "old_mean_true_tf_probability_given_commission": 0.05247612222188355,
+    "new_mean_true_tf_probability_given_commission": 0.1445490209023571,
+    "mean_true_tf_probability_gain": 0.0920728986804736
+  }
+}

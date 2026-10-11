@@ -1,0 +1,38 @@
+{
+  "joint_exact": {
+    "model": "Joint-Exact",
+    "n_test": 400,
+    "n_normal": 265,
+    "n_detected_fraud": 96,
+    "n_censored_fraud": 39,
+    "posterior_mode_mae_all_known_fraud": 8.911111111111111,
+    "posterior_mode_mae_detected_fraud": 8.770833333333334,
+    "posterior_mode_mae_censored_fraud": 9.256410256410257,
+    "posterior_mean_mae_all_known_fraud": 4.616530230617605,
+    "posterior_expected_abs_error_all_known_fraud": 5.5214788126267695,
+    "sampled_tf_mae_given_commission_all_known_fraud": 5.512125925925925,
+    "mean_true_tf_probability": 0.05420231156189133,
+    "onset_nll_all_known_fraud": 3.1032857817804143,
+    "mean_no_commission_posterior_normal": 0.00825826358050108,
+    "mean_no_commission_posterior_censored_fraud": 0.004368588328361511,
+    "full_posterior_sample_no_commission_rate_censored_fraud": 0.0048974358974358985
+  },
+  "joint_sampling": {
+    "model": "Joint-Sampling",
+    "n_test": 400,
+    "n_normal": 265,
+    "n_detected_fraud": 96,
+    "n_censored_fraud": 39,
+    "posterior_mode_mae_all_known_fraud": 8.911111111111111,
+    "posterior_mode_mae_detected_fraud": 8.770833333333334,
+    "posterior_mode_mae_censored_fraud": 9.256410256410257,
+    "posterior_mean_mae_all_known_fraud": 4.630178497991792,
+    "posterior_expected_abs_error_all_known_fraud": 5.53092443165973,
+    "sampled_tf_mae_given_commission_all_known_fraud": 5.521340740740741,
+    "mean_true_tf_probability": 0.05399237105415927,
+    "onset_nll_all_known_fraud": 3.1090501215102417,
+    "mean_no_commission_posterior_normal": 0.008028690703213215,
+    "mean_no_commission_posterior_censored_fraud": 0.004324274603277445,
+    "full_posterior_sample_no_commission_rate_censored_fraud": 0.004846153846153847
+  }
+}

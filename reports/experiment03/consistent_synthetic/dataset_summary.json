@@ -1,0 +1,19 @@
+{
+  "source_dataset": "data\\processed\\synthetic_demo.npz",
+  "output_dataset": "data\\processed\\synthetic_consistent_delay8.npz",
+  "behavior_x_unchanged": true,
+  "true_tf_unchanged": true,
+  "detection_seed": 20261009,
+  "delay_distribution": "integer floor of exponential",
+  "delay_mean": 8.0,
+  "random_detection_censoring": false,
+  "observation_horizon": 23,
+  "test_entities": 400,
+  "test_normal": 265,
+  "test_fraud": 135,
+  "test_detected_fraud": 109,
+  "test_naturally_censored_fraud": 26,
+  "test_natural_censor_fraction": 0.1925925925925926,
+  "invalid_hidden_in_window_detection_count": 0,
+  "test_mean_detection_delay": 8.2
+}
