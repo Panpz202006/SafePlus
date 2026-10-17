@@ -1,0 +1,3 @@
+comparison,mean_gain,ci_low,ci_high,wins,ties,losses
+final_convex_vs_behavior_raw,0.506000466469614,0.4017272822377041,0.6218414794270021,10,0,0
+final_convex_vs_delay_only,0.7680341148679115,0.6940952121803985,0.8543360496235909,10,0,0

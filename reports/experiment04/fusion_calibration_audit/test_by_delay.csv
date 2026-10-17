@@ -1,0 +1,10 @@
+delay_bucket,method,n,mae
+delay_1_2,delay_only,65,0.6923076923076923
+delay_1_2,behavior_only_raw,65,1.646153846153846
+delay_1_2,selected_fusion,65,0.6
+delay_3_5,delay_only,37,1.7297297297297298
+delay_3_5,behavior_only_raw,37,1.4054054054054055
+delay_3_5,selected_fusion,37,1.9189189189189189
+delay_6_plus,delay_only,30,6.033333333333333
+delay_6_plus,behavior_only_raw,30,1.7
+delay_6_plus,selected_fusion,30,1.7666666666666666

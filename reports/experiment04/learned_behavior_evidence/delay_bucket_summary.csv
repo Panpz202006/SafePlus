@@ -1,0 +1,10 @@
+delay_bucket,estimator,n_users,mae
+delay_1_2,learned_mean_tf,65,1.916878589913182
+delay_1_2,learned_median_tf,65,1.646153846153846
+delay_1_2,learned_mode_tf,65,1.0153846153846153
+delay_3_5,learned_mean_tf,37,1.5274291720796005
+delay_3_5,learned_median_tf,37,1.4054054054054055
+delay_3_5,learned_mode_tf,37,1.837837837837838
+delay_6_plus,learned_mean_tf,30,1.5616347444964451
+delay_6_plus,learned_median_tf,30,1.7
+delay_6_plus,learned_mode_tf,30,1.8666666666666667

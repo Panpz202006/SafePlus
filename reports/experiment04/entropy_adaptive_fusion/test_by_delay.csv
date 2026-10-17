@@ -1,0 +1,13 @@
+delay_bucket,method,n,mae,mean_alpha
+delay_1_2,delay_only,65,0.6923076923076923,0.0
+delay_3_5,delay_only,37,1.7297297297297298,0.0
+delay_6_plus,delay_only,30,6.033333333333333,0.0
+delay_1_2,behavior_only,65,1.9076923076923078,
+delay_3_5,behavior_only,37,1.3783783783783783,
+delay_6_plus,behavior_only,30,1.4333333333333333,
+delay_1_2,fixed_global_fusion,65,0.6,2.0
+delay_3_5,fixed_global_fusion,37,1.9189189189189189,2.0
+delay_6_plus,fixed_global_fusion,30,1.7666666666666666,2.0
+delay_1_2,entropy_adaptive_fusion,65,0.46153846153846156,1.1815670762486334
+delay_3_5,entropy_adaptive_fusion,37,1.6756756756756757,1.1523083575821633
+delay_6_plus,entropy_adaptive_fusion,30,2.1666666666666665,1.1535729062456244

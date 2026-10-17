@@ -1,0 +1,16 @@
+delay_bucket,method,n,mae
+delay_1_2,behavior_raw_04A_style,65,1.646153846153846
+delay_3_5,behavior_raw_04A_style,37,1.4054054054054055
+delay_6_plus,behavior_raw_04A_style,30,1.7
+delay_1_2,behavior_global_scaled,65,1.9076923076923078
+delay_3_5,behavior_global_scaled,37,1.3783783783783783
+delay_6_plus,behavior_global_scaled,30,1.4333333333333333
+delay_1_2,delay_only,65,0.6923076923076923
+delay_3_5,delay_only,37,1.7297297297297298
+delay_6_plus,delay_only,30,6.033333333333333
+delay_1_2,old_fixed_alpha,65,0.6
+delay_3_5,old_fixed_alpha,37,1.9189189189189189
+delay_6_plus,old_fixed_alpha,30,1.7666666666666666
+delay_1_2,fixed_convex_fusion,65,0.6307692307692307
+delay_3_5,fixed_convex_fusion,37,1.7837837837837838
+delay_6_plus,fixed_convex_fusion,30,1.6666666666666667

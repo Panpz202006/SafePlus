@@ -1,0 +1,13 @@
+delay_bucket,method,n,mae,mean_w
+delay_1_2,behavior_raw_04A_style,65,1.646153846153846,
+delay_3_5,behavior_raw_04A_style,37,1.4054054054054055,
+delay_6_plus,behavior_raw_04A_style,30,1.7,
+delay_1_2,delay_only,65,0.6923076923076923,0.0
+delay_3_5,delay_only,37,1.7297297297297298,0.0
+delay_6_plus,delay_only,30,6.033333333333333,0.0
+delay_1_2,fixed_convex_gate,65,0.6307692307692307,0.7000000000000001
+delay_3_5,fixed_convex_gate,37,1.7837837837837838,0.6999999999999998
+delay_6_plus,fixed_convex_gate,30,1.6666666666666667,0.6999999999999997
+delay_1_2,monotonic_confidence_gate,65,0.6307692307692307,0.7005671424739728
+delay_3_5,monotonic_confidence_gate,37,1.7837837837837838,0.7005671424739728
+delay_6_plus,monotonic_confidence_gate,30,1.6666666666666667,0.7005671424739727
