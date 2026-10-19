@@ -1,0 +1,38 @@
+{
+  "model_version": "exp04-synthetic-frozen-v1",
+  "dataset_id": "synthetic_same_delay_consistent",
+  "split": "TEST",
+  "n_split": 400,
+  "n_eligible_exact_detected_fraud": 132,
+  "n_gold_unresolved_in_split": 0,
+  "mae_median": 1.2348484848484849,
+  "signed_error": 0.29545454545454547,
+  "within_1": 0.6439393939393939,
+  "within_2": 0.8712121212121212,
+  "behavior_only_mae": 1.5909090909090908,
+  "vs_behavior_only": {
+    "gain": 0.3560606060606061,
+    "ci95_low": 0.08333333333333333,
+    "ci95_high": 0.6590909090909091
+  },
+  "delay_only_mae": 2.196969696969697,
+  "vs_delay_only": {
+    "gain": 0.9621212121212122,
+    "ci95_low": 0.5606060606060606,
+    "ci95_high": 1.3863636363636365
+  },
+  "by_true_delay": {
+    "short_1_2": {
+      "n": 65,
+      "mae": 0.6
+    },
+    "mid_3_5": {
+      "n": 37,
+      "mae": 1.9189189189189189
+    },
+    "long_6_plus": {
+      "n": 30,
+      "mae": 1.7666666666666666
+    }
+  }
+}

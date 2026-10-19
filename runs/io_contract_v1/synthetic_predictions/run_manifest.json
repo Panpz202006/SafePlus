@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "task": "retrospective_onset_after_detection",
+  "model_version": "exp04-synthetic-frozen-v1",
+  "split": "TEST",
+  "n_split": 400,
+  "n_detected_predicted": 132,
+  "w": 0.6666666666666666,
+  "temperature": 0.3333333333333333,
+  "global_behavior_scale": 1.504733284580797,
+  "delay_prior_version": "exp04_original_synthetic_prior",
+  "delay_prior_resolved": {
+    "mode": "synthetic_known",
+    "source": "known_project_synthetic_generator; do not estimate from test gold"
+  },
+  "dataset_id": "synthetic_same_delay_consistent",
+  "feature_names": [
+    "feature_0",
+    "feature_1",
+    "feature_2",
+    "feature_3",
+    "feature_4",
+    "feature_5",
+    "feature_6",
+    "feature_7"
+  ],
+  "time_unit": "synthetic_step",
+  "input_sha256": "6d8ed3ae8b8ded6d2147ef31458fa069658c9b8e69e38523d947651bb5ba542a",
+  "train_labels_sha256": "c8be230c78aafd07f12c3c267a2d575ebc6b04d2396d927b5590ee5383ed5afd",
+  "split_sha256": "8a90189bc883957584495c628c2c1f9d573ac9538238905758fde807a2c247f7",
+  "prior_sha256": "709bf93234e91f4ec58d388cead1998a64578e31ce5346beb3a37a1b2fdd0abb",
+  "source_code_sha256": {
+    "34_exp04_learned_behavior_evidence.py": "6e25341f78d2b9a4ee5ca5b53d1b4506915bd4705571cdf5a9b2ce0d388ef859",
+    "40_exp04_convex_fusion_audit.py": "96f3b08cdcce7a6375618fbe8b7e83e450114723237a3929907e242373fc9b8e",
+    "32_exp03_behavior_likelihood_identification.py": "0fbf44db7e69192c88880172a593644b2443fdf811488b9f6c309397d121d325"
+  },
+  "python": "3.14.7",
+  "numpy": "2.5.3",
+  "pandas": "3.0.6",
+  "warnings": []
+}
