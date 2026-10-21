@@ -1,0 +1,36 @@
+{
+  "dataset": "SAML-D (current Kaggle release)",
+  "source": "https://www.kaggle.com/datasets/berkanoztas/synthetic-transaction-monitoring-dataset-aml",
+  "upstream_repository": "https://github.com/BOztasUK/Anti_Money_Laundering_Transaction_Data_SAML-D",
+  "paper": "https://doi.org/10.1109/ICEBE59045.2023.00028",
+  "license": "CC-BY-NC-SA-4.0",
+  "file": {
+    "name": "SAML-D.csv",
+    "bytes": 996168850,
+    "sha256": "5b71ce2ea7b47fe6f19da1aa151776b04ec74560a852c2c077df91d20b8b4ef9"
+  },
+  "audit": {
+    "transactions": 9504852,
+    "laundering_transactions": 9873,
+    "laundering_rate": 0.0010387326388669703,
+    "missing_cells": 0,
+    "exact_duplicate_rows_after_first": 0,
+    "date_min": "2022-10-07",
+    "date_max": "2023-08-23",
+    "sender_accounts": 292715,
+    "receiver_accounts": 652266,
+    "accounts_union": 855460,
+    "laundering_accounts_union": 7902,
+    "payment_types": 7,
+    "normal_typologies": 11,
+    "suspicious_typologies": 17
+  },
+  "window_feasibility": {
+    "window_days": 30,
+    "active_account_windows": 3287239,
+    "positive_account_windows": 9466,
+    "positive_window_rate": 0.002879620252740978,
+    "estimated_dense_feature_gib_for_18_float32_features": 6.612796559929848
+  },
+  "status": "downloaded and audited; cohort adapter not yet generated"
+}

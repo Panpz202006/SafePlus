@@ -1,0 +1,28 @@
+{
+  "dataset": "Fraud Detection Handbook simulated transactions",
+  "source": "https://github.com/Fraud-Detection-Handbook/simulated-data-raw",
+  "source_commit": "6e67dbd0a3bfe0d7ec33abc4bce5f37cd4ff0d6a",
+  "daily_files": 183,
+  "source_total_bytes": 107121710,
+  "transactions": 1754155,
+  "customers": 4990,
+  "terminals": 10000,
+  "windows": 34290,
+  "positive_windows": 7010,
+  "positive_window_rate": 0.20443277923592884,
+  "feature_dim": 9,
+  "construction": {
+    "entity": "non-overlapping customer-level 30-day episode window",
+    "t_onset": "first fraud-labelled day in a window; evaluation only",
+    "t_detect": "t_onset + 7 days when observed, otherwise -1",
+    "simulated_positive_censor_rate": 0.2,
+    "split_unit": "customer",
+    "seed": 20261005
+  },
+  "scenario_positive_windows": {"1": 827, "2": 5858, "3": 676},
+  "splits": {
+    "train": {"customers": 3492, "windows": 23972, "positive_windows": 4921},
+    "valid": {"customers": 498, "windows": 3433, "positive_windows": 698},
+    "test": {"customers": 1000, "windows": 6885, "positive_windows": 1391}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "dataset": "BankSim",
+  "source": "https://www.kaggle.com/datasets/ealaxi/banksim1",
+  "source_file": "bs140513_032310.csv",
+  "source_sha256": "e37006f76d993bfaec3a02d717b4f0bdc1ebfa5d36449e91fb7c07e225278377",
+  "redistribution": "raw and adapted arrays are kept local pending license confirmation",
+  "transactions": 594643,
+  "customers": 4112,
+  "horizon": 180,
+  "feature_dim": 20,
+  "fraud_transactions": 7200,
+  "fraud_transaction_rate": 0.012108105199254007,
+  "positive_customers": 1483,
+  "construction": {
+    "entity": "customer",
+    "aggregation": "customer-step",
+    "t_onset": "first step containing a fraud-labelled transaction; evaluation only",
+    "t_detect": "t_onset + 4 when observed, otherwise -1",
+    "simulated_positive_censor_rate": 0.2,
+    "split": [0.7, 0.1, 0.2],
+    "split_unit": "customer",
+    "seed": 20261005
+  },
+  "splits": {
+    "train": {"n": 2878, "positive_customers": 1038, "observed_detections": 816},
+    "valid": {"n": 410, "positive_customers": 148, "observed_detections": 114},
+    "test": {"n": 824, "positive_customers": 297, "observed_detections": 242}
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "dataset": "IBM Transactions for Anti Money Laundering - HI-Small",
+  "source": "https://www.kaggle.com/datasets/ealtman2019/ibm-transactions-for-anti-money-laundering-aml",
+  "upstream_repository": "https://github.com/IBM/AML-Data",
+  "paper": "https://arxiv.org/abs/2306.16424",
+  "license": "CDLA-Sharing-1.0",
+  "source_files": {
+    "HI-Small_Trans.csv": {
+      "bytes": 475664283,
+      "sha256": "b19d39f515523373f991b689c07e11e7b0b95c17a2c27a87d91584ae16c5b040"
+    },
+    "HI-Small_Patterns.txt": {
+      "bytes": 323844,
+      "sha256": "2c546b5ce6009e73851f0139af053cf845f08bf92f3bc82fe1eb937dec2ef39b"
+    },
+    "HI-Small_accounts.csv": {
+      "bytes": 34053187,
+      "sha256": "786808526e33cfc441212dd6fccda7edfc24172149bed59c6ef59b186836b014"
+    }
+  },
+  "raw_audit": {
+    "transactions": 5078345,
+    "laundering_transactions": 5177,
+    "laundering_rate": 0.0010194266045335635,
+    "exact_duplicate_rows_after_first": 9,
+    "timestamp_min": "2022-09-01 00:00:00",
+    "timestamp_max": "2022-09-18 16:18:00",
+    "pattern_attempts": 370,
+    "pattern_rows": 3209
+  },
+  "primary_construction": {
+    "period": "2022-09-01 through 2022-09-10",
+    "transactions": 5077237,
+    "laundering_transactions": 4522,
+    "entity": "bank-and-account pair",
+    "accounts": 515078,
+    "positive_accounts": 5862,
+    "time_steps": 10,
+    "feature_dim": 18,
+    "t_onset": "first laundering-labelled transaction involving the account; evaluation only",
+    "t_detect": "t_onset + 1 day when observed, otherwise -1",
+    "simulated_positive_censor_rate": 0.2,
+    "split_unit": "account",
+    "split": [0.7, 0.1, 0.2],
+    "seed": 20261005
+  },
+  "splits": {
+    "train": {"accounts": 360554, "positive_accounts": 4103, "observed_detections": 2978},
+    "valid": {"accounts": 51507, "positive_accounts": 586, "observed_detections": 435},
+    "test": {"accounts": 103017, "positive_accounts": 1173, "observed_detections": 879}
+  }
+}

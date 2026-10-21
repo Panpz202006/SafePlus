@@ -1,0 +1,35 @@
+{
+  "dataset": "SAML-D current Kaggle release",
+  "source": "https://www.kaggle.com/datasets/berkanoztas/synthetic-transaction-monitoring-dataset-aml",
+  "license": "CC-BY-NC-SA-4.0",
+  "source_file": {
+    "bytes": 996168850,
+    "sha256": "5b71ce2ea7b47fe6f19da1aa151776b04ec74560a852c2c077df91d20b8b4ef9"
+  },
+  "population": {
+    "transactions": 9504852,
+    "laundering_transactions": 9873,
+    "accounts": 855460,
+    "positive_accounts": 7902,
+    "active_30_day_windows": 3287239,
+    "positive_30_day_windows": 9466
+  },
+  "cohort": {
+    "windows": 104126,
+    "positive_windows": 9466,
+    "matched_control_windows": 94660,
+    "window_days": 30,
+    "feature_dim": 20,
+    "typology_onset_dimensions": 17,
+    "negative_sampling": "10 controls per case, matched within split by calendar window and floor(log2 activity)",
+    "split_unit": "account before sampling",
+    "delay_days": 7,
+    "simulated_positive_censor_rate": 0.2,
+    "seed": 20261005
+  },
+  "splits": {
+    "train": {"windows": 72776, "accounts": 56781, "positive_windows": 6616, "observed_detections": 4467},
+    "valid": {"windows": 10406, "accounts": 8069, "positive_windows": 946, "observed_detections": 630},
+    "test": {"windows": 20944, "accounts": 16429, "positive_windows": 1904, "observed_detections": 1276}
+  }
+}

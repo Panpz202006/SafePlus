@@ -1,0 +1,30 @@
+{
+  "dataset": "Sparkov credit-card transactions",
+  "source": "https://www.kaggle.com/datasets/kartik2112/fraud-detection",
+  "generator": "https://github.com/namebrandon/Sparkov_Data_Generation",
+  "license": "CC0-1.0 as declared on the dataset page",
+  "source_files": {
+    "fraudTrain.csv": "fd7139200dbfcbed0b6742bbe05a4f1abce532c4fef20918228a651647a3e75d",
+    "fraudTest.csv": "12d553ab19440c752d2531ee1af44bb64f12cc3d3839f1649f19e81c230545f0"
+  },
+  "transactions": 1852394,
+  "cards": 999,
+  "windows": 22793,
+  "positive_windows": 1010,
+  "positive_window_rate": 0.0443118501294257,
+  "feature_dim": 21,
+  "construction": {
+    "entity": "non-overlapping card-level 30-day episode window",
+    "time_source": "trans_date_trans_time",
+    "t_onset": "first fraud-labelled day within a window; evaluation only",
+    "t_detect": "t_onset + 2 days when observed, otherwise -1",
+    "simulated_positive_censor_rate": 0.2,
+    "split_unit": "credit card",
+    "seed": 20261005
+  },
+  "splits": {
+    "train": {"cards": 699, "windows": 15989, "positive_windows": 710},
+    "valid": {"cards": 99, "windows": 2211, "positive_windows": 100},
+    "test": {"cards": 201, "windows": 4593, "positive_windows": 200}
+  }
+}

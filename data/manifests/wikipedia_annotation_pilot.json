@@ -1,0 +1,35 @@
+{
+  "dataset": "Wikipedia blocked-account annotation pilot",
+  "source_api": "https://en.wikipedia.org/w/api.php",
+  "retrieval_date": "2026-10-05",
+  "collection": {
+    "registered_accounts": 20,
+    "public_revision_events": 409,
+    "observation_days_before_block": 30,
+    "maximum_revisions_per_account": 500,
+    "request_concurrency": 1,
+    "minimum_inter_account_delay_seconds": 0.25
+  },
+  "verified_fields": {
+    "observed_block_event": 20,
+    "t_detect_source": "public block log",
+    "unique_revision_ids": 409
+  },
+  "annotation_status": {
+    "pending_double_review": 14,
+    "pending_policy_relevance_review": 3,
+    "exclude_no_public_revision_evidence": 3,
+    "final_onset_labels": 0
+  },
+  "privacy": {
+    "direct_username_field_saved": false,
+    "target_name_redacted_from_title_comment_and_reason": true,
+    "ip_range_and_temporary_accounts_excluded": true,
+    "entity_key": "SHA-256 of normalized public username"
+  },
+  "output_sha256": {
+    "annotation_queue.csv": "c94b419bb640373dad159617f6f9a0b33c5896d6b8e0e7ac86bdf7c0c70b944d",
+    "events_public.jsonl": "5a650987209face0f8ae37a512032eb855afc873659792675e8552314cb5a8ba"
+  },
+  "status": "pilot collected and triaged; final t_onset requires two independent human reviews"
+}

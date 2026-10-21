@@ -1,0 +1,24 @@
+{
+  "dataset": "PaySim1",
+  "status": "collected_and_audited_not_adapted",
+  "source": "https://www.kaggle.com/datasets/ealaxi/paysim1",
+  "paper": "https://www.msc-les.org/proceedings/emss/2016/EMSS2016_249.pdf",
+  "source_file": "PS_20174392719_1491204439457_log.csv",
+  "source_sha256": "16910f90577b0d981bf8ff289714510bb89bc71bff7d3f220f024e287e4eea6b",
+  "rows": 6362620,
+  "columns": 11,
+  "steps": {"min": 1, "max": 743, "unique": 743},
+  "fraud_transactions": 8213,
+  "fraud_rate": 0.001290820448180152,
+  "flagged_transactions": 16,
+  "origin_accounts": 6353307,
+  "origins_with_more_than_one_transaction": 9298,
+  "maximum_transactions_per_origin": 3,
+  "decision": "Do not construct customer longitudinal sequences from nameOrig.",
+  "reasons": [
+    "99.85% of origin identifiers occur only once.",
+    "The public identifiers do not link fraudulent transfer destinations to fraudulent cash-out origins.",
+    "isFlaggedFraud covers only 16 of 8213 fraud transactions and cannot serve as general detection time.",
+    "Post-transaction balance fields may reveal cancelled fraud outcomes and are excluded from leakage-safe designs."
+  ]
+}

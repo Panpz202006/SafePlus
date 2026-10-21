@@ -1,0 +1,31 @@
+{
+  "dataset": "ULB Credit Card Fraud Detection",
+  "source": "https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud",
+  "license": "DbCL-1.0",
+  "source_file": {
+    "bytes": 150828752,
+    "sha256": "76274b691b16a6c49d3f159c883398e03ccd6d1ee12d9d8ee38f4b4b98551a89"
+  },
+  "raw": {
+    "transactions": 284807,
+    "fraud": 492,
+    "exact_duplicate_rows_after_first": 1081,
+    "missing_cells": 0,
+    "time_min_seconds": 0,
+    "time_max_seconds": 172792
+  },
+  "clean": {
+    "transactions": 283726,
+    "fraud": 473,
+    "fraud_rate": 0.001667101358352777,
+    "feature_dim": 30,
+    "task": "transaction-level binary classification",
+    "customer_sequence_available": false,
+    "onset_available": false
+  },
+  "splits": {
+    "train": {"transactions": 198607, "fraud": 366, "time_max": 132905},
+    "valid": {"transactions": 28373, "fraud": 33, "time_min": 132906, "time_max": 145233},
+    "test": {"transactions": 56746, "fraud": 74, "time_min": 145234, "time_max": 172792}
+  }
+}
