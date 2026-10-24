@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "row_count": 300,
+  "label_counts": {
+    "EXACT": 61,
+    "INTERVAL": 139,
+    "NOT_FRAUD": 100
+  },
+  "split_counts": {
+    "TRAIN": 226,
+    "VAL": 24,
+    "TEST": 50
+  },
+  "split_by_label": {
+    "TRAIN": {
+      "EXACT": 45,
+      "INTERVAL": 99,
+      "NOT_FRAUD": 82
+    },
+    "VAL": {
+      "INTERVAL": 11,
+      "EXACT": 7,
+      "NOT_FRAUD": 6
+    },
+    "TEST": {
+      "INTERVAL": 29,
+      "EXACT": 9,
+      "NOT_FRAUD": 12
+    }
+  },
+  "exact_subtypes": {
+    "EXACT_PUBLIC": 51,
+    "EXACT_OTHER_LOG": 10
+  },
+  "positive_normal_prefix_groups": {
+    "PREFIX_1": 118,
+    "PREFIX_2": 30,
+    "PREFIX_3PLUS": 52
+  },
+  "exact_normal_prefix_groups": {
+    "PREFIX_1": 41,
+    "PREFIX_3PLUS": 11,
+    "PREFIX_2": 9
+  },
+  "interval_width_groups": {
+    "gt_30d": 51,
+    "le_1d": 56,
+    "7_to_30d": 14,
+    "1_to_7d": 18
+  },
+  "interval_width_median_days": 4.641550925925926,
+  "interval_width_max_days": 2252.251979166667,
+  "control_window_groups": {
+    "lt_1d": 52,
+    "ge_7d": 28,
+    "1_to_lt_7d": 20
+  },
+  "conservative_block_delay_over_30d": 54,
+  "conservative_block_delay_over_365d": 5,
+  "normal_prefix_bodies_complete_accounts": 200,
+  "onset_body_available_accounts": 197,
+  "control_bodies_complete_accounts": 100,
+  "accounts_with_same_second_events": 9,
+  "cross_account_shared_published_revision_ids": {},
+  "group_count": 200,
+  "matched_control_pairs": 100,
+  "independent_human_gold_completed": 0,
+  "prior_train_only_n": 36,
+  "structural_check_n": 5064,
+  "structural_checks_passed": 5064,
+  "errors": [],
+  "provenance_note": "Local cached bytes only; live link availability and semantic correctness are not established by structural checks.",
+  "ordering_note": "Nondecreasing seconds checked; equal-second records retained, not interpreted as proven fine-grained causal order."
+}

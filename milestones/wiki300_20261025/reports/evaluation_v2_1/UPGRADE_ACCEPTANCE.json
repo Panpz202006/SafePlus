@@ -1,0 +1,59 @@
+{
+  "evaluation_version": "2.1",
+  "completed_gates": 12,
+  "total_gates": 12,
+  "completion_percent": 100,
+  "basis": "Equal-weight scoped evaluation-software deliverables, not accuracy, annotation certainty or research hypothesis confirmation",
+  "gates": [
+    {
+      "gate": "四种标签及发布事件/其他日志精确时间分流",
+      "complete": true
+    },
+    {
+      "gate": "行为位置标准化与零分母处理",
+      "complete": true
+    },
+    {
+      "gate": "编辑差中位数/P90及精确/±1次命中率",
+      "complete": true
+    },
+    {
+      "gate": "固定窗口时间标准化及无效窗口处理",
+      "complete": true
+    },
+    {
+      "gate": "开闭区间命中/区间外距离/标准化距离",
+      "complete": true
+    },
+    {
+      "gate": "两种简单基线与三种冻结模型",
+      "complete": true
+    },
+    {
+      "gate": "同账号配对胜/负/平与不确定性",
+      "complete": true
+    },
+    {
+      "gate": "历史长度和正常前缀长度分层",
+      "complete": true
+    },
+    {
+      "gate": "区间宽度四组分层",
+      "complete": true
+    },
+    {
+      "gate": "真实检测延迟与区间延迟范围分层",
+      "complete": true
+    },
+    {
+      "gate": "正常对照不伪造tf或误报率",
+      "complete": true
+    },
+    {
+      "gate": "固定协议/单测/实际结果/保护哈希/未来验收规则",
+      "complete": true
+    }
+  ],
+  "training_objective_changed": false,
+  "old_v2_preserved": true
+}

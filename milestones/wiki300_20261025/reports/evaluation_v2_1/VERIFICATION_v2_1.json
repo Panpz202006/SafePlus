@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "checks": {
+    "old_three_models_event_means_unchanged": true,
+    "old_three_models_clock_means_unchanged": true,
+    "old_interval_hit_counts_unchanged": true,
+    "all_50_accounts_have_same_five_method_records": true,
+    "protected_frozen_files_unchanged": true,
+    "no_training_weights_or_total_score": true,
+    "normal_control_metrics_unavailable": true,
+    "edge_case_validation_did_not_change_actual_results": true
+  },
+  "tests": {
+    "legacy_v2": 5,
+    "added_v2_1": 29,
+    "total": 34
+  },
+  "source_prediction_and_model_inputs_unchanged": true
+}

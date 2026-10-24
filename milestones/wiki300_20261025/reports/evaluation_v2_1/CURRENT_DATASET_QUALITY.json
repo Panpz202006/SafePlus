@@ -1,0 +1,32 @@
+{
+  "rows": 300,
+  "unique_userids": 300,
+  "label_counts": {
+    "EXACT": 61,
+    "INTERVAL": 138,
+    "UNCERTAIN": 1,
+    "RIGHT_CENSORED": 100
+  },
+  "exact_prefix_counts": {
+    "1": 41,
+    "3": 3,
+    "4": 2,
+    "2": 9,
+    "13": 2,
+    "5": 1,
+    "9": 2,
+    "10": 1
+  },
+  "interval_width_counts": {
+    ">30天": 51,
+    "≤1天": 55,
+    "7–30天": 14,
+    "1–7天": 18
+  },
+  "user_accepted_review_dispositions": 300,
+  "direct_discussions": 12,
+  "delegated_acceptance": 288,
+  "uncertain_retained": 1,
+  "minimum_prefix_days_or_edits_required": false,
+  "known_false_positive_rate_evaluable": false
+}

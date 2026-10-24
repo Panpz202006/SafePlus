@@ -1,0 +1,10 @@
+test_duplicate_rejected (test_evaluate_addon.TestMetrics.test_duplicate_rejected) ... ok
+test_interval_outside_distance (test_evaluate_addon.TestMetrics.test_interval_outside_distance) ... ok
+test_open_closed_boundary (test_evaluate_addon.TestMetrics.test_open_closed_boundary) ... ok
+test_utc_requires_timezone (test_evaluate_addon.TestMetrics.test_utc_requires_timezone) ... ok
+test_width_group (test_evaluate_addon.TestMetrics.test_width_group) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK

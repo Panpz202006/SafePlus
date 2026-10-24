@@ -1,0 +1,18 @@
+{
+  "release_id": "wiki300-v1.2-eval-v2.1-20261025",
+  "installation": "Extract full milestone ZIP; code patch excludes source datasets, raw API caches, history and model artifacts",
+  "assets": {
+    "data_review/SafePlus_combined_current.jsonl": {
+      "sha256": "2cde19a024906cf1e43c4577912f2234d0823c0d87c1b690d0570d402bb554dc",
+      "bytes": 9066225
+    },
+    "code/exp05_history.bundle": {
+      "sha256": "3757441a4237e93991ee3b83e86cba5f80263e04d4748a73c03ab8431ae08d6e",
+      "bytes": 4514061
+    },
+    "artifacts/exp05/frozen_source/SafePlus_combined_current.jsonl": {
+      "sha256": "50cd29106fef981366f20c49170becbd6d2a700f9d838bcda410a784f995ae5d",
+      "bytes": 8888660
+    }
+  }
+}

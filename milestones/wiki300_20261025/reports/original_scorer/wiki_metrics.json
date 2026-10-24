@@ -1,0 +1,74 @@
+{
+  "dataset_id": "wiki300_exp05_frozen_method_real_v1",
+  "split": "TEST",
+  "n_split": 50,
+  "gold_counts": {
+    "NOT_FRAUD": 12,
+    "INTERVAL": 29,
+    "EXACT": 9
+  },
+  "prediction_status_counts": {
+    "NOT_DETECTED_UNSUPPORTED": 12,
+    "OK": 38
+  },
+  "exact_utc_n": 9,
+  "exact_event_step_n": 8,
+  "exact_mae_seconds": {
+    "final": 76379.44444444444,
+    "behavior_only": 66527.88888888889,
+    "delay_only": 306479.6666666667
+  },
+  "exact_mae_days": {
+    "final": 0.8840213477366254,
+    "behavior_only": 0.7699987139917694,
+    "delay_only": 3.547218364197531
+  },
+  "exact_event_position_mae": {
+    "final": 5.875,
+    "behavior_only": 5.5,
+    "delay_only": 5.125
+  },
+  "paired_clock_error_gain_vs_behavior_only": {
+    "n": 9,
+    "mean_gain_seconds": -9851.555555555555,
+    "ci95_seconds": [
+      -29539.11111111111,
+      61.333333333333336
+    ]
+  },
+  "paired_clock_error_gain_vs_delay_only": {
+    "n": 9,
+    "mean_gain_seconds": 230100.22222222222,
+    "ci95_seconds": [
+      -1470.3805555555555,
+      580402.6888888888
+    ]
+  },
+  "interval_n": 29,
+  "interval_point_hit_rate_open_closed": {
+    "final": 0.5172413793103449,
+    "behavior_only": 0.5172413793103449,
+    "delay_only": 0.5862068965517241
+  },
+  "interval_distance_days": {
+    "final": 5.5787623722860795,
+    "behavior_only": 0.4736282726692209,
+    "delay_only": 10.702340357598981
+  },
+  "interval_distance_is_not_exact_error": true,
+  "td_is_first_related_block_not_first_discovery": true,
+  "prior_supervision": {
+    "used": true,
+    "scope": "TRAIN_ONLY",
+    "n": 36,
+    "annotation_source": "AI adjudication of original public evidence; not independent human signoff",
+    "claim": "partially onset-supervised delay prior; behavior EM remains onset-latent"
+  },
+  "notes": [
+    "Fixed first-run metadata features; no hyperparameters selected from this TEST evaluation",
+    "Only nine source EXACT samples are in this fixed TEST; small-sample results are not stable evidence",
+    "Delay prior operates in observed event-position steps, not elapsed calendar time",
+    "Normal means no observed violation in a reviewed right-censored window",
+    "Exact UTC points and UTC intervals are unchanged; no independent human sign-off is claimed"
+  ]
+}

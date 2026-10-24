@@ -1,0 +1,22 @@
+{
+  "dataset_rows": 300,
+  "source_status": "AI-adjudicated; NOT independent human Gold",
+  "exact": 61,
+  "interval": 139,
+  "right_censored_controls": 100,
+  "exact_normal_prefix_one": 41,
+  "exact_normal_prefix_at_least_2": 20,
+  "exact_normal_prefix_at_least_3": 11,
+  "all_positives_normal_prefix_one": 118,
+  "interval_width_group_counts": {
+    "gt_30d": 51,
+    "le_1d": 56,
+    "7_to_30d": 14,
+    "1_to_7d": 18
+  },
+  "interval_width_median_days": 4.641550925925926,
+  "interval_over_30days": 51,
+  "control_under_1day": 52,
+  "control_at_least_7days": 28,
+  "control_at_least_7days_and_at_least_5_edits": 14
+}

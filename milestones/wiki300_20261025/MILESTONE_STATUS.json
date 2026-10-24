@@ -1,0 +1,43 @@
+{
+  "release_id": "wiki300-v1.2-eval-v2.1-20261025",
+  "as_of": "2026-10-24 Asia/Shanghai",
+  "dataset_stage_acceptance_percent": 100,
+  "evaluation_upgrade_percent": 100,
+  "requested_stage_engineering_percent": 100,
+  "stage_remaining_percent": 0,
+  "percentage_basis": "Scoped deliverables and user-authorized review disposition, not dataset error-free probability or model accuracy",
+  "review_dispositions": {
+    "total": 300,
+    "direct_user_ai_discussion": 12,
+    "delegated_acceptance_of_existing_ai_review": 288,
+    "uncertain_retained": 1,
+    "needs_all_300_manual_reannotation": false
+  },
+  "current_label_counts": {
+    "EXACT": 61,
+    "INTERVAL": 138,
+    "UNCERTAIN": 1,
+    "RIGHT_CENSORED": 100
+  },
+  "split_counts": {
+    "TRAIN": 226,
+    "VAL": 24,
+    "TEST": 50
+  },
+  "evaluation_test_count": 34,
+  "review_tests": 7,
+  "historical_queue_tests_reexecuted": 8,
+  "current_clean_release_test_count": 49,
+  "historical_engineering_tests": 33,
+  "current_record_protection_conditions": 42,
+  "independent_repeat_annotation_is_stage_gate": false,
+  "model_effectiveness_established": false,
+  "training_performed": false,
+  "test_tuning_performed": false,
+  "github_push_performed": false,
+  "source_sha256": "2cde19a024906cf1e43c4577912f2234d0823c0d87c1b690d0570d402bb554dc",
+  "frozen_predictions_sha256": "2b012e4a5ee5e83ee8f864db5f79a3eeaf33b8d398191817899312bfd1045432",
+  "evaluation_acceptance_file": "reports/evaluation_v2_1/UPGRADE_ACCEPTANCE.json",
+  "current_review_provenance_file": "data_review/USER_REVIEW_ACCEPTANCE.json",
+  "release_validation_file": "reports/RELEASE_VALIDATION.json"
+}

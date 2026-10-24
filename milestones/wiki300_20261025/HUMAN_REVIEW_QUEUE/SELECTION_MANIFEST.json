@@ -1,0 +1,68 @@
+{
+  "n": 12,
+  "split_counts": {
+    "TRAIN": 12
+  },
+  "exact_n": 4,
+  "narrow_interval_n": 4,
+  "control_n": 4,
+  "existing_queue_reused_n": 12,
+  "train_prior_review_n": 3,
+  "prediction_files_read_for_selection": false,
+  "selection_rule_version": "TRAIN_SOURCE_STRATIFIED_V1",
+  "human_gold_completed": 0,
+  "rules": [
+    "4 exact: public prefix1/prefix2/prefix3plus plus other-log; 4 interval <=1 day; controls by duration and edit-count strata",
+    "Within each stratum: existing36 queue first, body coverage then prior-use then fixed SHA256 tie-break; no error-based choice"
+  ],
+  "selected": [
+    {
+      "entity_id": "wiki_u55046119",
+      "stratum": "exact_public_prefix1"
+    },
+    {
+      "entity_id": "wiki_u54269218",
+      "stratum": "exact_public_prefix2"
+    },
+    {
+      "entity_id": "wiki_u54253181",
+      "stratum": "exact_public_prefix3plus"
+    },
+    {
+      "entity_id": "wiki_u54928085",
+      "stratum": "exact_other_log"
+    },
+    {
+      "entity_id": "wiki_u54730037",
+      "stratum": "interval_narrow_1"
+    },
+    {
+      "entity_id": "wiki_u55982625",
+      "stratum": "interval_narrow_2"
+    },
+    {
+      "entity_id": "wiki_u55025968",
+      "stratum": "interval_narrow_3"
+    },
+    {
+      "entity_id": "wiki_u55507062",
+      "stratum": "interval_narrow_4"
+    },
+    {
+      "entity_id": "wiki_u49739718",
+      "stratum": "control_short"
+    },
+    {
+      "entity_id": "wiki_u27774388",
+      "stratum": "control_middle"
+    },
+    {
+      "entity_id": "wiki_u7583140",
+      "stratum": "control_long_few"
+    },
+    {
+      "entity_id": "wiki_u47405613",
+      "stratum": "control_long_more"
+    }
+  ]
+}

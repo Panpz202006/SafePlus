@@ -1,0 +1,22 @@
+{
+  "missing_requested_files": [],
+  "all_requested_files_recovered": true,
+  "sources": [
+    {
+      "filename": "SafePlus_Exp05_Wiki300_Run_v1.zip",
+      "sha256": "e7b890cc959b01fce302a531c488f0c9408c76c266140aa900feab07bc5f0a64",
+      "size_bytes": 3879649
+    },
+    {
+      "filename": "SafePlus_Start_Here_20261024.zip",
+      "sha256": "c79142e87b1c36a37d6225fe6d0e3372f0c95881827ea374a8a0cd806c8f575e",
+      "size_bytes": 3907676
+    },
+    {
+      "filename": "SafePlus_Wiki300_阶段成果_评估v2_20261024.zip",
+      "sha256": "49c593ddea55ac75ad70e9aa0dfc85d351a8e4b7f01437a76ac1b4aae162589a",
+      "size_bytes": 26069
+    }
+  ],
+  "start_here_nested_payloads_match_standalone": true
+}

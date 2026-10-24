@@ -1,0 +1,13 @@
+{
+  "records_with_completed_review_disposition": 300,
+  "review_disposition_completion_percent": 100,
+  "direct_case_discussion_n": 12,
+  "delegated_existing_review_acceptance_n": 288,
+  "determinate_labels_n": 299,
+  "uncertain_n": 1,
+  "remaining_unapproved_records_n": 0,
+  "independent_repeat_annotation_status": "NOT_PERFORMED_NOT_A_CURRENT_STAGE_GATE",
+  "physical_user_per_event_review_of_288_claimed": false,
+  "label_data_sha256_unchanged": "2cde19a024906cf1e43c4577912f2234d0823c0d87c1b690d0570d402bb554dc",
+  "note": "Workflow acceptance is not a claim of 100% label accuracy or independent human annotation. UNCERTAIN remains retained rather than forced into a class."
+}

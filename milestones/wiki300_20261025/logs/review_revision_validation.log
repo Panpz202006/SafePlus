@@ -1,0 +1,177 @@
+{
+  "status": "PASS",
+  "checks_passed": 42,
+  "checks_total": 42,
+  "checks": [
+    {
+      "check": "300 unique rows retained",
+      "passed": true
+    },
+    {
+      "check": "exactly twelve known rows revised",
+      "passed": true
+    },
+    {
+      "check": "all remaining 288 source objects unchanged",
+      "passed": true
+    },
+    {
+      "check": "all frozen source, input, labels, splits, model parameters and predictions unchanged",
+      "passed": true
+    },
+    {
+      "check": "review12 label counts",
+      "passed": true
+    },
+    {
+      "check": "eleven resolved and one evidence pending",
+      "passed": true
+    },
+    {
+      "check": "no false independent human Gold",
+      "passed": true
+    },
+    {
+      "check": "user participation recorded without impersonating independent annotation",
+      "passed": true
+    },
+    {
+      "check": "twelve remain TRAIN",
+      "passed": true
+    },
+    {
+      "check": "no duration or edit-count minimum",
+      "passed": true
+    },
+    {
+      "check": "normal evidence namespace retained",
+      "passed": true
+    },
+    {
+      "check": "wiki_u55046119 current combined and review agree",
+      "passed": true
+    },
+    {
+      "check": "wiki_u55046119 point with declared event kind",
+      "passed": true
+    },
+    {
+      "check": "wiki_u54269218 current combined and review agree",
+      "passed": true
+    },
+    {
+      "check": "wiki_u54269218 point with declared event kind",
+      "passed": true
+    },
+    {
+      "check": "wiki_u54253181 current combined and review agree",
+      "passed": true
+    },
+    {
+      "check": "wiki_u54253181 point with declared event kind",
+      "passed": true
+    },
+    {
+      "check": "wiki_u54928085 current combined and review agree",
+      "passed": true
+    },
+    {
+      "check": "wiki_u54928085 point with declared event kind",
+      "passed": true
+    },
+    {
+      "check": "wiki_u54730037 current combined and review agree",
+      "passed": true
+    },
+    {
+      "check": "wiki_u54730037 interval not collapsed",
+      "passed": true
+    },
+    {
+      "check": "wiki_u55982625 current combined and review agree",
+      "passed": true
+    },
+    {
+      "check": "wiki_u55982625 interval not collapsed",
+      "passed": true
+    },
+    {
+      "check": "wiki_u55025968 current combined and review agree",
+      "passed": true
+    },
+    {
+      "check": "wiki_u55025968 interval not collapsed",
+      "passed": true
+    },
+    {
+      "check": "wiki_u55507062 current combined and review agree",
+      "passed": true
+    },
+    {
+      "check": "wiki_u55507062 uncertainty not forced to negative or positive",
+      "passed": true
+    },
+    {
+      "check": "wiki_u49739718 current combined and review agree",
+      "passed": true
+    },
+    {
+      "check": "wiki_u49739718 censored no fabricated tf",
+      "passed": true
+    },
+    {
+      "check": "wiki_u27774388 current combined and review agree",
+      "passed": true
+    },
+    {
+      "check": "wiki_u27774388 censored no fabricated tf",
+      "passed": true
+    },
+    {
+      "check": "wiki_u7583140 current combined and review agree",
+      "passed": true
+    },
+    {
+      "check": "wiki_u7583140 censored no fabricated tf",
+      "passed": true
+    },
+    {
+      "check": "wiki_u47405613 current combined and review agree",
+      "passed": true
+    },
+    {
+      "check": "wiki_u47405613 censored no fabricated tf",
+      "passed": true
+    },
+    {
+      "check": "Warn not equated to publication or failure",
+      "passed": true
+    },
+    {
+      "check": "RD3 report not falsely API verified or first-edit exact",
+      "passed": true
+    },
+    {
+      "check": "actual compare parents confirmed",
+      "passed": true
+    },
+    {
+      "check": "historical 12 evidence packets preserved",
+      "passed": true
+    },
+    {
+      "check": "original account evidence records unmodified",
+      "passed": true
+    },
+    {
+      "check": "queue tasks reflect all current decisions",
+      "passed": true
+    },
+    {
+      "check": "official CSV reflects all current decisions",
+      "passed": true
+    }
+  ],
+  "frozen_files_checked": 41,
+  "current_dataset_sha256": "2cde19a024906cf1e43c4577912f2234d0823c0d87c1b690d0570d402bb554dc"
+}

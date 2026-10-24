@@ -1,0 +1,3 @@
+EXP04 I/O CONTRACT v1.0
+SUMMARY: {"D": 8, "L": 90, "N": 300, "bundle": "/workspace/scratch/27b5629f48b1/milestones/wiki300_20261025/artifacts/exp05/data_bundle", "censored": 100, "detected": 200, "gold_rows": 300, "prior_mode": "empirical_train", "test": 50, "train": 226, "val": 24}
+RESULT: PASS (SCHEMA ONLY; prediction regression still pending)

@@ -1,0 +1,157 @@
+{
+  "scope": "EXPLORATORY_RESCORING_OF_ALREADY_OPENED_TEST__NOT_NEW_UNTOUCHED_TEST",
+  "test_n": 50,
+  "test_gold_types": {
+    "NOT_FRAUD": 12,
+    "INTERVAL": 29,
+    "EXACT": 9
+  },
+  "prediction_status": {
+    "NOT_DETECTED_UNSUPPORTED": 12,
+    "OK": 38
+  },
+  "exact_point_utc_n": 9,
+  "exact_point_utc_mae_days": {
+    "fusion": 0.8840213477366254,
+    "behavior": 0.7699987139917696,
+    "delay": 3.5472183641975312
+  },
+  "exact_point_utc_median_abs_days": {
+    "fusion": 0.008078703703703704,
+    "behavior": 0.008078703703703704,
+    "delay": 1.9761805555555556
+  },
+  "exact_published_event_n": 8,
+  "exact_event_abs_error_median": {
+    "fusion": 3.5,
+    "behavior": 4.0,
+    "delay": 2.0
+  },
+  "exact_event_abs_error_mean": {
+    "fusion": 5.875,
+    "behavior": 5.5,
+    "delay": 5.125
+  },
+  "exact_event_normalized_error_median": {
+    "fusion": 0.55,
+    "behavior": 0.55,
+    "delay": 0.4772727272727273
+  },
+  "exact_event_hit_exact": {
+    "fusion": 2,
+    "behavior": 2,
+    "delay": 0
+  },
+  "exact_event_hit_within_1": {
+    "fusion": 2,
+    "behavior": 2,
+    "delay": 2
+  },
+  "paired_exact_event_comparison": {
+    "behavior": {
+      "win": 2,
+      "loss": 3,
+      "tie": 3,
+      "n": 8
+    },
+    "delay": {
+      "win": 2,
+      "loss": 5,
+      "tie": 1,
+      "n": 8
+    }
+  },
+  "interval_stratified": {
+    "1_to_7d": {
+      "fusion": {
+        "n": 5,
+        "hits": 1,
+        "hit_rate": 0.2,
+        "median_distance_days": 0.033622685185185186
+      },
+      "behavior": {
+        "n": 5,
+        "hits": 1,
+        "hit_rate": 0.2,
+        "median_distance_days": 0.0309375
+      },
+      "delay": {
+        "n": 5,
+        "hits": 2,
+        "hit_rate": 0.4,
+        "median_distance_days": 0.027650462962962963
+      }
+    },
+    "7_to_30d": {
+      "fusion": {
+        "n": 3,
+        "hits": 3,
+        "hit_rate": 1.0,
+        "median_distance_days": 0.0
+      },
+      "behavior": {
+        "n": 3,
+        "hits": 3,
+        "hit_rate": 1.0,
+        "median_distance_days": 0.0
+      },
+      "delay": {
+        "n": 3,
+        "hits": 2,
+        "hit_rate": 0.6666666666666666,
+        "median_distance_days": 0.0
+      }
+    },
+    "gt_30d": {
+      "fusion": {
+        "n": 10,
+        "hits": 9,
+        "hit_rate": 0.9,
+        "median_distance_days": 0.0
+      },
+      "behavior": {
+        "n": 10,
+        "hits": 9,
+        "hit_rate": 0.9,
+        "median_distance_days": 0.0
+      },
+      "delay": {
+        "n": 10,
+        "hits": 7,
+        "hit_rate": 0.7,
+        "median_distance_days": 0.0
+      }
+    },
+    "le_1d": {
+      "fusion": {
+        "n": 11,
+        "hits": 2,
+        "hit_rate": 0.18181818181818182,
+        "median_distance_days": 0.002025462962962963
+      },
+      "behavior": {
+        "n": 11,
+        "hits": 2,
+        "hit_rate": 0.18181818181818182,
+        "median_distance_days": 0.0027430555555555554
+      },
+      "delay": {
+        "n": 11,
+        "hits": 6,
+        "hit_rate": 0.5454545454545454,
+        "median_distance_days": 0.0
+      }
+    }
+  },
+  "notes": [
+    "No single scalar combines exact UTC, interval, and censored controls.",
+    "Normalized event error is secondary and may be unstable with very short histories.",
+    "Interval hits are easier for wide ranges; always stratify by range width.",
+    "Censored controls have no fraud risk prediction in this existing runner: no false-positive rate can be reported.",
+    "First-block time is a proxy for detection, not necessarily first discovery.",
+    "Original TEST is already viewed: never retune to this score and claim untouched performance."
+  ],
+  "input_sha256": "942145fb2cf578867b7607cfa300b91d8e7312cccf8a343106646e2dd3daa409",
+  "split_sha256": "1543971a2c5b99be9faaad798a2894fd71279c14fa5a6a7f0e49305b97d54684",
+  "run_predictions_sha256": "2b012e4a5ee5e83ee8f864db5f79a3eeaf33b8d398191817899312bfd1045432"
+}

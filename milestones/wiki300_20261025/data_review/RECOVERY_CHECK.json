@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "checks": {
+    "jsonl_parse_ok": true,
+    "unique_review_ids": true,
+    "unique_dataset_ids": true,
+    "csv_labels_match": true,
+    "html_has_all_12_ids": true,
+    "html_12_articles": true,
+    "report_has_all_12_accounts": true,
+    "current_hash_matches_saved_validation": true,
+    "human_gold_not_promoted": true
+  },
+  "previous_validation_preserved": "42/42 PASS",
+  "previous_tests_preserved": "7 revision tests + 8 frozen-queue tests PASS; not rerun",
+  "remaining_work": [
+    "persist prepared files; upload receipt is kept outside the package"
+  ],
+  "new_model_training": false,
+  "new_io_conversion": false,
+  "new_sample_review": false,
+  "local_closeout": "Complete; prior successful audits reused. No record rewrite or repeated semantic review."
+}

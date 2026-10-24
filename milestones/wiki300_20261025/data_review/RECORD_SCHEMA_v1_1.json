@@ -1,0 +1,31 @@
+{
+  "label_type": [
+    "EXACT",
+    "INTERVAL",
+    "RIGHT_CENSORED",
+    "UNCERTAIN"
+  ],
+  "formal_review_status": [
+    "RESOLVED",
+    "EVIDENCE_PENDING"
+  ],
+  "human_participation_status": [
+    "DISCUSSION_REPORTED"
+  ],
+  "ai_evidence_review_status": [
+    "CHECKED"
+  ],
+  "human_gold_status": [
+    "PENDING",
+    "HUMAN_GOLD_CONFIRMED"
+  ],
+  "onset_event_kind": [
+    "PUBLISHED_EDIT",
+    "VIOLATION_ATTEMPT",
+    "NO_CONFIRMED_VIOLATION_IN_WINDOW",
+    "UNRESOLVED"
+  ],
+  "human_gold_promotion_guard": "Requires real independent reviewer identity, completion time and evidence decisions; no promotion in this revision",
+  "uncertain_entity_label": null,
+  "normal_window_minimum": null
+}

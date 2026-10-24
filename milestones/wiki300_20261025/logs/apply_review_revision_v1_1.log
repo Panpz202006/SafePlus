@@ -1,0 +1,55 @@
+{
+  "revision_id": "review12_user_rules_v1_1_20261024",
+  "recorded_utc": "2026-10-24T10:02:56.933964+00:00",
+  "records_revised": 12,
+  "record_revision_percent": 100,
+  "resolved_usable": 11,
+  "resolved_percent": 91.66666666666667,
+  "uncertain": 1,
+  "uncertain_percent": 8.333333333333334,
+  "review12_label_counts": {
+    "EXACT": 4,
+    "INTERVAL": 3,
+    "UNCERTAIN": 1,
+    "RIGHT_CENSORED": 4
+  },
+  "exact_published_edit_n": 3,
+  "exact_violation_attempt_n": 1,
+  "independent_human_gold_n": 0,
+  "human_participatory_discussions_reported": 12,
+  "wiki300_rows": 300,
+  "wiki300_current_label_counts": {
+    "EXACT": 61,
+    "INTERVAL": 138,
+    "UNCERTAIN": 1,
+    "RIGHT_CENSORED": 100
+  },
+  "wiki300_this_revision_coverage_percent": 4,
+  "unchanged_other_records": 288,
+  "split_sha256": "1543971a2c5b99be9faaad798a2894fd71279c14fa5a6a7f0e49305b97d54684",
+  "frozen_source_sha256": "50cd29106fef981366f20c49170becbd6d2a700f9d838bcda410a784f995ae5d",
+  "frozen_source_unchanged": true,
+  "current_dataset_sha256": "2cde19a024906cf1e43c4577912f2234d0823c0d87c1b690d0570d402bb554dc",
+  "formal_dataset_path": "data_review/SafePlus_combined_current.jsonl",
+  "model_training_performed": false,
+  "io_conversion_performed": false,
+  "old_model_results_annotation_version": "frozen300_AI_v1; not rescored against this revision",
+  "blocking_case_ids": [
+    "wiki_u55507062"
+  ],
+  "definition_decisions_needed": [],
+  "evidence_followups": [
+    {
+      "entity_id": "wiki_u55025968",
+      "item": "RD3 source attribution remains unverified; not needed to invent an exact onset"
+    },
+    {
+      "entity_id": "wiki_u54928085",
+      "item": "Published revision body 1365980014 unavailable; attempt exact time remains separate"
+    },
+    {
+      "entity_id": "wiki_u55507062",
+      "item": "Need evidence distinguishing harmful rename from ordinary error before assigning a violation label"
+    }
+  ]
+}

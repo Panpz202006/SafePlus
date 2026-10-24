@@ -1,0 +1,12 @@
+test_attempt_not_published_onset (test_review_revision.ReviewRevision.test_attempt_not_published_onset) ... ok
+test_current_annotations_and_evidence_integrity (test_review_revision.ReviewRevision.test_current_annotations_and_evidence_integrity) ... ok
+test_namespace_user_and_user_talk_preserved (test_review_revision.ReviewRevision.test_namespace_user_and_user_talk_preserved) ... ok
+test_old_generator_cannot_overwrite_formal_records (test_review_revision.ReviewRevision.test_old_generator_cannot_overwrite_formal_records) ... ok
+test_ordinary_self_correction_stays_censored (test_review_revision.ReviewRevision.test_ordinary_self_correction_stays_censored) ... ok
+test_rd3_not_converted_into_point (test_review_revision.ReviewRevision.test_rd3_not_converted_into_point) ... ok
+test_uncertain_retained_in_300 (test_review_revision.ReviewRevision.test_uncertain_retained_in_300) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.583s
+
+OK

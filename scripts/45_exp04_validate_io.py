@@ -103,7 +103,9 @@ def validate_bundle(bundle: Path, *, check_gold: bool = True) -> tuple[list[str]
 
     if not np.all((lengths >= 1) & (lengths <= l)):
         errors.append("lengths must satisfy 1 <= lengths <= L")
-    if np.any(lengths != l):
+    length_aware = (meta.get("schema_version") == "1.1"
+                    and meta.get("variable_length_policy") == "slice_before_fit_and_predict")
+    if np.any(lengths != l) and not length_aware:
         errors.append("FROZEN_ENGINE_UNSUPPORTED: variable lengths are not yet handled "
                       "end-to-end by Exp04 EM; do not silently run this bundle")
     if not np.all(np.isin(detected, [0, 1])):
@@ -115,6 +117,10 @@ def validate_bundle(bundle: Path, *, check_gold: bool = True) -> tuple[list[str]
                       "undetected requires t_detect == lengths (censor marker)")
     if not np.all(np.isfinite(x)):
         errors.append("x contains NaN/Inf; convert raw missing data using TRAIN-only rules")
+    if length_aware:
+        for i, actual_length in enumerate(lengths):
+            if np.any(x[i, int(actual_length):, :] != 0):
+                errors.append(f"entity_id={ids[i]}: storage padding must be zero")
     for i in np.flatnonzero(detected == 1):
         if td[i] + 1 < l and not np.all(x[i, int(td[i])+1:, :] == 0):
             errors.append(f"entity_id={ids[i]}: x after detected bin must be masked to zero")
@@ -124,8 +130,10 @@ def validate_bundle(bundle: Path, *, check_gold: bool = True) -> tuple[list[str]
     absent_meta = REQUIRED_META - set(meta)
     if absent_meta:
         errors.append(f"metadata.json missing {sorted(absent_meta)}")
-    if meta.get("schema_version") != "1.0":
-        errors.append("metadata.schema_version must equal '1.0'")
+    if meta.get("schema_version") not in ("1.0", "1.1"):
+        errors.append("metadata.schema_version must equal '1.0' or '1.1'")
+    if meta.get("schema_version") == "1.1" and not length_aware:
+        errors.append("schema 1.1 requires variable_length_policy=slice_before_fit_and_predict")
     if meta.get("dataset_kind") not in ("synthetic", "real"):
         errors.append("metadata.dataset_kind must be synthetic or real")
     if meta.get("time_index_base") != 0:
@@ -177,8 +185,19 @@ def validate_bundle(bundle: Path, *, check_gold: bool = True) -> tuple[list[str]
                       "never infer from test/val gold")
     if mode == "empirical_train" and (bundle / "train_onset_for_prior.csv").is_file():
         prior_rows = read_csv(bundle / "train_onset_for_prior.csv", {"entity_id", "t_onset"})
+        check_unique(prior_rows, "train_onset_for_prior.csv", errors)
         if any(row["entity_id"] not in train_set for row in prior_rows):
             errors.append("train_onset_for_prior.csv contains non-TRAIN users")
+        for row in prior_rows:
+            if row["entity_id"] not in train_set:
+                continue
+            idx = ids.index(row["entity_id"])
+            try:
+                onset = int(row["t_onset"])
+                if detected[idx] != 1 or not 0 <= onset < td[idx]:
+                    errors.append("train_onset_for_prior.csv has invalid detected onset/delay")
+            except (ValueError, TypeError):
+                errors.append("train_onset_for_prior.csv has noninteger onset")
 
     gold_path = bundle / "gold_onset.csv"
     if check_gold and gold_path.exists():
@@ -205,6 +224,14 @@ def validate_bundle(bundle: Path, *, check_gold: bool = True) -> tuple[list[str]
                             errors.append(f"{eid}: onset must be strictly before t_detect")
                     except (ValueError, TypeError):
                         errors.append(f"{eid}: invalid integer EXACT t_onset")
+                elif label_type == "INTERVAL" and meta.get("schema_version") == "1.1":
+                    if row.get("t_onset", "") or row.get("onset_utc", ""):
+                        errors.append(f"{eid}: INTERVAL must not contain a fabricated point onset")
+                    if row.get("interval_closure") != "(lower,upper]":
+                        errors.append(f"{eid}: INTERVAL closure must remain (lower,upper]")
+                elif label_type == "NOT_FRAUD" and meta.get("dataset_kind") == "real":
+                    if any(row.get(key, "") for key in ("onset_utc", "onset_lower_utc", "onset_upper_utc", "td_utc")):
+                        errors.append(f"{eid}: censored normal control must not have a fabricated tf/td")
             stats["gold_rows"] = len(gold)
         except (ValueError, OSError) as ex:
             errors.append(f"Cannot read gold_onset.csv: {ex}")

@@ -150,6 +150,7 @@ def initialize_emissions(
     detected,
     td,
     train_idx,
+    lengths=None,
 ):
     """
     Normal state initialization:
@@ -169,7 +170,7 @@ def initialize_emissions(
         end = observation_end(
             detected[idx],
             td[idx],
-            sequence_length,
+            sequence_length if lengths is None else int(lengths[idx]),
         )
 
         observed = x[idx, :end + 1, :]
@@ -282,6 +283,7 @@ def train_emission_em(
     detected,
     td,
     train_idx,
+    lengths=None,
 ):
     sequence_length = x.shape[1]
     feature_dim = x.shape[2]
@@ -292,6 +294,7 @@ def train_emission_em(
         detected,
         td,
         train_idx,
+        lengths=lengths,
     )
 
     print("\nInitial emission parameters:")
@@ -323,7 +326,7 @@ def train_emission_em(
             end = observation_end(
                 detected[idx],
                 td[idx],
-                sequence_length,
+                sequence_length if lengths is None else int(lengths[idx]),
             )
 
             observed = x[idx, :end + 1, :]

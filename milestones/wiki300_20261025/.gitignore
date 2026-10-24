@@ -1,0 +1,14 @@
+/artifacts/
+/code/exp05_history.bundle
+/code/evaluation_v2/reports/
+/HUMAN_REVIEW_QUEUE/accounts/
+/HUMAN_REVIEW_QUEUE/HUMAN_REVIEW_QUEUE.jsonl
+/data_review/SafePlus_combined_current.jsonl
+/data_review/evidence/
+/history/
+/review_revision_work/
+/github_ready/
+/manifest_sha256.json
+/reports/packaging_validation.json
+__pycache__/
+.ipynb_checkpoints/

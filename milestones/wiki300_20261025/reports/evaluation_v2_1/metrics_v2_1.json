@@ -1,0 +1,2212 @@
+{
+  "version": "2.1",
+  "scope": "EXPLORATORY_RESCORING_OF_ALREADY_OPENED_TEST_NOT_NEW_BLIND_TEST",
+  "protocol_sha256": "f8adf68bfc014f56e0eefbac8344b75e2777583423ffd4643829abaec7d3afd9",
+  "models": [
+    "last_edit",
+    "time_midpoint",
+    "behavior",
+    "delay",
+    "fusion"
+  ],
+  "test_n": 50,
+  "test_label_counts": {
+    "RIGHT_CENSORED": 12,
+    "INTERVAL": 29,
+    "EXACT": 9
+  },
+  "current_dataset_label_counts": {
+    "EXACT": 61,
+    "INTERVAL": 138,
+    "UNCERTAIN": 1,
+    "RIGHT_CENSORED": 100
+  },
+  "cohorts": {
+    "exact_published_event": {
+      "n_accounts": 8,
+      "models": {
+        "last_edit": {
+          "accounts": 8,
+          "metrics": {
+            "event_error": {
+              "n": 8,
+              "median": 4.5,
+              "p90": 14.999999999999996,
+              "mean": 7.5,
+              "min": 0.0,
+              "max": 29.0
+            },
+            "event_norm": {
+              "n": 8,
+              "median": 0.8090909090909091,
+              "p90": 0.92,
+              "mean": 0.6397727272727273,
+              "min": 0.0,
+              "max": 0.9666666666666667
+            },
+            "time_error_hours": {
+              "n": 8,
+              "median": 0.36875,
+              "p90": 70.32058333333333,
+              "mean": 24.052881944444444,
+              "min": 0.0,
+              "max": 75.92583333333333
+            },
+            "time_norm": {
+              "n": 8,
+              "median": 0.2006000562649513,
+              "p90": 0.9415660647083934,
+              "mean": 0.40126675445176513,
+              "min": 0.0,
+              "max": 0.9940168961925703
+            },
+            "interval_distance_days": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "interval_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            }
+          },
+          "exact_at_0": {
+            "success": 2,
+            "n": 8,
+            "rate": 0.25,
+            "ci95": [
+              0.071479212752109,
+              0.5907245696898311
+            ]
+          },
+          "within_1": {
+            "success": 2,
+            "n": 8,
+            "rate": 0.25,
+            "ci95": [
+              0.071479212752109,
+              0.5907245696898311
+            ]
+          },
+          "interval_hit": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          }
+        },
+        "time_midpoint": {
+          "accounts": 8,
+          "metrics": {
+            "event_error": {
+              "n": 8,
+              "median": 4.0,
+              "p90": 8.599999999999998,
+              "mean": 4.25,
+              "min": 0.0,
+              "max": 17.0
+            },
+            "event_norm": {
+              "n": 8,
+              "median": 0.38181818181818183,
+              "p90": 0.81,
+              "mean": 0.3704545454545455,
+              "min": 0.0,
+              "max": 0.8333333333333334
+            },
+            "time_error_hours": {
+              "n": 8,
+              "median": 0.12874999999999998,
+              "p90": 36.37147222222221,
+              "mean": 12.691493055555556,
+              "min": 0.0,
+              "max": 67.91833333333334
+            },
+            "time_norm": {
+              "n": 8,
+              "median": 0.12680240279712168,
+              "p90": 0.47537726634720795,
+              "mean": 0.18440833539467574,
+              "min": 0.0,
+              "max": 0.47601550746441385
+            },
+            "interval_distance_days": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "interval_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            }
+          },
+          "exact_at_0": {
+            "success": 3,
+            "n": 8,
+            "rate": 0.375,
+            "ci95": [
+              0.13684428582359742,
+              0.6942576053973727
+            ]
+          },
+          "within_1": {
+            "success": 3,
+            "n": 8,
+            "rate": 0.375,
+            "ci95": [
+              0.13684428582359742,
+              0.6942576053973727
+            ]
+          },
+          "interval_hit": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          }
+        },
+        "behavior": {
+          "accounts": 8,
+          "metrics": {
+            "event_error": {
+              "n": 8,
+              "median": 4.0,
+              "p90": 12.599999999999998,
+              "mean": 5.5,
+              "min": 0.0,
+              "max": 21.0
+            },
+            "event_norm": {
+              "n": 8,
+              "median": 0.55,
+              "p90": 0.8054545454545455,
+              "mean": 0.48143939393939394,
+              "min": 0.0,
+              "max": 0.8181818181818182
+            },
+            "time_error_hours": {
+              "n": 8,
+              "median": 0.36875,
+              "p90": 69.40183333333333,
+              "mean": 20.775069444444444,
+              "min": 0.0,
+              "max": 75.92583333333333
+            },
+            "time_norm": {
+              "n": 8,
+              "median": 0.19933759935547787,
+              "p90": 0.6848481771517007,
+              "mean": 0.29600387119769256,
+              "min": 0.0,
+              "max": 0.888636385803041
+            },
+            "interval_distance_days": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "interval_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            }
+          },
+          "exact_at_0": {
+            "success": 2,
+            "n": 8,
+            "rate": 0.25,
+            "ci95": [
+              0.071479212752109,
+              0.5907245696898311
+            ]
+          },
+          "within_1": {
+            "success": 2,
+            "n": 8,
+            "rate": 0.25,
+            "ci95": [
+              0.071479212752109,
+              0.5907245696898311
+            ]
+          },
+          "interval_hit": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          }
+        },
+        "delay": {
+          "accounts": 8,
+          "metrics": {
+            "event_error": {
+              "n": 8,
+              "median": 2.0,
+              "p90": 10.399999999999997,
+              "mean": 5.125,
+              "min": 1.0,
+              "max": 23.0
+            },
+            "event_norm": {
+              "n": 8,
+              "median": 0.4772727272727273,
+              "p90": 0.8366666666666667,
+              "mean": 0.5443181818181818,
+              "min": 0.3333333333333333,
+              "max": 1.0
+            },
+            "time_error_hours": {
+              "n": 8,
+              "median": 57.01708333333333,
+              "p90": 229.27244444444437,
+              "mean": 95.76934027777779,
+              "min": 0.04138888888888889,
+              "max": 437.23
+            },
+            "time_norm": {
+              "n": 8,
+              "median": 0.469961545378094,
+              "p90": 0.9066201289242302,
+              "mean": 0.47859469187870834,
+              "min": 0.0017459961551326774,
+              "max": 0.9879759287119546
+            },
+            "interval_distance_days": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "interval_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            }
+          },
+          "exact_at_0": {
+            "success": 0,
+            "n": 8,
+            "rate": 0.0,
+            "ci95": [
+              0,
+              0.32440756488388023
+            ]
+          },
+          "within_1": {
+            "success": 2,
+            "n": 8,
+            "rate": 0.25,
+            "ci95": [
+              0.071479212752109,
+              0.5907245696898311
+            ]
+          },
+          "interval_hit": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          }
+        },
+        "fusion": {
+          "accounts": 8,
+          "metrics": {
+            "event_error": {
+              "n": 8,
+              "median": 3.5,
+              "p90": 12.799999999999997,
+              "mean": 5.875,
+              "min": 0.0,
+              "max": 24.0
+            },
+            "event_norm": {
+              "n": 8,
+              "median": 0.55,
+              "p90": 0.8,
+              "mean": 0.4909090909090909,
+              "min": 0.0,
+              "max": 0.8
+            },
+            "time_error_hours": {
+              "n": 8,
+              "median": 0.35680555555555554,
+              "p90": 69.48211111111111,
+              "mean": 23.856076388888887,
+              "min": 0.0,
+              "max": 75.87583333333333
+            },
+            "time_norm": {
+              "n": 8,
+              "median": 0.1994685208127566,
+              "p90": 0.9180286084763569,
+              "mean": 0.36821774471925045,
+              "min": 0.0,
+              "max": 0.9879759287119546
+            },
+            "interval_distance_days": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "interval_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            }
+          },
+          "exact_at_0": {
+            "success": 2,
+            "n": 8,
+            "rate": 0.25,
+            "ci95": [
+              0.071479212752109,
+              0.5907245696898311
+            ]
+          },
+          "within_1": {
+            "success": 2,
+            "n": 8,
+            "rate": 0.25,
+            "ci95": [
+              0.071479212752109,
+              0.5907245696898311
+            ]
+          },
+          "interval_hit": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          }
+        }
+      }
+    },
+    "exact_utc_all": {
+      "n_accounts": 9,
+      "models": {
+        "last_edit": {
+          "accounts": 9,
+          "metrics": {
+            "event_error": {
+              "n": 8,
+              "median": 4.5,
+              "p90": 14.999999999999996,
+              "mean": 7.5,
+              "min": 0.0,
+              "max": 29.0
+            },
+            "event_norm": {
+              "n": 8,
+              "median": 0.8090909090909091,
+              "p90": 0.92,
+              "mean": 0.6397727272727273,
+              "min": 0.0,
+              "max": 0.9666666666666667
+            },
+            "time_error_hours": {
+              "n": 9,
+              "median": 0.1938888888888889,
+              "p90": 69.51983333333334,
+              "mean": 21.39358024691358,
+              "min": 0.0,
+              "max": 75.92583333333333
+            },
+            "time_norm": {
+              "n": 9,
+              "median": 0.13065747687098786,
+              "p90": 0.9340730887820825,
+              "mean": 0.3623013032838033,
+              "min": 0.0,
+              "max": 0.9940168961925703
+            },
+            "interval_distance_days": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "interval_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            }
+          },
+          "exact_at_0": {
+            "success": 2,
+            "n": 8,
+            "rate": 0.25,
+            "ci95": [
+              0.071479212752109,
+              0.5907245696898311
+            ]
+          },
+          "within_1": {
+            "success": 2,
+            "n": 8,
+            "rate": 0.25,
+            "ci95": [
+              0.071479212752109,
+              0.5907245696898311
+            ]
+          },
+          "interval_hit": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          }
+        },
+        "time_midpoint": {
+          "accounts": 9,
+          "metrics": {
+            "event_error": {
+              "n": 8,
+              "median": 4.0,
+              "p90": 8.599999999999998,
+              "mean": 4.25,
+              "min": 0.0,
+              "max": 17.0
+            },
+            "event_norm": {
+              "n": 8,
+              "median": 0.38181818181818183,
+              "p90": 0.81,
+              "mean": 0.3704545454545455,
+              "min": 0.0,
+              "max": 0.8333333333333334
+            },
+            "time_error_hours": {
+              "n": 9,
+              "median": 0.11916666666666667,
+              "p90": 31.864777777777785,
+              "mean": 11.294567901234569,
+              "min": 0.0,
+              "max": 67.91833333333334
+            },
+            "time_norm": {
+              "n": 9,
+              "median": 0.12294732872325553,
+              "p90": 0.47528608904474995,
+              "mean": 0.16953826412194606,
+              "min": 0.0,
+              "max": 0.47601550746441385
+            },
+            "interval_distance_days": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "interval_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            }
+          },
+          "exact_at_0": {
+            "success": 3,
+            "n": 8,
+            "rate": 0.375,
+            "ci95": [
+              0.13684428582359742,
+              0.6942576053973727
+            ]
+          },
+          "within_1": {
+            "success": 3,
+            "n": 8,
+            "rate": 0.375,
+            "ci95": [
+              0.13684428582359742,
+              0.6942576053973727
+            ]
+          },
+          "interval_hit": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          }
+        },
+        "behavior": {
+          "accounts": 9,
+          "metrics": {
+            "event_error": {
+              "n": 8,
+              "median": 4.0,
+              "p90": 12.599999999999998,
+              "mean": 5.5,
+              "min": 0.0,
+              "max": 21.0
+            },
+            "event_norm": {
+              "n": 8,
+              "median": 0.55,
+              "p90": 0.8054545454545455,
+              "mean": 0.48143939393939394,
+              "min": 0.0,
+              "max": 0.8181818181818182
+            },
+            "time_error_hours": {
+              "n": 9,
+              "median": 0.1938888888888889,
+              "p90": 68.46983333333334,
+              "mean": 18.47996913580247,
+              "min": 0.0,
+              "max": 75.92583333333333
+            },
+            "time_norm": {
+              "n": 9,
+              "median": 0.12813256305204102,
+              "p90": 0.655735575915795,
+              "mean": 0.2687342959468499,
+              "min": 0.0,
+              "max": 0.888636385803041
+            },
+            "interval_distance_days": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "interval_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            }
+          },
+          "exact_at_0": {
+            "success": 2,
+            "n": 8,
+            "rate": 0.25,
+            "ci95": [
+              0.071479212752109,
+              0.5907245696898311
+            ]
+          },
+          "within_1": {
+            "success": 2,
+            "n": 8,
+            "rate": 0.25,
+            "ci95": [
+              0.071479212752109,
+              0.5907245696898311
+            ]
+          },
+          "interval_hit": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          }
+        },
+        "delay": {
+          "accounts": 9,
+          "metrics": {
+            "event_error": {
+              "n": 8,
+              "median": 2.0,
+              "p90": 10.399999999999997,
+              "mean": 5.125,
+              "min": 1.0,
+              "max": 23.0
+            },
+            "event_norm": {
+              "n": 8,
+              "median": 0.4772727272727273,
+              "p90": 0.8366666666666667,
+              "mean": 0.5443181818181818,
+              "min": 0.3333333333333333,
+              "max": 1.0
+            },
+            "time_error_hours": {
+              "n": 9,
+              "median": 47.428333333333335,
+              "p90": 199.56422222222227,
+              "mean": 85.13324074074075,
+              "min": 0.04138888888888889,
+              "max": 437.23
+            },
+            "time_norm": {
+              "n": 9,
+              "median": 0.2967695637852336,
+              "p90": 0.8949978718116981,
+              "mean": 0.42751344562500504,
+              "min": 0.0017459961551326774,
+              "max": 0.9879759287119546
+            },
+            "interval_distance_days": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "interval_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            }
+          },
+          "exact_at_0": {
+            "success": 0,
+            "n": 8,
+            "rate": 0.0,
+            "ci95": [
+              0,
+              0.32440756488388023
+            ]
+          },
+          "within_1": {
+            "success": 2,
+            "n": 8,
+            "rate": 0.25,
+            "ci95": [
+              0.071479212752109,
+              0.5907245696898311
+            ]
+          },
+          "interval_hit": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          }
+        },
+        "fusion": {
+          "accounts": 9,
+          "metrics": {
+            "event_error": {
+              "n": 8,
+              "median": 3.5,
+              "p90": 12.799999999999997,
+              "mean": 5.875,
+              "min": 0.0,
+              "max": 24.0
+            },
+            "event_norm": {
+              "n": 8,
+              "median": 0.55,
+              "p90": 0.8,
+              "mean": 0.4909090909090909,
+              "min": 0.0,
+              "max": 0.8
+            },
+            "time_error_hours": {
+              "n": 9,
+              "median": 0.1938888888888889,
+              "p90": 68.56872222222222,
+              "mean": 21.21651234567901,
+              "min": 0.0,
+              "max": 75.87583333333333
+            },
+            "time_norm": {
+              "n": 9,
+              "median": 0.12839440596659846,
+              "p90": 0.9080361341569858,
+              "mean": 0.3320205308715117,
+              "min": 0.0,
+              "max": 0.9879759287119546
+            },
+            "interval_distance_days": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "interval_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            }
+          },
+          "exact_at_0": {
+            "success": 2,
+            "n": 8,
+            "rate": 0.25,
+            "ci95": [
+              0.071479212752109,
+              0.5907245696898311
+            ]
+          },
+          "within_1": {
+            "success": 2,
+            "n": 8,
+            "rate": 0.25,
+            "ci95": [
+              0.071479212752109,
+              0.5907245696898311
+            ]
+          },
+          "interval_hit": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          }
+        }
+      }
+    },
+    "exact_utc_other_log": {
+      "n_accounts": 1,
+      "models": {
+        "last_edit": {
+          "accounts": 1,
+          "metrics": {
+            "event_error": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "event_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "time_error_hours": {
+              "n": 1,
+              "median": 0.11916666666666667,
+              "p90": 0.11916666666666667,
+              "mean": 0.11916666666666667,
+              "min": 0.11916666666666667,
+              "max": 0.11916666666666667
+            },
+            "time_norm": {
+              "n": 1,
+              "median": 0.05057769394010846,
+              "p90": 0.05057769394010846,
+              "mean": 0.05057769394010846,
+              "min": 0.05057769394010846,
+              "max": 0.05057769394010846
+            },
+            "interval_distance_days": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "interval_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            }
+          },
+          "exact_at_0": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          },
+          "within_1": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          },
+          "interval_hit": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          }
+        },
+        "time_midpoint": {
+          "accounts": 1,
+          "metrics": {
+            "event_error": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "event_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "time_error_hours": {
+              "n": 1,
+              "median": 0.11916666666666667,
+              "p90": 0.11916666666666667,
+              "mean": 0.11916666666666667,
+              "min": 0.11916666666666667,
+              "max": 0.11916666666666667
+            },
+            "time_norm": {
+              "n": 1,
+              "median": 0.05057769394010846,
+              "p90": 0.05057769394010846,
+              "mean": 0.05057769394010846,
+              "min": 0.05057769394010846,
+              "max": 0.05057769394010846
+            },
+            "interval_distance_days": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "interval_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            }
+          },
+          "exact_at_0": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          },
+          "within_1": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          },
+          "interval_hit": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          }
+        },
+        "behavior": {
+          "accounts": 1,
+          "metrics": {
+            "event_error": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "event_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "time_error_hours": {
+              "n": 1,
+              "median": 0.11916666666666667,
+              "p90": 0.11916666666666667,
+              "mean": 0.11916666666666667,
+              "min": 0.11916666666666667,
+              "max": 0.11916666666666667
+            },
+            "time_norm": {
+              "n": 1,
+              "median": 0.05057769394010846,
+              "p90": 0.05057769394010846,
+              "mean": 0.05057769394010846,
+              "min": 0.05057769394010846,
+              "max": 0.05057769394010846
+            },
+            "interval_distance_days": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "interval_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            }
+          },
+          "exact_at_0": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          },
+          "within_1": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          },
+          "interval_hit": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          }
+        },
+        "delay": {
+          "accounts": 1,
+          "metrics": {
+            "event_error": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "event_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "time_error_hours": {
+              "n": 1,
+              "median": 0.044444444444444446,
+              "p90": 0.044444444444444446,
+              "mean": 0.044444444444444446,
+              "min": 0.044444444444444446,
+              "max": 0.044444444444444446
+            },
+            "time_norm": {
+              "n": 1,
+              "median": 0.01886347559537845,
+              "p90": 0.01886347559537845,
+              "mean": 0.01886347559537845,
+              "min": 0.01886347559537845,
+              "max": 0.01886347559537845
+            },
+            "interval_distance_days": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "interval_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            }
+          },
+          "exact_at_0": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          },
+          "within_1": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          },
+          "interval_hit": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          }
+        },
+        "fusion": {
+          "accounts": 1,
+          "metrics": {
+            "event_error": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "event_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "time_error_hours": {
+              "n": 1,
+              "median": 0.1,
+              "p90": 0.1,
+              "mean": 0.1,
+              "min": 0.1,
+              "max": 0.1
+            },
+            "time_norm": {
+              "n": 1,
+              "median": 0.042442820089601506,
+              "p90": 0.042442820089601506,
+              "mean": 0.042442820089601506,
+              "min": 0.042442820089601506,
+              "max": 0.042442820089601506
+            },
+            "interval_distance_days": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "interval_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            }
+          },
+          "exact_at_0": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          },
+          "within_1": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          },
+          "interval_hit": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          }
+        }
+      }
+    },
+    "exact_utc_public": {
+      "n_accounts": 8,
+      "models": {
+        "last_edit": {
+          "accounts": 8,
+          "metrics": {
+            "event_error": {
+              "n": 8,
+              "median": 4.5,
+              "p90": 14.999999999999996,
+              "mean": 7.5,
+              "min": 0.0,
+              "max": 29.0
+            },
+            "event_norm": {
+              "n": 8,
+              "median": 0.8090909090909091,
+              "p90": 0.92,
+              "mean": 0.6397727272727273,
+              "min": 0.0,
+              "max": 0.9666666666666667
+            },
+            "time_error_hours": {
+              "n": 8,
+              "median": 0.36875,
+              "p90": 70.32058333333333,
+              "mean": 24.052881944444444,
+              "min": 0.0,
+              "max": 75.92583333333333
+            },
+            "time_norm": {
+              "n": 8,
+              "median": 0.2006000562649513,
+              "p90": 0.9415660647083934,
+              "mean": 0.40126675445176513,
+              "min": 0.0,
+              "max": 0.9940168961925703
+            },
+            "interval_distance_days": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "interval_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            }
+          },
+          "exact_at_0": {
+            "success": 2,
+            "n": 8,
+            "rate": 0.25,
+            "ci95": [
+              0.071479212752109,
+              0.5907245696898311
+            ]
+          },
+          "within_1": {
+            "success": 2,
+            "n": 8,
+            "rate": 0.25,
+            "ci95": [
+              0.071479212752109,
+              0.5907245696898311
+            ]
+          },
+          "interval_hit": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          }
+        },
+        "time_midpoint": {
+          "accounts": 8,
+          "metrics": {
+            "event_error": {
+              "n": 8,
+              "median": 4.0,
+              "p90": 8.599999999999998,
+              "mean": 4.25,
+              "min": 0.0,
+              "max": 17.0
+            },
+            "event_norm": {
+              "n": 8,
+              "median": 0.38181818181818183,
+              "p90": 0.81,
+              "mean": 0.3704545454545455,
+              "min": 0.0,
+              "max": 0.8333333333333334
+            },
+            "time_error_hours": {
+              "n": 8,
+              "median": 0.12874999999999998,
+              "p90": 36.37147222222221,
+              "mean": 12.691493055555556,
+              "min": 0.0,
+              "max": 67.91833333333334
+            },
+            "time_norm": {
+              "n": 8,
+              "median": 0.12680240279712168,
+              "p90": 0.47537726634720795,
+              "mean": 0.18440833539467574,
+              "min": 0.0,
+              "max": 0.47601550746441385
+            },
+            "interval_distance_days": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "interval_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            }
+          },
+          "exact_at_0": {
+            "success": 3,
+            "n": 8,
+            "rate": 0.375,
+            "ci95": [
+              0.13684428582359742,
+              0.6942576053973727
+            ]
+          },
+          "within_1": {
+            "success": 3,
+            "n": 8,
+            "rate": 0.375,
+            "ci95": [
+              0.13684428582359742,
+              0.6942576053973727
+            ]
+          },
+          "interval_hit": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          }
+        },
+        "behavior": {
+          "accounts": 8,
+          "metrics": {
+            "event_error": {
+              "n": 8,
+              "median": 4.0,
+              "p90": 12.599999999999998,
+              "mean": 5.5,
+              "min": 0.0,
+              "max": 21.0
+            },
+            "event_norm": {
+              "n": 8,
+              "median": 0.55,
+              "p90": 0.8054545454545455,
+              "mean": 0.48143939393939394,
+              "min": 0.0,
+              "max": 0.8181818181818182
+            },
+            "time_error_hours": {
+              "n": 8,
+              "median": 0.36875,
+              "p90": 69.40183333333333,
+              "mean": 20.775069444444444,
+              "min": 0.0,
+              "max": 75.92583333333333
+            },
+            "time_norm": {
+              "n": 8,
+              "median": 0.19933759935547787,
+              "p90": 0.6848481771517007,
+              "mean": 0.29600387119769256,
+              "min": 0.0,
+              "max": 0.888636385803041
+            },
+            "interval_distance_days": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "interval_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            }
+          },
+          "exact_at_0": {
+            "success": 2,
+            "n": 8,
+            "rate": 0.25,
+            "ci95": [
+              0.071479212752109,
+              0.5907245696898311
+            ]
+          },
+          "within_1": {
+            "success": 2,
+            "n": 8,
+            "rate": 0.25,
+            "ci95": [
+              0.071479212752109,
+              0.5907245696898311
+            ]
+          },
+          "interval_hit": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          }
+        },
+        "delay": {
+          "accounts": 8,
+          "metrics": {
+            "event_error": {
+              "n": 8,
+              "median": 2.0,
+              "p90": 10.399999999999997,
+              "mean": 5.125,
+              "min": 1.0,
+              "max": 23.0
+            },
+            "event_norm": {
+              "n": 8,
+              "median": 0.4772727272727273,
+              "p90": 0.8366666666666667,
+              "mean": 0.5443181818181818,
+              "min": 0.3333333333333333,
+              "max": 1.0
+            },
+            "time_error_hours": {
+              "n": 8,
+              "median": 57.01708333333333,
+              "p90": 229.27244444444437,
+              "mean": 95.76934027777779,
+              "min": 0.04138888888888889,
+              "max": 437.23
+            },
+            "time_norm": {
+              "n": 8,
+              "median": 0.469961545378094,
+              "p90": 0.9066201289242302,
+              "mean": 0.47859469187870834,
+              "min": 0.0017459961551326774,
+              "max": 0.9879759287119546
+            },
+            "interval_distance_days": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "interval_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            }
+          },
+          "exact_at_0": {
+            "success": 0,
+            "n": 8,
+            "rate": 0.0,
+            "ci95": [
+              0,
+              0.32440756488388023
+            ]
+          },
+          "within_1": {
+            "success": 2,
+            "n": 8,
+            "rate": 0.25,
+            "ci95": [
+              0.071479212752109,
+              0.5907245696898311
+            ]
+          },
+          "interval_hit": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          }
+        },
+        "fusion": {
+          "accounts": 8,
+          "metrics": {
+            "event_error": {
+              "n": 8,
+              "median": 3.5,
+              "p90": 12.799999999999997,
+              "mean": 5.875,
+              "min": 0.0,
+              "max": 24.0
+            },
+            "event_norm": {
+              "n": 8,
+              "median": 0.55,
+              "p90": 0.8,
+              "mean": 0.4909090909090909,
+              "min": 0.0,
+              "max": 0.8
+            },
+            "time_error_hours": {
+              "n": 8,
+              "median": 0.35680555555555554,
+              "p90": 69.48211111111111,
+              "mean": 23.856076388888887,
+              "min": 0.0,
+              "max": 75.87583333333333
+            },
+            "time_norm": {
+              "n": 8,
+              "median": 0.1994685208127566,
+              "p90": 0.9180286084763569,
+              "mean": 0.36821774471925045,
+              "min": 0.0,
+              "max": 0.9879759287119546
+            },
+            "interval_distance_days": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "interval_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            }
+          },
+          "exact_at_0": {
+            "success": 2,
+            "n": 8,
+            "rate": 0.25,
+            "ci95": [
+              0.071479212752109,
+              0.5907245696898311
+            ]
+          },
+          "within_1": {
+            "success": 2,
+            "n": 8,
+            "rate": 0.25,
+            "ci95": [
+              0.071479212752109,
+              0.5907245696898311
+            ]
+          },
+          "interval_hit": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          }
+        }
+      }
+    },
+    "interval": {
+      "n_accounts": 29,
+      "models": {
+        "last_edit": {
+          "accounts": 29,
+          "metrics": {
+            "event_error": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "event_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "time_error_hours": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "time_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "interval_distance_days": {
+              "n": 29,
+              "median": 0.007905092592592592,
+              "p90": 24.560495370370365,
+              "mean": 13.459057311621967,
+              "min": 0.0004050925925925926,
+              "max": 156.00376157407408
+            },
+            "interval_norm": {
+              "n": 29,
+              "median": 0.019256912148004294,
+              "p90": 0.8214669441123946,
+              "mean": 0.24156838041951056,
+              "min": 3.082760275600413e-07,
+              "max": 0.9935126699131493
+            }
+          },
+          "exact_at_0": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          },
+          "within_1": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          },
+          "interval_hit": {
+            "success": 0,
+            "n": 29,
+            "rate": 0.0,
+            "ci95": [
+              0,
+              0.11696979849974075
+            ]
+          }
+        },
+        "time_midpoint": {
+          "accounts": 29,
+          "metrics": {
+            "event_error": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "event_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "time_error_hours": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "time_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "interval_distance_days": {
+              "n": 29,
+              "median": 0.0,
+              "p90": 1.5350439814814796,
+              "mean": 4.612128432311622,
+              "min": 0.0,
+              "max": 116.02131944444444
+            },
+            "interval_norm": {
+              "n": 29,
+              "median": 0.0,
+              "p90": 0.44297126043902885,
+              "mean": 0.09871097405551005,
+              "min": 0.0,
+              "max": 0.9931763359709151
+            }
+          },
+          "exact_at_0": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          },
+          "within_1": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          },
+          "interval_hit": {
+            "success": 16,
+            "n": 29,
+            "rate": 0.5517241379310345,
+            "ci95": [
+              0.37547963210970914,
+              0.7158683197696281
+            ]
+          }
+        },
+        "behavior": {
+          "accounts": 29,
+          "metrics": {
+            "event_error": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "event_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "time_error_hours": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "time_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "interval_distance_days": {
+              "n": 29,
+              "median": 0.0,
+              "p90": 0.06386805555555548,
+              "mean": 0.4736282726692209,
+              "min": 0.0,
+              "max": 12.921944444444444
+            },
+            "interval_norm": {
+              "n": 29,
+              "median": 0.0,
+              "p90": 0.6024158336810403,
+              "mean": 0.14045176338826557,
+              "min": 0.0,
+              "max": 0.9933916608757317
+            }
+          },
+          "exact_at_0": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          },
+          "within_1": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          },
+          "interval_hit": {
+            "success": 15,
+            "n": 29,
+            "rate": 0.5172413793103449,
+            "ci95": [
+              0.34431021881994717,
+              0.6861390984731652
+            ]
+          }
+        },
+        "delay": {
+          "accounts": 29,
+          "metrics": {
+            "event_error": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "event_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "time_error_hours": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "time_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "interval_distance_days": {
+              "n": 29,
+              "median": 0.0,
+              "p90": 14.929976851851844,
+              "mean": 10.70234035759898,
+              "min": 0.0,
+              "max": 148.10247685185186
+            },
+            "interval_norm": {
+              "n": 29,
+              "median": 0.0,
+              "p90": 0.6165610662042667,
+              "mean": 0.14271204932855752,
+              "min": 0.0,
+              "max": 0.9931763359709151
+            }
+          },
+          "exact_at_0": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          },
+          "within_1": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          },
+          "interval_hit": {
+            "success": 17,
+            "n": 29,
+            "rate": 0.5862068965517241,
+            "ci95": [
+              0.4073783598787858,
+              0.744868226586776
+            ]
+          }
+        },
+        "fusion": {
+          "accounts": 29,
+          "metrics": {
+            "event_error": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "event_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "time_error_hours": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "time_norm": {
+              "n": 0,
+              "median": null,
+              "p90": null,
+              "mean": null,
+              "min": null,
+              "max": null
+            },
+            "interval_distance_days": {
+              "n": 29,
+              "median": 0.0,
+              "p90": 0.21511574074074047,
+              "mean": 5.5787623722860795,
+              "min": 0.0,
+              "max": 148.0967476851852
+            },
+            "interval_norm": {
+              "n": 29,
+              "median": 0.0,
+              "p90": 0.75165663558908,
+              "mean": 0.16370818529287712,
+              "min": 0.0,
+              "max": 0.9931763359709151
+            }
+          },
+          "exact_at_0": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          },
+          "within_1": {
+            "success": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": null
+          },
+          "interval_hit": {
+            "success": 15,
+            "n": 29,
+            "rate": 0.5172413793103449,
+            "ci95": [
+              0.34431021881994717,
+              0.6861390984731652
+            ]
+          }
+        }
+      }
+    }
+  },
+  "paired": {
+    "event_norm": {
+      "behavior": {
+        "n": 8,
+        "wins": 2,
+        "losses": 3,
+        "ties": 3,
+        "win_rate": 0.25,
+        "loss_rate": 0.375,
+        "tie_rate": 0.375,
+        "win_wilson95": [
+          0.071479212752109,
+          0.5907245696898311
+        ],
+        "paired_mean_gain": -0.009469696969696968,
+        "paired_mean_gain_bootstrap95": [
+          -0.08030303030303032,
+          0.07272727272727275
+        ],
+        "interval_hit_outcomes": null
+      },
+      "delay": {
+        "n": 8,
+        "wins": 2,
+        "losses": 5,
+        "ties": 1,
+        "win_rate": 0.25,
+        "loss_rate": 0.625,
+        "tie_rate": 0.125,
+        "win_wilson95": [
+          0.071479212752109,
+          0.5907245696898311
+        ],
+        "paired_mean_gain": 0.053409090909090906,
+        "paired_mean_gain_bootstrap95": [
+          -0.2091098484848485,
+          0.3875
+        ],
+        "interval_hit_outcomes": null
+      },
+      "last_edit": {
+        "n": 8,
+        "wins": 5,
+        "losses": 0,
+        "ties": 3,
+        "win_rate": 0.625,
+        "loss_rate": 0.0,
+        "tie_rate": 0.375,
+        "win_wilson95": [
+          0.30574239460262737,
+          0.8631557141764026
+        ],
+        "paired_mean_gain": 0.14886363636363636,
+        "paired_mean_gain_bootstrap95": [
+          0.057196969696969704,
+          0.2541666666666667
+        ],
+        "interval_hit_outcomes": null
+      },
+      "time_midpoint": {
+        "n": 8,
+        "wins": 1,
+        "losses": 4,
+        "ties": 3,
+        "win_rate": 0.125,
+        "loss_rate": 0.5,
+        "tie_rate": 0.375,
+        "win_wilson95": [
+          0.02241749145005667,
+          0.4708881822128535
+        ],
+        "paired_mean_gain": -0.12045454545454545,
+        "paired_mean_gain_bootstrap95": [
+          -0.31137310606060603,
+          0.05833333333333335
+        ],
+        "interval_hit_outcomes": null
+      }
+    },
+    "interval_norm": {
+      "behavior": {
+        "n": 29,
+        "wins": 6,
+        "losses": 2,
+        "ties": 21,
+        "win_rate": 0.20689655172413793,
+        "loss_rate": 0.06896551724137931,
+        "tie_rate": 0.7241379310344828,
+        "win_wilson95": [
+          0.09846070197841039,
+          0.38390090403867905
+        ],
+        "paired_mean_gain": -0.02325642190461153,
+        "paired_mean_gain_bootstrap95": [
+          -0.07505134387175033,
+          0.004212975073936919
+        ],
+        "interval_hit_outcomes": {
+          "tie": 29
+        }
+      },
+      "delay": {
+        "n": 29,
+        "wins": 6,
+        "losses": 10,
+        "ties": 13,
+        "win_rate": 0.20689655172413793,
+        "loss_rate": 0.3448275862068966,
+        "tie_rate": 0.4482758620689655,
+        "win_wilson95": [
+          0.09846070197841039,
+          0.38390090403867905
+        ],
+        "paired_mean_gain": -0.020996135964319578,
+        "paired_mean_gain_bootstrap95": [
+          -0.09329693865263645,
+          0.049354297058506455
+        ],
+        "interval_hit_outcomes": {
+          "tie": 19,
+          "win": 4,
+          "loss": 6
+        }
+      },
+      "last_edit": {
+        "n": 29,
+        "wins": 25,
+        "losses": 0,
+        "ties": 4,
+        "win_rate": 0.8620689655172413,
+        "loss_rate": 0.0,
+        "tie_rate": 0.13793103448275862,
+        "win_wilson95": [
+          0.6944100627964798,
+          0.9450256003588804
+        ],
+        "paired_mean_gain": 0.07786019512663345,
+        "paired_mean_gain_bootstrap95": [
+          0.009214101473586239,
+          0.16402936592390904
+        ],
+        "interval_hit_outcomes": {
+          "win": 15,
+          "tie": 14
+        }
+      },
+      "time_midpoint": {
+        "n": 29,
+        "wins": 6,
+        "losses": 11,
+        "ties": 12,
+        "win_rate": 0.20689655172413793,
+        "loss_rate": 0.3793103448275862,
+        "tie_rate": 0.41379310344827586,
+        "win_wilson95": [
+          0.09846070197841039,
+          0.38390090403867905
+        ],
+        "paired_mean_gain": -0.06499721123736706,
+        "paired_mean_gain_bootstrap95": [
+          -0.1539735410592068,
+          0.023883047558676127
+        ],
+        "interval_hit_outcomes": {
+          "tie": 16,
+          "win": 6,
+          "loss": 7
+        }
+      }
+    },
+    "time_norm": {
+      "behavior": {
+        "n": 9,
+        "wins": 3,
+        "losses": 3,
+        "ties": 3,
+        "win_rate": 0.3333333333333333,
+        "loss_rate": 0.3333333333333333,
+        "tie_rate": 0.3333333333333333,
+        "win_wilson95": [
+          0.1205838183869109,
+          0.6457978644196036
+        ],
+        "paired_mean_gain": -0.0632862349246618,
+        "paired_mean_gain_bootstrap95": [
+          -0.17799421642957317,
+          0.001907916243190616
+        ],
+        "interval_hit_outcomes": null
+      },
+      "delay": {
+        "n": 9,
+        "wins": 2,
+        "losses": 6,
+        "ties": 1,
+        "win_rate": 0.2222222222222222,
+        "loss_rate": 0.6666666666666666,
+        "tie_rate": 0.1111111111111111,
+        "win_wilson95": [
+          0.06322510711784671,
+          0.5474110308930111
+        ],
+        "paired_mean_gain": 0.09549291475349332,
+        "paired_mean_gain_bootstrap95": [
+          -0.05643819160712319,
+          0.303547729095091
+        ],
+        "interval_hit_outcomes": null
+      },
+      "last_edit": {
+        "n": 9,
+        "wins": 6,
+        "losses": 0,
+        "ties": 3,
+        "win_rate": 0.6666666666666666,
+        "loss_rate": 0.0,
+        "tie_rate": 0.3333333333333333,
+        "win_wilson95": [
+          0.3542021355803963,
+          0.879416181613089
+        ],
+        "paired_mean_gain": 0.03028077241229158,
+        "paired_mean_gain_bootstrap95": [
+          0.0006329491531526386,
+          0.08756088318013296
+        ],
+        "interval_hit_outcomes": null
+      },
+      "time_midpoint": {
+        "n": 9,
+        "wins": 2,
+        "losses": 4,
+        "ties": 3,
+        "win_rate": 0.2222222222222222,
+        "loss_rate": 0.4444444444444444,
+        "tie_rate": 0.3333333333333333,
+        "win_wilson95": [
+          0.06322510711784671,
+          0.5474110308930111
+        ],
+        "paired_mean_gain": -0.16248226674956567,
+        "paired_mean_gain_bootstrap95": [
+          -0.3606138593624769,
+          -0.0011364353949793473
+        ],
+        "interval_hit_outcomes": null
+      }
+    }
+  },
+  "excluded_from_onset_metrics": {
+    "RIGHT_CENSORED": 12
+  },
+  "normal_control_fpr": {
+    "status": "NOT_EVALUABLE_NO_RISK_OUTPUT",
+    "n": 12,
+    "false_positive_rate": null,
+    "specificity": null,
+    "auc": null
+  },
+  "protected_files_unchanged": true,
+  "protected_file_count": 23,
+  "frozen_predictions_sha256": "2b012e4a5ee5e83ee8f864db5f79a3eeaf33b8d398191817899312bfd1045432",
+  "frozen_inputs_sha256": "942145fb2cf578867b7607cfa300b91d8e7312cccf8a343106646e2dd3daa409",
+  "split_sha256": "1543971a2c5b99be9faaad798a2894fd71279c14fa5a6a7f0e49305b97d54684",
+  "source_sha256": "2cde19a024906cf1e43c4577912f2234d0823c0d87c1b690d0570d402bb554dc",
+  "original_v2_event_means_reproduced": {
+    "behavior": true,
+    "delay": true,
+    "fusion": true
+  },
+  "training_performed": false,
+  "weight_or_threshold_selection": false,
+  "combined_total_score_created": false,
+  "cautions": [
+    "Account-normalization changes cross-account aggregation, not within-account error ordering.",
+    "Only eight exact published-event cases and nine exact UTC cases; P90 and uncertainty intervals are unstable.",
+    "No duration/edit-count minimum for normal history; grouping is descriptive only.",
+    "INTERVAL delay bins are ranges; an ambiguous range is never replaced by its upper endpoint.",
+    "All-UTC cohort includes a separate nonpublished-log event; event-level cohort excludes it.",
+    "Bootstrap/Wilson intervals are descriptive and assume account independence; unknown related identities may violate it."
+  ]
+}

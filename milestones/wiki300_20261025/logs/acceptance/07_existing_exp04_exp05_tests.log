@@ -1,0 +1,87 @@
+PREPARED: /tmp/tmpy7lal8an/bundle
+N=50 L=12 D=3; TRAIN=35 VAL=5 TEST=10
+inputs.npz has x/lengths/detected/t_detect/entity_id ONLY
+Gold tf and TRAIN fraud labels have been stored in separate files
+PREPARED: /tmp/tmp1q7mc_w7/bundle
+N=50 L=12 D=3; TRAIN=35 VAL=5 TEST=10
+inputs.npz has x/lengths/detected/t_detect/entity_id ONLY
+Gold tf and TRAIN fraud labels have been stored in separate files
+PREPARED: /tmp/tmp8nyh82gb/bundle
+N=50 L=12 D=3; TRAIN=35 VAL=5 TEST=10
+inputs.npz has x/lengths/detected/t_detect/entity_id ONLY
+Gold tf and TRAIN fraud labels have been stored in separate files
+PREPARED: /tmp/tmp1e2xkhm0/bundle
+N=50 L=12 D=3; TRAIN=35 VAL=5 TEST=10
+inputs.npz has x/lengths/detected/t_detect/entity_id ONLY
+Gold tf and TRAIN fraud labels have been stored in separate files
+PREPARED: /tmp/tmpjqk3lkdm/bundle
+N=50 L=12 D=3; TRAIN=35 VAL=5 TEST=10
+inputs.npz has x/lengths/detected/t_detect/entity_id ONLY
+Gold tf and TRAIN fraud labels have been stored in separate files
+PREPARED: /tmp/tmp_anmyfyw/bundle
+N=50 L=12 D=3; TRAIN=35 VAL=5 TEST=10
+inputs.npz has x/lengths/detected/t_detect/entity_id ONLY
+Gold tf and TRAIN fraud labels have been stored in separate files
+PREPARED: /tmp/tmpmr2jcv2q/bundle
+N=50 L=12 D=3; TRAIN=35 VAL=5 TEST=10
+inputs.npz has x/lengths/detected/t_detect/entity_id ONLY
+Gold tf and TRAIN fraud labels have been stored in separate files
+PREPARED: /tmp/tmp91p16av2/bundle
+N=50 L=12 D=3; TRAIN=35 VAL=5 TEST=10
+inputs.npz has x/lengths/detected/t_detect/entity_id ONLY
+Gold tf and TRAIN fraud labels have been stored in separate files
+PREPARED: /tmp/tmpacvr1irt/bundle
+N=60 L=12 D=3; TRAIN=42 VAL=6 TEST=12
+inputs.npz has x/lengths/detected/t_detect/entity_id ONLY
+Gold tf and TRAIN fraud labels have been stored in separate files
+FROZEN EXP04 | bundle=/tmp/tmpacvr1irt/bundle | split=TEST | n=12
+TRAIN behavior EM: using only train_labels, inputs, fixed split
+
+Initial emission parameters:
+  normal mean: [ 0.038 -0.054  0.042]
+  fraud mean: [0.654 0.617 0.688]
+  normal points: 228
+  fraud-tail init points: 47
+EM 01 | logL=-1764.261212 | entropy=1.445818 | normal_w=303.6 | fraud_w=112.4
+EM 02 | logL=-1761.191268 | entropy=1.366618 | normal_w=304.6 | fraud_w=111.4
+EM 03 | logL=-1761.134972 | entropy=1.351044 | normal_w=304.9 | fraud_w=111.1
+EM 04 | logL=-1761.132911 | entropy=1.347873 | normal_w=305.0 | fraud_w=111.0
+EM 05 | logL=-1761.132813 | entropy=1.347152 | normal_w=305.1 | fraud_w=110.9
+EM 06 | logL=-1761.132806 | entropy=1.346971 | normal_w=305.1 | fraud_w=110.9
+EM converged.
+PREDICTED: 3 detected users in TEST (others marked unsupported)
+RESULT: PASS (INFERENCE; test gold never loaded) | saved /tmp/tmpacvr1irt/pred
+EXP04 POSTERIOR MEDIAN EVALUATION (independent gold)
+Eligible n: 3
+MAE: 0.666667
+Signed Error: 0.000000
+Within-1: 1.000000
+Within-2: 1.000000
+Behavior-only MAE: 0.666667
+Delay-only MAE:    2.000000
+METRICS SAVED: /tmp/tmpacvr1irt/pred/metrics.json
+test_gold_onset_after_detection_fails (test_exp04_io_contract.TestContract.test_gold_onset_after_detection_fails) ... ok
+test_good_contract_passes (test_exp04_io_contract.TestContract.test_good_contract_passes) ... ok
+test_leaked_truth_is_rejected (test_exp04_io_contract.TestContract.test_leaked_truth_is_rejected) ... ok
+test_post_detection_data_is_rejected (test_exp04_io_contract.TestContract.test_post_detection_data_is_rejected) ... ok
+test_real_data_cannot_use_synthetic_prior (test_exp04_io_contract.TestContract.test_real_data_cannot_use_synthetic_prior) ... ok
+test_train_labels_cannot_contain_test_entity (test_exp04_io_contract.TestContract.test_train_labels_cannot_contain_test_entity) ... ok
+test_variable_length_not_silently_accepted (test_exp04_io_contract.TestContract.test_variable_length_not_silently_accepted) ... ok
+test_wrong_detect_time_is_rejected (test_exp04_io_contract.TestContract.test_wrong_detect_time_is_rejected) ... ok
+test_prediction_does_not_need_gold_and_posterior_normalized (test_exp04_stage2_io.TestStage2.test_prediction_does_not_need_gold_and_posterior_normalized) ... ok
+test_all_equal_lengths_retain_frozen_results_exactly (test_exp05_real_lengths.RealLengthTest.test_all_equal_lengths_retain_frozen_results_exactly) ... ok
+test_exact_observed_point_count_ignores_storage_padding (test_exp05_real_lengths.RealLengthTest.test_exact_observed_point_count_ignores_storage_padding) ... ok
+test_non_train_prior_onsets_rejected (test_exp05_real_lengths.RealLengthTest.test_non_train_prior_onsets_rejected) ... ok
+test_nonzero_padding_rejected (test_exp05_real_lengths.RealLengthTest.test_nonzero_padding_rejected) ... ok
+test_padding_never_changes_fitted_parameters_even_for_censored_fraud (test_exp05_real_lengths.RealLengthTest.test_padding_never_changes_fitted_parameters_even_for_censored_fraud) ... ok
+test_variable_length_requires_explicit_policy (test_exp05_real_lengths.RealLengthTest.test_variable_length_requires_explicit_policy) ... ok
+test_variable_runner_can_train_and_predict_without_gold (test_exp05_real_lengths.RealLengthTest.test_variable_runner_can_train_and_predict_without_gold) ... ok
+test_control_onset_is_rejected (test_exp05_wiki_evaluation.WikiEvaluationTest.test_control_onset_is_rejected) ... ok
+test_exact_utc_not_mistaken_for_exact_event_index (test_exp05_wiki_evaluation.WikiEvaluationTest.test_exact_utc_not_mistaken_for_exact_event_index) ... ok
+test_interval_cannot_be_given_point_truth (test_exp05_wiki_evaluation.WikiEvaluationTest.test_interval_cannot_be_given_point_truth) ... ok
+test_open_lower_boundary_zero_distance_but_not_hit (test_exp05_wiki_evaluation.WikiEvaluationTest.test_open_lower_boundary_zero_distance_but_not_hit) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.439s
+
+OK

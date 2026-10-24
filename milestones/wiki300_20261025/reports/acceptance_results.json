@@ -1,0 +1,238 @@
+{
+  "started_utc": "2026-10-24T08:47:13.864231+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "real_training_performed": false,
+  "network_required": false,
+  "commands": [
+    {
+      "name": "01_offline_clone",
+      "argv": [
+        "git",
+        "clone",
+        "--branch",
+        "work/wiki300-exp05-real",
+        "/workspace/scratch/27b5629f48b1/milestones/wiki300_20261025/code/exp05_history.bundle",
+        "/workspace/scratch/27b5629f48b1/milestone_work_20261025/acceptance_final/verification_repo"
+      ],
+      "cwd": "/workspace/scratch/27b5629f48b1/milestones/wiki300_20261025",
+      "exit_code": 0,
+      "log": "logs/01_offline_clone.log",
+      "tests_run": null
+    },
+    {
+      "name": "02_checkout_base",
+      "argv": [
+        "git",
+        "switch",
+        "--detach",
+        "exp05-io-contract-v1"
+      ],
+      "cwd": "/workspace/scratch/27b5629f48b1/milestone_work_20261025/acceptance_final/verification_repo",
+      "exit_code": 0,
+      "log": "logs/02_checkout_base.log",
+      "tests_run": null
+    },
+    {
+      "name": "03_patch_check",
+      "argv": [
+        "git",
+        "apply",
+        "--check",
+        "/workspace/scratch/27b5629f48b1/milestones/wiki300_20261025/artifacts/exp05/exp05_wiki_real.patch"
+      ],
+      "cwd": "/workspace/scratch/27b5629f48b1/milestone_work_20261025/acceptance_final/verification_repo",
+      "exit_code": 0,
+      "log": "logs/03_patch_check.log",
+      "tests_run": null
+    },
+    {
+      "name": "04_patch_apply",
+      "argv": [
+        "git",
+        "apply",
+        "--index",
+        "/workspace/scratch/27b5629f48b1/milestones/wiki300_20261025/artifacts/exp05/exp05_wiki_real.patch"
+      ],
+      "cwd": "/workspace/scratch/27b5629f48b1/milestone_work_20261025/acceptance_final/verification_repo",
+      "exit_code": 0,
+      "log": "logs/04_patch_apply.log",
+      "tests_run": null
+    },
+    {
+      "name": "05_code_tree_matches_adapter",
+      "argv": [
+        "git",
+        "diff",
+        "--exit-code",
+        "57555b536f2395dd39d4c329917a7eef1acdf77c"
+      ],
+      "cwd": "/workspace/scratch/27b5629f48b1/milestone_work_20261025/acceptance_final/verification_repo",
+      "exit_code": 0,
+      "log": "logs/05_code_tree_matches_adapter.log",
+      "tests_run": null
+    },
+    {
+      "name": "06_validate_real_io",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "scripts/45_exp04_validate_io.py",
+        "--bundle",
+        "/workspace/scratch/27b5629f48b1/milestones/wiki300_20261025/artifacts/exp05/data_bundle"
+      ],
+      "cwd": "/workspace/scratch/27b5629f48b1/milestone_work_20261025/acceptance_final/verification_repo",
+      "exit_code": 0,
+      "log": "logs/06_validate_real_io.log",
+      "tests_run": null
+    },
+    {
+      "name": "07_existing_exp04_exp05_tests",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_exp0*.py",
+        "-v"
+      ],
+      "cwd": "/workspace/scratch/27b5629f48b1/milestone_work_20261025/acceptance_final/verification_repo",
+      "exit_code": 0,
+      "log": "logs/07_existing_exp04_exp05_tests.log",
+      "tests_run": 20
+    },
+    {
+      "name": "08_evaluation_v2_tests",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_evaluate_addon.py",
+        "-v"
+      ],
+      "cwd": "/workspace/scratch/27b5629f48b1/milestones/wiki300_20261025/code/evaluation_v2",
+      "exit_code": 0,
+      "log": "logs/08_evaluation_v2_tests.log",
+      "tests_run": 5
+    },
+    {
+      "name": "09_original_scoring",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "scripts/50_exp05_evaluate_wiki.py",
+        "--bundle",
+        "/workspace/scratch/27b5629f48b1/milestones/wiki300_20261025/artifacts/exp05/data_bundle",
+        "--predictions",
+        "/workspace/scratch/27b5629f48b1/milestone_work_20261025/acceptance_final/original_scorer"
+      ],
+      "cwd": "/workspace/scratch/27b5629f48b1/milestone_work_20261025/acceptance_final/verification_repo",
+      "exit_code": 0,
+      "log": "logs/09_original_scoring.log",
+      "tests_run": null
+    },
+    {
+      "name": "10_evaluation_v2_scoring",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/27b5629f48b1/milestones/wiki300_20261025/code/evaluation_v2/scripts/evaluate_addon.py",
+        "--bundle",
+        "/workspace/scratch/27b5629f48b1/milestones/wiki300_20261025/artifacts/exp05/data_bundle",
+        "--run",
+        "/workspace/scratch/27b5629f48b1/milestones/wiki300_20261025/artifacts/exp05/real_run",
+        "--source",
+        "/workspace/scratch/27b5629f48b1/milestones/wiki300_20261025/artifacts/exp05/frozen_source/SafePlus_combined_current.jsonl",
+        "--out",
+        "/workspace/scratch/27b5629f48b1/milestone_work_20261025/acceptance_final/evaluation_v2"
+      ],
+      "cwd": "/workspace/scratch/27b5629f48b1/milestones/wiki300_20261025",
+      "exit_code": 0,
+      "log": "logs/10_evaluation_v2_scoring.log",
+      "tests_run": null
+    },
+    {
+      "name": "11_dataset_audit",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/27b5629f48b1/milestones/wiki300_20261025/scripts/audit_dataset.py",
+        "--artifact",
+        "/workspace/scratch/27b5629f48b1/milestones/wiki300_20261025/artifacts/exp05",
+        "--out",
+        "/workspace/scratch/27b5629f48b1/milestone_work_20261025/acceptance_final/audit"
+      ],
+      "cwd": "/workspace/scratch/27b5629f48b1/milestones/wiki300_20261025",
+      "exit_code": 0,
+      "log": "logs/11_dataset_audit.log",
+      "tests_run": null
+    },
+    {
+      "name": "12_milestone_contract_tests",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/workspace/scratch/27b5629f48b1/milestones/wiki300_20261025/tests",
+        "-p",
+        "test_milestone_contract.py",
+        "-v"
+      ],
+      "cwd": "/workspace/scratch/27b5629f48b1/milestones/wiki300_20261025",
+      "exit_code": 0,
+      "log": "logs/12_milestone_contract_tests.log",
+      "tests_run": 8
+    },
+    {
+      "name": "13_review_queue_rebuild",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/27b5629f48b1/milestones/wiki300_20261025/scripts/build_review_queue.py",
+        "--out",
+        "/workspace/scratch/27b5629f48b1/milestone_work_20261025/acceptance_final/review_queue_rebuilt"
+      ],
+      "cwd": "/workspace/scratch/27b5629f48b1/milestones/wiki300_20261025",
+      "exit_code": 0,
+      "log": "logs/13_review_queue_rebuild.log",
+      "tests_run": null
+    }
+  ],
+  "review_queue_reproduced_exactly": true,
+  "scoring_matches_saved_original": true,
+  "v2_saved_output_comparison": {
+    "exploratory_score_v2.json": {
+      "equal": true,
+      "old_sha256": "9699b329b78fa907a9512ad8c0ead076118b17b50506c584ba986a0585e87076",
+      "new_sha256": "9699b329b78fa907a9512ad8c0ead076118b17b50506c584ba986a0585e87076"
+    },
+    "dataset_quality_audit_v2.json": {
+      "equal": true,
+      "old_sha256": "bb5edcddf43c26955d296f0ba83ba75e3e129fe4da767c3bbd588b01f0a62561",
+      "new_sha256": "bb5edcddf43c26955d296f0ba83ba75e3e129fe4da767c3bbd588b01f0a62561"
+    },
+    "per_account_exploratory_v2.csv": {
+      "equal": true,
+      "old_sha256": "73add35b7b05bad24b34f0171500d810b3220e275d658c44df2c690a48dc6dbc",
+      "new_sha256": "73add35b7b05bad24b34f0171500d810b3220e275d658c44df2c690a48dc6dbc"
+    },
+    "independent_review_queue_36.csv": {
+      "equal": true,
+      "old_sha256": "f7f747766213f71a08c85440a802a28dd67945825589323467390b2aa54c8169",
+      "new_sha256": "f7f747766213f71a08c85440a802a28dd67945825589323467390b2aa54c8169"
+    },
+    "train_prior_evidence_review_36.csv": {
+      "equal": true,
+      "old_sha256": "fd37ac9d575daeac0bfc33b6953114a68dd2659ab00b7351e53b04e4e9619454",
+      "new_sha256": "fd37ac9d575daeac0bfc33b6953114a68dd2659ab00b7351e53b04e4e9619454"
+    }
+  },
+  "protected_files_unchanged": true,
+  "test_count": 33,
+  "status": "PASS",
+  "finished_utc": "2026-10-24T08:47:20.437542+00:00"
+}

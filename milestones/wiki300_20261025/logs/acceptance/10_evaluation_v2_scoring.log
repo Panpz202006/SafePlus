@@ -1,0 +1,8 @@
+{
+  "status": "PASS_READ_ONLY",
+  "test_n": 50,
+  "exact_published_event_n": 8,
+  "human_review_queue_n": 36,
+  "source_rows": 300,
+  "warning": "EXPLORATORY_RESCORING_OF_ALREADY_OPENED_TEST__NOT_NEW_UNTOUCHED_TEST"
+}

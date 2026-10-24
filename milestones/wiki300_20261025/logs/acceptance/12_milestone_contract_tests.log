@@ -1,0 +1,13 @@
+test_legacy_account_aliases_resolve_all_matched_pairs (test_milestone_contract.MilestoneContract.test_legacy_account_aliases_resolve_all_matched_pairs) ... ok
+test_packet_cached_text_equals_original_source (test_milestone_contract.MilestoneContract.test_packet_cached_text_equals_original_source) ... ok
+test_packet_interval_and_control_have_no_invented_point (test_milestone_contract.MilestoneContract.test_packet_interval_and_control_have_no_invented_point) ... ok
+test_packet_status_never_automatically_human_gold (test_milestone_contract.MilestoneContract.test_packet_status_never_automatically_human_gold) ... ok
+test_review_html_contains_no_external_code (test_milestone_contract.MilestoneContract.test_review_html_contains_no_external_code) ... ok
+test_selection_has_exact_interval_censored_4_each (test_milestone_contract.MilestoneContract.test_selection_has_exact_interval_censored_4_each) ... ok
+test_selection_invariant_to_source_order (test_milestone_contract.MilestoneContract.test_selection_invariant_to_source_order) ... ok
+test_selection_twelve_train_unique_and_existing_queue (test_milestone_contract.MilestoneContract.test_selection_twelve_train_unique_and_existing_queue) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.173s
+
+OK

@@ -156,8 +156,7 @@ def run(bundle: Path, output: Path, split: str = 'TEST', allow_overwrite: bool =
         detected = np.asarray(input_file['detected'], dtype=np.int64)
         td = np.asarray(input_file['t_detect'], dtype=np.int64)
         ids = list(map(str, input_file['entity_id'].tolist()))
-    if not np.all(lengths == x.shape[1]):
-        raise ValueError('FROZEN_ENGINE_UNSUPPORTED: variable-length sequences')
+    length_aware = bool(np.any(lengths != x.shape[1]))
     lookup = {eid:i for i,eid in enumerate(ids)}
     splits = rows_by_id(bundle / 'split.csv')
     labels = rows_by_id(bundle / 'train_labels.csv')
@@ -183,7 +182,8 @@ def run(bundle: Path, output: Path, split: str = 'TEST', allow_overwrite: bool =
     print(f'FROZEN EXP04 | bundle={bundle} | split={split} | n={len(predict_idx)}')
     print('TRAIN behavior EM: using only train_labels, inputs, fixed split')
     params, history = exp04a.train_emission_em(
-        x=x, fraud_label=fraud_label, detected=detected, td=td, train_idx=train_idx
+        x=x, fraud_label=fraud_label, detected=detected, td=td, train_idx=train_idx,
+        **({'lengths': lengths} if length_aware else {})
     )
     scale = exp04f.estimate_global_behavior_scale(
         x=x, fraud_label=fraud_label, detected=detected, td=td, train_idx=train_idx,
@@ -216,7 +216,7 @@ def run(bundle: Path, output: Path, split: str = 'TEST', allow_overwrite: bool =
         }
         if detected[i] == 1:
             candidate, by_mode, prob = infer_for_one(
-                x[int(i)], d, params, scale, exp04a, exp04f, log_delay
+                x[int(i), :int(lengths[i])], d, params, scale, exp04a, exp04f, log_delay
             )
             final = by_mode['final']
             row.update({
@@ -243,7 +243,7 @@ def run(bundle: Path, output: Path, split: str = 'TEST', allow_overwrite: bool =
             f.write(json.dumps(r, ensure_ascii=False, allow_nan=False)+'\n')
 
     manifest = {
-        'schema_version':'1.0','task':'retrospective_onset_after_detection',
+        'schema_version':metadata.get('schema_version','1.0'),'task':'retrospective_onset_after_detection',
         'model_version':'exp04-synthetic-frozen-v1',
         'split':split,'n_split':int(len(predict_idx)),
         'n_detected_predicted':len(posterior_rows),
@@ -258,6 +258,9 @@ def run(bundle: Path, output: Path, split: str = 'TEST', allow_overwrite: bool =
         'train_labels_sha256':sha256(bundle/'train_labels.csv'),
         'split_sha256':sha256(bundle/'split.csv'),
         'prior_sha256':sha256(bundle/'delay_prior.json'),
+        'sequence_handling':'per_entity_real_lengths' if length_aware else 'unchanged_fixed_length_path',
+        'onset_supervision_for_prior':prior.get('onset_supervision', 'synthetic_or_external'),
+        'train_onset_for_prior_sha256':sha256(bundle/'train_onset_for_prior.csv') if prior['mode']=='empirical_train' else None,
         'source_code_sha256':{p.name:sha256(p) for p in (BASE_04A,BASE_04F,BASE_03Y) if p.is_file()},
         'python':platform.python_version(), 'numpy':np.__version__, 'pandas':pd.__version__,
         'warnings':warnings,

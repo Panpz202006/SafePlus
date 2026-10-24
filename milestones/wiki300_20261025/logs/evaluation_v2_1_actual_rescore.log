@@ -1,0 +1,17 @@
+{
+  "status": "PASS_READ_ONLY",
+  "test_n": 50,
+  "cohort_n": {
+    "exact_published_event": 8,
+    "exact_utc_all": 9,
+    "exact_utc_other_log": 1,
+    "exact_utc_public": 8,
+    "interval": 29
+  },
+  "original_v2_reproduced": {
+    "behavior": true,
+    "delay": true,
+    "fusion": true
+  },
+  "protected_files_unchanged": true
+}

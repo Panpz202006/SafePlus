@@ -1,0 +1,39 @@
+test_duplicate_rejected (test_evaluate_addon.TestMetrics.test_duplicate_rejected) ... ok
+test_interval_outside_distance (test_evaluate_addon.TestMetrics.test_interval_outside_distance) ... ok
+test_open_closed_boundary (test_evaluate_addon.TestMetrics.test_open_closed_boundary) ... ok
+test_utc_requires_timezone (test_evaluate_addon.TestMetrics.test_utc_requires_timezone) ... ok
+test_width_group (test_evaluate_addon.TestMetrics.test_width_group) ... ok
+test_control_must_not_receive_onset (test_evaluate_v2_1.FrozenFixture.test_control_must_not_receive_onset) ... ok
+test_current_label_change_cannot_be_silently_scored (test_evaluate_v2_1.FrozenFixture.test_current_label_change_cannot_be_silently_scored) ... ok
+test_duplicate_prediction_rejected (test_evaluate_v2_1.FrozenFixture.test_duplicate_prediction_rejected) ... ok
+test_exact_bounds_cannot_hide_an_interval (test_evaluate_v2_1.FrozenFixture.test_exact_bounds_cannot_hide_an_interval) ... ok
+test_existing_result_not_overwritten (test_evaluate_v2_1.FrozenFixture.test_existing_result_not_overwritten) ... ok
+test_incomplete_window_utc_error_retained_normalization_unavailable (test_evaluate_v2_1.FrozenFixture.test_incomplete_window_utc_error_retained_normalization_unavailable) ... ok
+test_interval_cannot_be_point_truth (test_evaluate_v2_1.FrozenFixture.test_interval_cannot_be_point_truth) ... ok
+test_noninteger_prediction_rejected (test_evaluate_v2_1.FrozenFixture.test_noninteger_prediction_rejected) ... ok
+test_normal_control_not_counted_as_correct (test_evaluate_v2_1.FrozenFixture.test_normal_control_not_counted_as_correct) ... ok
+test_one_event_has_explicit_unavailable_normalization (test_evaluate_v2_1.FrozenFixture.test_one_event_has_explicit_unavailable_normalization) ... ok
+test_open_boundary_distance_tie_does_not_become_hit (test_evaluate_v2_1.FrozenFixture.test_open_boundary_distance_tie_does_not_become_hit) ... ok
+test_output_cannot_overwrite_original_bundle (test_evaluate_v2_1.FrozenFixture.test_output_cannot_overwrite_original_bundle) ... ok
+test_read_only_source_and_predictions (test_evaluate_v2_1.FrozenFixture.test_read_only_source_and_predictions) ... ok
+test_same_account_five_methods_and_separate_types (test_evaluate_v2_1.FrozenFixture.test_same_account_five_methods_and_separate_types) ... ok
+test_unaligned_exact_utc_does_not_get_event_error (test_evaluate_v2_1.FrozenFixture.test_unaligned_exact_utc_does_not_get_event_error) ... ok
+test_wrong_event_revision_id_rejected (test_evaluate_v2_1.FrozenFixture.test_wrong_event_revision_id_rejected) ... ok
+test_contradictory_completeness_not_accepted (test_evaluate_v2_1.MetricDefinitions.test_contradictory_completeness_not_accepted) ... ok
+test_empty_summary_is_unavailable (test_evaluate_v2_1.MetricDefinitions.test_empty_summary_is_unavailable) ... ok
+test_incomplete_window_not_normalized (test_evaluate_v2_1.MetricDefinitions.test_incomplete_window_not_normalized) ... ok
+test_interval_delay_ambiguity_not_hidden (test_evaluate_v2_1.MetricDefinitions.test_interval_delay_ambiguity_not_hidden) ... ok
+test_interval_delay_exclusive_endpoint (test_evaluate_v2_1.MetricDefinitions.test_interval_delay_exclusive_endpoint) ... ok
+test_interval_upper_is_hit (test_evaluate_v2_1.MetricDefinitions.test_interval_upper_is_hit) ... ok
+test_midpoint_uses_fixed_window_and_earlier_tie (test_evaluate_v2_1.MetricDefinitions.test_midpoint_uses_fixed_window_and_earlier_tie) ... ok
+test_open_lower_is_not_hit_even_zero_distance (test_evaluate_v2_1.MetricDefinitions.test_open_lower_is_not_hit_even_zero_distance) ... ok
+test_own_event_denominator (test_evaluate_v2_1.MetricDefinitions.test_own_event_denominator) ... ok
+test_p90_linear_interpolation (test_evaluate_v2_1.MetricDefinitions.test_p90_linear_interpolation) ... ok
+test_positive_scaling_cannot_change_within_account_win (test_evaluate_v2_1.MetricDefinitions.test_positive_scaling_cannot_change_within_account_win) ... ok
+test_rate_uncertainty_not_perfect_certainty (test_evaluate_v2_1.MetricDefinitions.test_rate_uncertainty_not_perfect_certainty) ... ok
+test_zero_denominator_is_not_zero_error (test_evaluate_v2_1.MetricDefinitions.test_zero_denominator_is_not_zero_error) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 0.231s
+
+OK
