@@ -1,0 +1,31 @@
+{
+  "dataset": "SafePlus Wikipedia full account lifecycle v1",
+  "basis": "SafePlus-main canonical account-sequence contract",
+  "created_at_utc": "2026-10-25T07:58:48+00:00",
+  "stage": "raw_account_lifecycle_stage1",
+  "counts": {
+    "candidate_offset": 1500,
+    "candidate_accounts_scanned": 1500,
+    "collected_accounts": 500,
+    "public_events": 27672,
+    "public_block_actions": 515,
+    "skipped": {
+      "incomplete_public_history": 2,
+      "no_public_activity_before_td": 10
+    }
+  },
+  "observation_contract": {
+    "start": "public registration when available plus earliest retrievable public activity",
+    "end": "earliest automatically relevant public block candidate, pending human verification",
+    "post_td_events_included": false,
+    "tf_generated": false,
+    "model_ready": false
+  },
+  "next_required_stages": [
+    "human verification of first relevant block td",
+    "matched right-censored lifecycle controls",
+    "revision diff/content acquisition",
+    "causal feature extraction and temporal binning",
+    "conversion to x/lengths/detected/t_detect/t_onset/entity_id NPZ"
+  ]
+}
