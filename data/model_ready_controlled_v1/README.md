@@ -6,7 +6,7 @@ experimental condition can be validated before the next condition is added.
 
 ## Current release
 
-The current branch contains 400 sequences:
+The current branch contains 500 sequences:
 
 | Batch | Behavior after tf | Detection delay | Model entity IDs |
 | --- | --- | --- | --- |
@@ -14,6 +14,7 @@ The current branch contains 400 sequences:
 | 002 | Immediate full-strength shift | Truncated geometric, 1–8 steps | 101–200 |
 | 003 | Gradual shift beginning at tf | Fixed at 4 steps | 201–300 |
 | 004 | Gradual shift beginning at tf | Truncated geometric, 1–8 steps | 301–400 |
+| 005 | Immediate weak shift (35% signal strength) | Truncated geometric, 1–8 steps | 401–500 |
 
 Every sequence has 24 time steps, eight time-varying features, at least four
 normal-prefix steps, a known controlled onset, and an in-window detection time.
@@ -46,9 +47,10 @@ are unique across all released batches.
 
 ## Scope limitation
 
-The first four batches contain detected positive sequences. They are suitable
-for controlled onset-recovery experiments and the 2-by-2 comparison of behavior
-alignment and delay stability. They are not a standalone discrimination
+The first five batches contain detected positive sequences. They are suitable
+for controlled onset-recovery experiments, the 2-by-2 comparison of behavior
+alignment and delay stability, and a weak-signal comparison between batches 002
+and 005. They are not a standalone discrimination
 benchmark: AUPRC, AUROC, precision, recall, and F1 require negative or censored
 controls.
 
@@ -75,3 +77,6 @@ Example for batch 004:
       --delay-max 8 ^
       --geometric-p 0.25 ^
       --min-prefix 4
+
+Batch 005 uses the same aligned/random-delay condition as batch 002 but adds
+`--signal-strength 0.35` to isolate the effect of weaker behavioral evidence.

@@ -38,6 +38,7 @@ def build_batch(
     delay_max: int,
     geometric_p: float,
     behavior_mode: str,
+    signal_strength: float,
     min_prefix: int,
 ) -> dict:
     if count <= 0:
@@ -50,6 +51,8 @@ def build_batch(
         raise ValueError("behavior_mode must be aligned_step or gradual_ramp")
     if not 0 < geometric_p <= 1:
         raise ValueError("geometric_p must be in (0, 1]")
+    if signal_strength <= 0:
+        raise ValueError("signal_strength must be positive")
     policy_max_delay = delay_steps if delay_mode == "fixed" else delay_max
     if length <= min_prefix + policy_max_delay:
         raise ValueError("length is too short for the requested prefix and delay")
@@ -82,7 +85,9 @@ def build_batch(
         1 + entity_id_offset, count + 1 + entity_id_offset, dtype=np.int64
     )
 
-    signal = rng.normal(1.0, 0.10, size=features).astype(np.float32)
+    signal = (
+        signal_strength * rng.normal(1.0, 0.10, size=features)
+    ).astype(np.float32)
     entity_scale = rng.uniform(0.85, 1.15, size=count).astype(np.float32)
     for i in range(count):
         if behavior_mode == "aligned_step":
@@ -232,6 +237,7 @@ def build_batch(
             "normal_prefix_min_steps": min_prefix,
             "behavior_mode": behavior_mode,
             "behavior_change": behavior_description,
+            "signal_strength": signal_strength,
             "tf_source": "controlled_injection; not a real-world timestamp",
             "td_source": "controlled delay; not a platform observation",
             "delay_policy": {
@@ -343,6 +349,7 @@ def main() -> None:
         choices=["aligned_step", "gradual_ramp"],
         default="aligned_step",
     )
+    parser.add_argument("--signal-strength", type=float, default=1.0)
     parser.add_argument("--min-prefix", type=int, default=4)
     args = parser.parse_args()
     checks = build_batch(
@@ -359,6 +366,7 @@ def main() -> None:
         delay_max=args.delay_max,
         geometric_p=args.geometric_p,
         behavior_mode=args.behavior_mode,
+        signal_strength=args.signal_strength,
         min_prefix=args.min_prefix,
     )
     print(json.dumps(checks, ensure_ascii=False, indent=2))
