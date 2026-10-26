@@ -1,8 +1,8 @@
 # SafePlus model-ready controlled sequences v1
 
 This release contains controlled temporal sequences for testing latent onset
-recovery and delayed detection. It is organized in batches of 100 so that each
-experimental condition can be validated before the next condition is added.
+recovery and delayed detection. The initial conditions were organized in
+batches of 100; batch 012 adds a 1000-sequence stress-test condition.
 
 ## Current release
 
@@ -70,9 +70,18 @@ The cumulative entity-level split contains 700 train, 100 validation, and 200
 test sequences. The combined NPZ has been loaded through the repository's
 `SequenceDataset` and used for a finite forward/backward optimization step.
 
+## Mixed discrimination benchmark
+
+`mixed_benchmark_1000_v1/` is a separate model-ready benchmark containing 650
+normal controls, 280 detected fraud sequences, and 70 censored fraud sequences.
+It uses an exact stratified 700/100/200 entity split. True fraud status and the
+controlled onset are evaluation-only metadata and are not included in `x`.
+This benchmark is the appropriate package for discrimination and censoring
+pipeline checks; the positive-only batches remain onset-recovery panels.
+
 ## Scope limitation
 
-All ten batches contain detected positive sequences. They are suitable
+All twelve numbered batches contain detected positive sequences. They are suitable
 for controlled onset-recovery experiments, the 2-by-2 comparison of behavior
 alignment and delay stability, and a weak-signal comparison between batches 002
 and 005, plus the corresponding gradual-signal comparison between batches 004

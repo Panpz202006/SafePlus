@@ -1,0 +1,49 @@
+{
+  "dataset_name": "SafePlus mixed controlled benchmark v1",
+  "provenance": "fully controlled synthetic sequences; no real platform timestamps",
+  "seed": 20261107,
+  "entity_count": 1000,
+  "sequence_length": 24,
+  "feature_count": 8,
+  "class_protocol": {
+    "true_fraud_rate": 0.35,
+    "censoring_rate_among_true_fraud": 0.2,
+    "status_counts": {
+      "fraud_censored": 70,
+      "fraud_detected": 280,
+      "normal": 650
+    }
+  },
+  "behavior_protocol": {
+    "modes": [
+      "aligned",
+      "gradual"
+    ],
+    "assignment": "prespecified random 50/50 among true fraud entities",
+    "signal_strength": "uniform per fraud entity in [0.35, 1.0]"
+  },
+  "delay_protocol": {
+    "distribution": "truncated geometric",
+    "p": 0.25,
+    "range_steps": [
+      1,
+      8
+    ],
+    "undetected_endpoint": 23
+  },
+  "model_contract": {
+    "model_input": "model_input.npz",
+    "required_keys": [
+      "x",
+      "lengths",
+      "detected",
+      "t_detect",
+      "t_onset",
+      "entity_id"
+    ],
+    "feature_leakage_rule": "status, true fraud, tf, td phase and split are excluded from x",
+    "t_onset": "evaluation only; -1 for normal entities",
+    "detected": "observed event indicator, not identical to true fraud under censoring"
+  },
+  "scope_limit": "Controlled benchmark for pipeline and sensitivity experiments, not real-world evidence."
+}

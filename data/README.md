@@ -5,6 +5,11 @@ This directory separates redistributable benchmark assets from third-party data.
 ## Included
 
 - `processed/synthetic_demo.npz`: the repository's generated synthetic demo.
+- `model_ready_controlled_v1/combined_1000`: frozen positive-only controlled
+  onset-recovery release.
+- `model_ready_controlled_v1/mixed_benchmark_1000_v1`: controlled benchmark
+  with normal, detected-fraud, and censored-fraud sequences. This is synthetic
+  experimental data and is not a real-platform dataset.
 - `manifests/safe_twitter.json`: audited statistics, time semantics and source
   checksums for the locally adapted SAFE-Twitter split.
 - `manifests/safe_wiki.json`: the equivalent audit record for SAFE-Wiki.

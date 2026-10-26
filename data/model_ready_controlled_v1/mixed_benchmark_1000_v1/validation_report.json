@@ -1,0 +1,41 @@
+{
+  "entity_count": 1000,
+  "unique_entity_count": 1000,
+  "timeline_row_count": 24000,
+  "array_shape": [
+    1000,
+    24,
+    8
+  ],
+  "status_counts": {
+    "fraud_censored": 70,
+    "fraud_detected": 280,
+    "normal": 650
+  },
+  "split_status_counts": {
+    "train": {
+      "fraud_censored": 49,
+      "fraud_detected": 196,
+      "normal": 455
+    },
+    "val": {
+      "fraud_censored": 7,
+      "fraud_detected": 28,
+      "normal": 65
+    },
+    "test": {
+      "fraud_censored": 14,
+      "fraud_detected": 56,
+      "normal": 130
+    }
+  },
+  "true_fraud_prevalence": 0.35,
+  "censoring_rate_among_true_fraud": 0.2,
+  "all_finite_features": true,
+  "normal_has_no_tf": true,
+  "fraud_has_valid_tf": true,
+  "detected_has_tf_before_td": true,
+  "undetected_uses_horizon": true,
+  "all_td_within_horizon": true,
+  "all_required_checks_pass": true
+}
