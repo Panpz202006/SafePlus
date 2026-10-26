@@ -6,7 +6,7 @@ experimental condition can be validated before the next condition is added.
 
 ## Current release
 
-The current branch contains 800 sequences:
+The current branch contains 1000 sequences:
 
 | Batch | Behavior after tf | Detection delay | Model entity IDs |
 | --- | --- | --- | --- |
@@ -18,6 +18,8 @@ The current branch contains 800 sequences:
 | 006 | Gradual weak shift (35% signal strength) | Truncated geometric, 1–8 steps | 501–600 |
 | 007 | Immediate weak shift (35% signal strength) | Fixed at 4 steps | 601–700 |
 | 008 | Gradual weak shift (35% signal strength) | Fixed at 4 steps | 701–800 |
+| 009 | Immediate heterogeneous shift (35%–100% per entity) | Truncated geometric, 1–8 steps | 801–900 |
+| 010 | Gradual heterogeneous shift (35%–100% per entity) | Truncated geometric, 1–8 steps | 901–1000 |
 
 Every sequence has 24 time steps, eight time-varying features, at least four
 normal-prefix steps, a known controlled onset, and an in-window detection time.
@@ -48,13 +50,29 @@ entity_id.
 The files have been loaded with the repository's SequenceDataset. Entity IDs
 are unique across all released batches.
 
+## Combined release
+
+`combined_1000/` contains the complete model-ready release:
+
+- `model_input_all.npz`: arrays with shape 1000 × 24 × 8;
+- `sequence_index_all.csv`: one row per entity with protocol and provenance;
+- `timeline_evaluation_only_all.csv`: 24000 step-level evaluation rows;
+- `batch_summary.csv`: the ten prespecified experimental conditions;
+- `validation_report.json`: release-level integrity checks;
+- `checksums_sha256.json`: hashes for the combined release files.
+
+The cumulative entity-level split contains 700 train, 100 validation, and 200
+test sequences. The combined NPZ has been loaded through the repository's
+`SequenceDataset` and used for a finite forward/backward optimization step.
+
 ## Scope limitation
 
-The first eight batches contain detected positive sequences. They are suitable
+All ten batches contain detected positive sequences. They are suitable
 for controlled onset-recovery experiments, the 2-by-2 comparison of behavior
 alignment and delay stability, and a weak-signal comparison between batches 002
 and 005, plus the corresponding gradual-signal comparison between batches 004
-and 006. They are not a standalone discrimination
+and 006. Batches 009 and 010 add prespecified per-entity signal heterogeneity.
+They are not a standalone discrimination
 benchmark: AUPRC, AUROC, precision, recall, and F1 require negative or censored
 controls.
 
@@ -90,3 +108,7 @@ Batch 007 applies the same 35% signal strength to the aligned/fixed-delay
 condition from batch 001.
 Batch 008 applies the same 35% signal strength to the gradual/fixed-delay
 condition from batch 003, completing the weak-signal 2-by-2 matrix.
+Batch 009 and batch 010 use `--signal-strength-min 0.35` and
+`--signal-strength-max 1.0` with aligned and gradual behavior, respectively.
+Run `python scripts/build_combined_release.py` after all ten batch directories
+are present to reproduce `combined_1000/`.

@@ -1,0 +1,25 @@
+{
+  "batch_count": 10,
+  "entity_count": 1000,
+  "unique_entity_count": 1000,
+  "entity_id_min": 1,
+  "entity_id_max": 1000,
+  "timeline_row_count": 24000,
+  "feature_shape": [
+    1000,
+    24,
+    8
+  ],
+  "split_counts": {
+    "train": 700,
+    "val": 100,
+    "test": 200
+  },
+  "all_finite_features": true,
+  "all_have_normal_prefix": true,
+  "all_tf_before_td": true,
+  "all_td_within_horizon": true,
+  "all_detected": true,
+  "all_batch_checks_pass": true,
+  "all_required_checks_pass": true
+}

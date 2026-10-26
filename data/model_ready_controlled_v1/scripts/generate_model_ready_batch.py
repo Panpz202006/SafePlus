@@ -39,6 +39,8 @@ def build_batch(
     geometric_p: float,
     behavior_mode: str,
     signal_strength: float,
+    signal_strength_min: float | None,
+    signal_strength_max: float | None,
     min_prefix: int,
 ) -> dict:
     if count <= 0:
@@ -53,6 +55,13 @@ def build_batch(
         raise ValueError("geometric_p must be in (0, 1]")
     if signal_strength <= 0:
         raise ValueError("signal_strength must be positive")
+    if (signal_strength_min is None) != (signal_strength_max is None):
+        raise ValueError("signal_strength_min and signal_strength_max must be set together")
+    if signal_strength_min is not None:
+        if signal_strength_min <= 0 or signal_strength_max <= 0:
+            raise ValueError("signal strength bounds must be positive")
+        if signal_strength_min > signal_strength_max:
+            raise ValueError("signal_strength_min must not exceed signal_strength_max")
     policy_max_delay = delay_steps if delay_mode == "fixed" else delay_max
     if length <= min_prefix + policy_max_delay:
         raise ValueError("length is too short for the requested prefix and delay")
@@ -85,18 +94,32 @@ def build_batch(
         1 + entity_id_offset, count + 1 + entity_id_offset, dtype=np.int64
     )
 
-    signal = (
-        signal_strength * rng.normal(1.0, 0.10, size=features)
-    ).astype(np.float32)
+    signal = rng.normal(1.0, 0.10, size=features).astype(np.float32)
     entity_scale = rng.uniform(0.85, 1.15, size=count).astype(np.float32)
+    if signal_strength_min is None:
+        entity_signal_strength = np.full(count, signal_strength, dtype=np.float32)
+        signal_strength_spec: float | dict = signal_strength
+    else:
+        entity_signal_strength = rng.uniform(
+            signal_strength_min, signal_strength_max, size=count
+        ).astype(np.float32)
+        signal_strength_spec = {
+            "mode": "uniform_per_entity",
+            "minimum": signal_strength_min,
+            "maximum": signal_strength_max,
+        }
     for i in range(count):
         if behavior_mode == "aligned_step":
-            x[i, t_onset[i] :, :] += entity_scale[i] * signal
+            x[i, t_onset[i] :, :] += (
+                entity_scale[i] * entity_signal_strength[i] * signal
+            )
         else:
             ramp = np.linspace(
                 0.15, 1.0, length - t_onset[i], dtype=np.float32
             )[:, None]
-            x[i, t_onset[i] :, :] += entity_scale[i] * ramp * signal
+            x[i, t_onset[i] :, :] += (
+                entity_scale[i] * entity_signal_strength[i] * ramp * signal
+            )
 
     behavior_description = (
         "additive feature shift begins at full strength exactly at tf"
@@ -148,6 +171,7 @@ def build_batch(
                 "censored": 0,
                 "behavior_change_start_index": int(t_onset[i]),
                 "alignment_condition": alignment_condition,
+                "signal_strength": float(entity_signal_strength[i]),
                 "sequence_valid": 1,
                 "validation_notes": "normal prefix present; tf<td; td within horizon",
             }
@@ -202,6 +226,9 @@ def build_batch(
         "delay_min": int(entity_delays.min()),
         "delay_max": int(entity_delays.max()),
         "delay_mean": float(entity_delays.mean()),
+        "signal_strength_min": float(entity_signal_strength.min()),
+        "signal_strength_max": float(entity_signal_strength.max()),
+        "signal_strength_mean": float(entity_signal_strength.mean()),
         "pre_tf_feature_mean": float(
             np.concatenate([x[i, : t_onset[i], :].reshape(-1) for i in range(count)]).mean()
         ),
@@ -237,7 +264,7 @@ def build_batch(
             "normal_prefix_min_steps": min_prefix,
             "behavior_mode": behavior_mode,
             "behavior_change": behavior_description,
-            "signal_strength": signal_strength,
+            "signal_strength": signal_strength_spec,
             "tf_source": "controlled_injection; not a real-world timestamp",
             "td_source": "controlled delay; not a platform observation",
             "delay_policy": {
@@ -299,7 +326,7 @@ timestamp. The source is recorded in sequence_index.csv and manifest.json.
 ## Purpose
 
 This condition uses behavior mode {behavior_mode}: {behavior_description}. The
-delay mechanism is declared above. Later 100-sequence batches should independently vary
+signal strength specification is {signal_strength_spec}. The delay mechanism is declared above. Later 100-sequence batches should independently vary
 change alignment, delay distribution, signal strength, and censoring. Samples
 must not be selected according to model scores.
 
@@ -350,6 +377,8 @@ def main() -> None:
         default="aligned_step",
     )
     parser.add_argument("--signal-strength", type=float, default=1.0)
+    parser.add_argument("--signal-strength-min", type=float)
+    parser.add_argument("--signal-strength-max", type=float)
     parser.add_argument("--min-prefix", type=int, default=4)
     args = parser.parse_args()
     checks = build_batch(
@@ -367,6 +396,8 @@ def main() -> None:
         geometric_p=args.geometric_p,
         behavior_mode=args.behavior_mode,
         signal_strength=args.signal_strength,
+        signal_strength_min=args.signal_strength_min,
+        signal_strength_max=args.signal_strength_max,
         min_prefix=args.min_prefix,
     )
     print(json.dumps(checks, ensure_ascii=False, indent=2))

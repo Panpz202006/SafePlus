@@ -1,0 +1,29 @@
+{
+  "entity_count": 100,
+  "unique_entity_count": 100,
+  "timeline_row_count": 2400,
+  "all_finite_features": true,
+  "all_have_normal_prefix": true,
+  "all_tf_before_td": true,
+  "all_td_within_horizon": true,
+  "all_delay_within_policy": true,
+  "all_detected": true,
+  "split_counts": {
+    "train": 70,
+    "val": 10,
+    "test": 20
+  },
+  "tf_min": 4,
+  "tf_max": 15,
+  "td_min": 5,
+  "td_max": 23,
+  "delay_min": 1,
+  "delay_max": 8,
+  "delay_mean": 3.5,
+  "signal_strength_min": 0.3525690734386444,
+  "signal_strength_max": 0.9992839694023132,
+  "signal_strength_mean": 0.6848040819168091,
+  "pre_tf_feature_mean": 0.011149601079523563,
+  "post_tf_feature_mean": 0.3823152184486389,
+  "all_required_checks_pass": true
+}

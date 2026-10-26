@@ -1,0 +1,29 @@
+{
+  "dataset_name": "SafePlus model-ready controlled sequences v1",
+  "release_entity_count": 1000,
+  "batch_count": 10,
+  "canonical_npz_keys": [
+    "x",
+    "lengths",
+    "detected",
+    "t_detect",
+    "t_onset",
+    "entity_id"
+  ],
+  "tf_provenance": "controlled injection; not a real platform timestamp",
+  "td_provenance": "prespecified controlled delay; not a platform detection or ban timestamp",
+  "selection_policy": "generated from prespecified protocols; not selected by model score",
+  "scope_limit": "positive-only controlled onset-recovery release; not a standalone AUPRC/AUROC benchmark",
+  "batch_names": [
+    "batch_001_aligned_fixed_delay_100",
+    "batch_002_aligned_random_delay_100",
+    "batch_003_gradual_fixed_delay_100",
+    "batch_004_gradual_random_delay_100",
+    "batch_005_aligned_weak_random_delay_100",
+    "batch_006_gradual_weak_random_delay_100",
+    "batch_007_aligned_weak_fixed_delay_100",
+    "batch_008_gradual_weak_fixed_delay_100",
+    "batch_009_aligned_mixed_strength_random_delay_100",
+    "batch_010_gradual_mixed_strength_random_delay_100"
+  ]
+}

@@ -1,0 +1,11 @@
+﻿batch_id,entity_count,model_entity_id_min,model_entity_id_max,behavior_mode,signal_strength_spec,delay_policy_id,delay_mean,tf_source,td_source,all_required_checks_pass
+batch_001_aligned_fixed_delay_100,100,1,100,aligned_step,1.0,fixed_delay_4_v1,4.0,controlled_injection; not a real-world timestamp,controlled fixed delay; not a platform observation,True
+batch_002_aligned_random_delay_100,100,101,200,aligned_step,1.0,truncated_geometric_p0.25_max8_v1,3.91,controlled_injection; not a real-world timestamp,controlled delay; not a platform observation,True
+batch_003_gradual_fixed_delay_100,100,201,300,gradual_ramp,1.0,fixed_delay_4_v1,4.0,controlled_injection; not a real-world timestamp,controlled delay; not a platform observation,True
+batch_004_gradual_random_delay_100,100,301,400,gradual_ramp,1.0,truncated_geometric_p0.25_max8_v1,3.46,controlled_injection; not a real-world timestamp,controlled delay; not a platform observation,True
+batch_005_aligned_weak_random_delay_100,100,401,500,aligned_step,0.35,truncated_geometric_p0.25_max8_v1,3.89,controlled_injection; not a real-world timestamp,controlled delay; not a platform observation,True
+batch_006_gradual_weak_random_delay_100,100,501,600,gradual_ramp,0.35,truncated_geometric_p0.25_max8_v1,3.65,controlled_injection; not a real-world timestamp,controlled delay; not a platform observation,True
+batch_007_aligned_weak_fixed_delay_100,100,601,700,aligned_step,0.35,fixed_delay_4_v1,4.0,controlled_injection; not a real-world timestamp,controlled delay; not a platform observation,True
+batch_008_gradual_weak_fixed_delay_100,100,701,800,gradual_ramp,0.35,fixed_delay_4_v1,4.0,controlled_injection; not a real-world timestamp,controlled delay; not a platform observation,True
+batch_009_aligned_mixed_strength_random_delay_100,100,801,900,aligned_step,"{""maximum"": 1.0, ""minimum"": 0.35, ""mode"": ""uniform_per_entity""}",truncated_geometric_p0.25_max8_v1,3.63,controlled_injection; not a real-world timestamp,controlled delay; not a platform observation,True
+batch_010_gradual_mixed_strength_random_delay_100,100,901,1000,gradual_ramp,"{""maximum"": 1.0, ""minimum"": 0.35, ""mode"": ""uniform_per_entity""}",truncated_geometric_p0.25_max8_v1,3.5,controlled_injection; not a real-world timestamp,controlled delay; not a platform observation,True
