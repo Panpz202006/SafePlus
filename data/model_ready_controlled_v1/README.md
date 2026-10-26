@@ -6,7 +6,7 @@ experimental condition can be validated before the next condition is added.
 
 ## Current release
 
-The current branch contains 700 sequences:
+The current branch contains 800 sequences:
 
 | Batch | Behavior after tf | Detection delay | Model entity IDs |
 | --- | --- | --- | --- |
@@ -17,6 +17,7 @@ The current branch contains 700 sequences:
 | 005 | Immediate weak shift (35% signal strength) | Truncated geometric, 1–8 steps | 401–500 |
 | 006 | Gradual weak shift (35% signal strength) | Truncated geometric, 1–8 steps | 501–600 |
 | 007 | Immediate weak shift (35% signal strength) | Fixed at 4 steps | 601–700 |
+| 008 | Gradual weak shift (35% signal strength) | Fixed at 4 steps | 701–800 |
 
 Every sequence has 24 time steps, eight time-varying features, at least four
 normal-prefix steps, a known controlled onset, and an in-window detection time.
@@ -49,7 +50,7 @@ are unique across all released batches.
 
 ## Scope limitation
 
-The first seven batches contain detected positive sequences. They are suitable
+The first eight batches contain detected positive sequences. They are suitable
 for controlled onset-recovery experiments, the 2-by-2 comparison of behavior
 alignment and delay stability, and a weak-signal comparison between batches 002
 and 005, plus the corresponding gradual-signal comparison between batches 004
@@ -87,3 +88,5 @@ Batch 006 applies the same 35% signal strength to the gradual/random-delay
 condition from batch 004.
 Batch 007 applies the same 35% signal strength to the aligned/fixed-delay
 condition from batch 001.
+Batch 008 applies the same 35% signal strength to the gradual/fixed-delay
+condition from batch 003, completing the weak-signal 2-by-2 matrix.
