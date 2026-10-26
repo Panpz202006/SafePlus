@@ -1,0 +1,39 @@
+{
+  "dataset_name": "SafePlus controlled onset batch_004_gradual_random_delay_100",
+  "batch_id": "batch_004_gradual_random_delay_100",
+  "created_for": "latent-onset and delayed-detection controlled experiment",
+  "generation": {
+    "generator": "generate_model_ready_batch.py",
+    "seed": 20261029,
+    "entity_count": 100,
+    "sequence_length": 24,
+    "feature_count": 8,
+    "normal_prefix_min_steps": 4,
+    "behavior_mode": "gradual_ramp",
+    "behavior_change": "additive feature shift begins weakly at tf and increases gradually",
+    "tf_source": "controlled_injection; not a real-world timestamp",
+    "td_source": "controlled delay; not a platform observation",
+    "delay_policy": {
+      "id": "truncated_geometric_p0.25_max8_v1",
+      "mode": "truncated_geometric",
+      "description": "geometric(p=0.25) delay clipped to 1..8 steps",
+      "fixed_steps": null,
+      "maximum_steps": 8,
+      "geometric_p": 0.25
+    },
+    "censoring_rate": 0.0
+  },
+  "model_contract": {
+    "required_npz_keys": [
+      "x",
+      "lengths",
+      "detected",
+      "t_detect",
+      "t_onset",
+      "entity_id"
+    ],
+    "t_onset_use": "evaluation only; must not enter model features",
+    "timeline_phase_columns": "evaluation only; must not enter model features"
+  },
+  "scope_limit": "This positive-only batch is suitable for controlled onset-recovery checks. It is not sufficient by itself for AUPRC, AUROC, precision, recall, or F1; those require negative or censored controls."
+}
