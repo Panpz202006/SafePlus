@@ -6,7 +6,9 @@ experimental condition can be validated before the next condition is added.
 
 ## Current release
 
-The current branch contains 1000 sequences:
+The current branch contains 1100 batch-level sequences. The first 1000 are
+also frozen as the `combined_1000/` release; batch 011 is a subsequent
+prespecified extension and is not silently folded into that frozen release.
 
 | Batch | Behavior after tf | Detection delay | Model entity IDs |
 | --- | --- | --- | --- |
@@ -20,6 +22,7 @@ The current branch contains 1000 sequences:
 | 008 | Gradual weak shift (35% signal strength) | Fixed at 4 steps | 701–800 |
 | 009 | Immediate heterogeneous shift (35%–100% per entity) | Truncated geometric, 1–8 steps | 801–900 |
 | 010 | Gradual heterogeneous shift (35%–100% per entity) | Truncated geometric, 1–8 steps | 901–1000 |
+| 011 | Immediate heterogeneous shift (35%–100% per entity) | Fixed at 4 steps | 1001–1100 |
 
 Every sequence has 24 time steps, eight time-varying features, at least four
 normal-prefix steps, a known controlled onset, and an in-window detection time.
@@ -72,6 +75,9 @@ for controlled onset-recovery experiments, the 2-by-2 comparison of behavior
 alignment and delay stability, and a weak-signal comparison between batches 002
 and 005, plus the corresponding gradual-signal comparison between batches 004
 and 006. Batches 009 and 010 add prespecified per-entity signal heterogeneity.
+Batch 011 holds the heterogeneous immediate-shift condition fixed while
+replacing the random delay used by batch 009 with a four-step delay, enabling
+a single-factor delay-policy comparison.
 They are not a standalone discrimination
 benchmark: AUPRC, AUROC, precision, recall, and F1 require negative or censored
 controls.
@@ -110,5 +116,7 @@ Batch 008 applies the same 35% signal strength to the gradual/fixed-delay
 condition from batch 003, completing the weak-signal 2-by-2 matrix.
 Batch 009 and batch 010 use `--signal-strength-min 0.35` and
 `--signal-strength-max 1.0` with aligned and gradual behavior, respectively.
-Run `python scripts/build_combined_release.py` after all ten batch directories
-are present to reproduce `combined_1000/`.
+Run `python scripts/build_combined_release.py` after the first ten batch
+directories are present to reproduce the frozen `combined_1000/` release.
+Batch 011 is intentionally kept separate until a new cumulative release name
+and protocol are declared.
