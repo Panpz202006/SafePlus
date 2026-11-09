@@ -1,0 +1,11 @@
+{
+  "reviewer_id": "R1",
+  "reviewed_at": "2026-11-09T14:44:14+00:00",
+  "total": 300,
+  "decisions": {
+    "R1_PASS_B": 200,
+    "R1_PASS_CONTROL_SCREENED": 100
+  },
+  "rejected_sample_ids": [],
+  "scope": "Evidence-led first review of package identity, timeline, exact affected version, t_f, proxy t_d, and control eligibility."
+}

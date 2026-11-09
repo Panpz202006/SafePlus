@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-11-09T14:43:40+00:00",
+  "status": "PASS",
+  "checks": {
+    "sample_count_is_300": true,
+    "malicious_count_is_200": true,
+    "normal_count_is_100": true,
+    "sample_id_unique": true,
+    "package_unique": true,
+    "malicious_tf_before_td": true,
+    "malicious_two_normal_prefixes": true,
+    "normal_tf_td_null": true,
+    "normal_three_timeline_rows": true,
+    "every_sample_has_timeline": true,
+    "every_sample_has_evidence": true
+  },
+  "counts": {
+    "samples": 300,
+    "timeline": 42669,
+    "evidence": 692
+  },
+  "important_limitations": [
+    "All rows remain pending manual final review.",
+    "Only one malicious PyPI sample currently passes the strict t_f evidence rule.",
+    "Most malicious samples belong to two Shai-Hulud waves.",
+    "Public-advisory proxy t_d is not the same as official registry removal time."
+  ]
+}

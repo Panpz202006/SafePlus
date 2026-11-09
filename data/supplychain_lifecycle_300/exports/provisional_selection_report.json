@@ -1,0 +1,20 @@
+{
+  "selection_status": "provisional_pending_manual_final_review",
+  "selection_rule": "include all non-Shai-Hulud campaigns, then deterministic SHA256 selection from Shai-Hulud candidates",
+  "malicious": 200,
+  "normal": 100,
+  "campaigns": {
+    "coa-rc-account-takeover-2021": 2,
+    "eslint-account-takeover-2018": 2,
+    "event-stream-flatmap-2018": 1,
+    "shai-hulud-wave-1-2025-09": 63,
+    "shai-hulud-wave-2-2025-11": 129,
+    "solana-web3-publisher-compromise-2024": 1,
+    "ua-parser-js-account-takeover-2021": 1,
+    "ultralytics-release-artifact-injection-2024": 1
+  },
+  "malicious_ecosystems": {
+    "npm": 199,
+    "pypi": 1
+  }
+}

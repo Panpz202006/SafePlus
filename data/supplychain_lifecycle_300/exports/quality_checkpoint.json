@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-11-09T14:30:25+00:00",
+  "malicious_B_pending_manual": 211,
+  "malicious_distinct_packages": 211,
+  "malicious_time_order_violations": 0,
+  "malicious_prefix_violations": 0,
+  "normal_controls_pending_manual": 100,
+  "normal_controls_with_tf_or_td": 0,
+  "normal_controls_under_three_versions": 0,
+  "timeline_rows": 60738,
+  "evidence_rows": 1288,
+  "campaign_count_current": 8,
+  "pypi_malicious_current": 1
+}

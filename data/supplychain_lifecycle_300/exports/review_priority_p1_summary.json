@@ -1,0 +1,14 @@
+{
+  "reviewer_id": "R2-P1",
+  "reviewed_at": "2026-11-09T17:23:22+00:00",
+  "total": 15,
+  "decisions": {
+    "P1_KEEP_THIN_HISTORY_VERIFIED": 14,
+    "P1_KEEP_ARCHIVAL_DEPENDENCY": 1
+  },
+  "rejected_sample_ids": [],
+  "archival_dependency_sample_ids": [
+    "SC-M-0187"
+  ],
+  "conclusion": "The two-version normal prefixes are intrinsic to the package histories rather than collection truncation."
+}

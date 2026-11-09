@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-11-09T19:04:03+00:00",
+  "p2_total": 107,
+  "p2_decisions": {
+    "P2_KEEP_DETECTION_EVIDENCE_ONLY": 107
+  },
+  "control_total": 100,
+  "control_decisions": {
+    "CONTROL_KEEP_SCREENED": 100
+  },
+  "included_total": 300,
+  "excluded_total": 0,
+  "split_counts": {
+    "test_label_0": 14,
+    "test_label_1": 129,
+    "train_label_0": 68,
+    "train_label_1": 49,
+    "validation_label_0": 18,
+    "validation_label_1": 22
+  },
+  "test_campaigns": [
+    "shai-hulud-wave-2-2025-11"
+  ],
+  "limitations": [
+    "Malicious t_d values remain public-advisory proxies rather than official platform removal times.",
+    "Normal controls are screened controls, not proofs of absolute historical safety.",
+    "The outer test isolates Shai-Hulud wave 2; train and validation may share non-test campaigns."
+  ]
+}
