@@ -1,0 +1,34 @@
+\section{Motivation and Scope}
+Fraud occurrence and platform intervention are different events. A user may
+commit fraud before the platform accumulates sufficient evidence to suspend
+the account. Learning suspension time as though it were fraud onset therefore
+mixes user behavior with the platform's detection mechanism.
+
+SAFE~\cite{zheng2019safe} combines recurrent sequence modeling with positive
+hazard outputs and a monotonically decreasing survival score. Its revised
+objective rewards event probability accumulated before an observed suspension,
+rather than concentrating event probability at suspension time. This supports
+early flagging, but does not explicitly identify when fraud began or how long
+the platform took to detect it. Moreover, absence of suspension is not evidence
+that fraud has not occurred.
+
+The supplied conceptual note~\cite{smola2022note} proposes separate hazards
+for latent fraud occurrence and subsequent detection, together with latent
+variable inference. We use that proposal as the starting point of SAFEPlus;
+the two-process idea itself is prior conceptual material, not a new
+contribution claimed here. Attention, hierarchical representations, and future
+distillation described in that note are deferred while the likelihood and its
+limitations are examined.
+
+\paragraph{Working research question.}
+Under which assumptions can delayed detection records support useful
+inference about fraud onset, and when does explicitly modeling detection
+delay improve early warning relative to SAFE?
+
+\paragraph{Current scope.}
+This draft contains a candidate likelihood, a finite-grid implementation
+specification, and an evaluation plan. It reports an exploratory SAFE baseline rerun. A potential
+submission contribution must be established through a broader literature
+review, explicit identification assumptions, and evidence of reliable
+inference or improved decisions. Replacing a GRU with attention alone is not
+the present research objective.

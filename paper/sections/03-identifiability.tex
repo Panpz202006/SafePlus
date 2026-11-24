@@ -1,0 +1,36 @@
+\section{What Can Be Identified?}
+Accurate prediction of detection does not by itself establish accurate
+recovery of fraud onset. The following restricted example already exhibits
+ambiguity.
+
+\begin{proposition}
+Suppose $T_f\sim\mathrm{Exp}(\alpha)$ and the independent detection delay
+$L=T_d-T_f\sim\mathrm{Exp}(\beta)$, with positive unequal rates. The
+distribution of $T_d$ alone cannot distinguish $(\alpha,\beta)$ from
+$(\beta,\alpha)$.
+\end{proposition}
+\begin{proof}
+The convolution density is
+\begin{equation}
+ p_d(t)=\frac{\alpha\beta}{\beta-\alpha}
+       \left(e^{-\alpha t}-e^{-\beta t}\right).
+\end{equation}
+Exchanging the rates changes the signs of both the denominator and the
+parenthesized difference, leaving the density unchanged. Detection survival
+is also unchanged, so administrative right-censoring cannot resolve the
+ambiguity. The mean fraud onset, $1/\alpha$, generally changes.
+\end{proof}
+
+This is a counterexample, not a general identification theorem. It shows
+that detection-time fit alone is insufficient even in a simple submodel.
+Flexible neural hazards can introduce further ambiguity. Restricting a
+hazard or regularizing parameters selects solutions but does not establish
+that the selected onset corresponds to the true process.
+
+Possible additional information includes an audited subset with onset labels
+or intervals, externally estimated detection delays, or covariates with
+justified effects on only one process. Each route requires explicit
+assumptions and sensitivity analysis. We will first compare unconstrained
+estimation with known-delay and partially audited settings. A meaningful
+outcome may be calibrated onset intervals or sensitivity bounds rather than
+point identification.

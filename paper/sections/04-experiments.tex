@@ -1,0 +1,91 @@
+\section{Evaluation}
+\subsection{Exploratory SAFE baseline rerun}
+We reran SAFE on the bundled Twitter and Wiki splits using one seed
+and TensorFlow 2.12 in compatibility mode. The cumulative-hazard loss
+was evaluated with an algebraically equivalent stable expression
+after the original expression overflowed on Twitter. Model updates
+used training data. Checkpoint and threshold selection maximized mean
+validation accuracy over prefixes 1--5. Validation and test inference
+received only the first five feature vectors per account. All test
+records were scored, including remainder batches.
+
+\paragraph{Split audit.}
+We preserved the test splits and removed records from earlier splits
+when their full feature sequences matched another split, giving test
+priority over validation and validation priority over training.
+On Twitter, this removed 64 training and 15 validation records,
+leaving 3,806 training, 541 validation, and 1,114 test records.
+Wiki had no exact full-sequence matches across splits and retained
+1,231 training, 175 validation, and 353 test records. After filtering,
+neither dataset had exact full-sequence matches across splits.
+Exact matches are a feature-level check. Sparse sequences may match
+across different accounts, and the bundled arrays lack account IDs and
+source timestamps for verifying account separation and feature availability.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrr}
+\hline
+Dataset & Run & Prec. & Recall & F1 & Acc. \\
+\hline
+Twitter & Published & 82.0 & 55.7 & 65.4 & 71.8 \\
+        & Audited rerun & 71.8 & 60.0 & 64.8 & 67.9 \\
+Wiki    & Published & 71.1 & 88.0 & 78.7 & 76.4 \\
+        & Audited rerun & 69.7 & 89.0 & 78.2 & 75.5 \\
+\hline
+\end{tabular}
+\caption{SAFE performance (\%) averaged over prefixes 1--5.
+The published study reports ten runs. The audited rerun uses one
+seed per dataset.}
+\label{tab:safe-audited-rerun}
+\end{table}
+
+\paragraph{Results and limitations.}
+The published values are from Table~1 of \cite{zheng2019safe}.
+In Table~\ref{tab:safe-audited-rerun}, local F1 was within 0.6
+percentage points of the published score on both datasets. Twitter
+precision remained 10.2 points below the published value.
+The rerun changed overlap handling, batching, and the validation
+window together. The legacy test results had been inspected before
+these changes, so the rerun is exploratory. A confirmatory evaluation
+requires a fresh account-disjoint holdout, verifiable feature
+timestamps, and a protocol fixed before test evaluation.
+
+\subsection{Planned SAFEPlus evaluation}
+\paragraph{Stage 1: likelihood verification.}
+Enumerate short sequences to compare Equations~\ref{eq:discrete-detected}
+and~\ref{eq:discrete-censored} against the linear-time recurrence. Check
+normalization, posterior sums, gradient calculations, variable sequence
+lengths, and censoring boundaries. Generate an explicit detection observation
+indicator separately from latent fraud status.
+
+\paragraph{Stage 2: synthetic recovery.}
+Generate known onset and delay distributions, then hide onset during fitting.
+Vary delay length, censoring, sample size, and the fraction of audited onset
+labels. Include the rate-swapping example as a deliberate failure case.
+Compare no delay information, a known delay process, and partial onset
+supervision across multiple initializations. Report held-out detection
+log-likelihood separately from onset error, posterior interval coverage,
+undetected-fraud calibration, and parameter sensitivity. Strong detection fit
+with poor onset recovery is an important diagnostic outcome.
+
+\paragraph{Stage 3: controlled comparison with SAFE.}
+Establish the original data and loss conventions before porting the legacy
+implementation to a current framework. Compare SAFE, a standard detection-time
+survival model, and the proposed joint model under matched causal encoders,
+splits, and tuning budgets. Add a supervised-onset oracle only in synthetic
+experiments as a reference. Introduce an onset-dependent delay model only
+after the restricted model is validated.
+
+\paragraph{Real-data audit and metrics.}
+Determine whether timestamps denote observations, edits, suspensions, or
+intervals between status checks. Audit label semantics, censoring, padding,
+and train/validation/test separation. Select alert thresholds on validation
+data only. Report prefix-based precision--recall performance, false alerts,
+and lead time relative to observed suspension, with repeated-run uncertainty.
+Where chronological splits are possible, prevent future account or platform
+information from entering training features. Without independently verified
+onset labels, earlier alerts than suspension do not establish accurate fraud
+onset recovery or anticipation before fraud occurs.

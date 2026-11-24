@@ -1,0 +1,28 @@
+\section{Limitations and Next Steps}
+The initial formulation assumes a single irreversible fraud onset, reliable
+detection labels, and an observation mechanism compatible with the stated
+censoring model. Platform policies may change, suspicious accounts may be
+monitored more intensely, and suspensions may be noisy. The current
+conditional treatment of behavioral covariates also needs an explicit audit.
+These issues affect interpretation of the hazards and inferred onset times.
+
+Before a submission is defensible, the draft needs a broader related-work
+review on delayed feedback, latent event times, multi-state survival models,
+and partial supervision. The proposed likelihood must be distinguished from
+existing models and from the supplied conceptual note. The origin,
+publication status, and appropriate attribution of that note must be
+confirmed before submission. Its bibliography entry is provisional.
+
+\paragraph{Potential impact.}
+Fraud-risk estimates can generate harmful false accusations. Evaluation
+should quantify false positives and calibration, examine subgroup effects
+where ethically and statistically appropriate, and treat inferred onset as
+uncertain model output. A research score alone should not be interpreted as
+evidence sufficient for automatic punitive action.
+
+\paragraph{Working conclusion.}
+Separating occurrence from detection gives an explicit account of hidden
+fraud among undetected users. Whether it yields reliable onset inference or
+better early warning remains an empirical and statistical question. The
+immediate goal is to determine what can be recovered under controlled delay
+and supervision assumptions before expanding the architecture.

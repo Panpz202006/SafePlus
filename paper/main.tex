@@ -1,0 +1,47 @@
+\documentclass{article}
+\pdfpagewidth=8.5in
+\pdfpageheight=11in
+\usepackage{ijcai27}
+\usepackage{times}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[small]{caption}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[switch]{lineno}
+\linenumbers
+\urlstyle{same}
+\newtheorem{proposition}{Proposition}
+\newcommand{\Hist}{\mathcal{H}}
+\newcommand{\Loss}{\mathcal{L}}
+\pdfinfo{
+/TemplateVersion (IJCAI.2027.0)
+}
+\title{SAFEPlus: Separating Fraud Occurrence from Delayed Detection}
+\author{Anonymous Authors}
+\begin{document}
+\maketitle
+\begin{abstract}
+Platforms typically record when an account is suspended rather than when
+fraud first occurs. SAFE addresses this mismatch through a survival-based
+early-detection objective, but does not explicitly model the delay between
+fraud occurrence and platform detection. This research note develops a
+candidate SAFEPlus formulation with a latent fraud onset process and a
+subsequent detection process. Marginalizing onset time gives an observed-data
+likelihood that distinguishes accounts without fraud from accounts with
+undetected fraud at the observation boundary. We derive a discrete-time
+formulation with exact marginalization and give an elementary example of
+non-identifiability from detection times alone. We outline synthetic recovery
+experiments and report an exploratory audit and rerun of the legacy SAFE
+baseline. SAFEPlus performance, onset recovery, and novelty beyond the
+supplied conceptual note remain to be established.
+\end{abstract}
+\input{sections/01-introduction}
+\input{sections/02-model}
+\input{sections/03-identifiability}
+\input{sections/04-experiments}
+\input{sections/05-discussion}
+\bibliographystyle{named}
+\bibliography{references}
+\end{document}
