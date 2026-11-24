@@ -1,0 +1,142 @@
+{
+  "verification": {
+    "cases": 189,
+    "max_probability_error": 2.220446049250313e-16,
+    "max_posterior_sum_error": 4.440892098500626e-16,
+    "max_gradient_error": 2.0340740203295127e-10,
+    "long_horizon_log_prob_finite": true,
+    "gradient_check": "analytic two-parameter sensitivity vs central finite difference; not neural autodiff"
+  },
+  "design": {
+    "train_n_per_seed": 5000,
+    "test_n_per_seed": 5000,
+    "seeds": [
+      7,
+      11,
+      19,
+      23,
+      31
+    ],
+    "horizon_bins": 20,
+    "true_onset_hazard": 0.08,
+    "true_detection_hazard": 0.3,
+    "grid_step": 0.005,
+    "known_delay_fitting": "grid initialization followed by bounded scalar refinement",
+    "covariates": false,
+    "same_bin_detection": true,
+    "fitting_uses": "detection indicator and observed time only; no latent onset labels",
+    "known_delay_anchor": "true b supplied as external oracle information; not estimated from hidden labels",
+    "unanchored_branches": "same fitted unordered pair; low-a is arbitrary display order, not identification"
+  },
+  "truth": {
+    "mean_onset_bins": 12.5,
+    "undetected_fraud_probability": 0.2022140568309652,
+    "swapped_undetected_fraud_probability": 0.9966264229526146,
+    "censoring_probability": 0.23652125081729652,
+    "max_swap_detection_probability_difference": 1.6653345369377348e-16
+  },
+  "aggregates": {
+    "unanchored_low_a": {
+      "a": {
+        "mean": 0.08,
+        "sample_sd": 0.0035355339059327407
+      },
+      "b": {
+        "mean": 0.304,
+        "sample_sd": 0.02631539473388153
+      },
+      "test_nll_per_account": {
+        "mean": 2.800099759188001,
+        "sample_sd": 0.009433782235568088
+      },
+      "mean_onset_bins": {
+        "mean": 12.519607843137255,
+        "sample_sd": 0.5552430878291817
+      },
+      "detected_onset_mae_bins": {
+        "mean": 1.6996370024440464,
+        "sample_sd": 0.05737187164778255
+      },
+      "undetected_fraud_probability": {
+        "mean": 0.2008805126361879,
+        "sample_sd": 0.033645575927795546
+      },
+      "empirical_undetected_fraud_fraction": {
+        "mean": 0.19918302505005614,
+        "sample_sd": 0.007914246612376398
+      }
+    },
+    "unanchored_swapped": {
+      "a": {
+        "mean": 0.304,
+        "sample_sd": 0.02631539473388153
+      },
+      "b": {
+        "mean": 0.08,
+        "sample_sd": 0.0035355339059327407
+      },
+      "test_nll_per_account": {
+        "mean": 2.8000997591880004,
+        "sample_sd": 0.009433782235568003
+      },
+      "mean_onset_bins": {
+        "mean": 3.309671342401368,
+        "sample_sd": 0.2921482491876346
+      },
+      "detected_onset_mae_bins": {
+        "mean": 4.459139704394898,
+        "sample_sd": 0.17616575383683425
+      },
+      "undetected_fraud_probability": {
+        "mean": 0.9962224811586529,
+        "sample_sd": 0.0028726956377425165
+      },
+      "empirical_undetected_fraud_fraction": {
+        "mean": 0.19918302505005614,
+        "sample_sd": 0.007914246612376398
+      }
+    },
+    "known_delay": {
+      "a": {
+        "mean": 0.0804547800830935,
+        "sample_sd": 0.0014913171925254253
+      },
+      "b": {
+        "mean": 0.3,
+        "sample_sd": 0.0
+      },
+      "test_nll_per_account": {
+        "mean": 2.799803583839933,
+        "sample_sd": 0.009380776785493159
+      },
+      "mean_onset_bins": {
+        "mean": 12.432771894004533,
+        "sample_sd": 0.2312872571593293
+      },
+      "detected_onset_mae_bins": {
+        "mean": 1.6945202268540875,
+        "sample_sd": 0.021584132988397304
+      },
+      "undetected_fraud_probability": {
+        "mean": 0.20346321597949696,
+        "sample_sd": 0.004081196594499017
+      },
+      "empirical_undetected_fraud_fraction": {
+        "mean": 0.19918302505005614,
+        "sample_sd": 0.007914246612376398
+      }
+    }
+  },
+  "limitations": [
+    "Synthetic constant hazards only; no original SAFE or GRU model was trained.",
+    "One parameter setting, five seeds, and a bounded grid are a diagnostic, not a benchmark.",
+    "Constant positive onset hazard implies eventual fraud with probability one; no cure fraction is tested.",
+    "Mean posterior onset is evaluated only for detected test accounts.",
+    "Known delay is oracle information; recovery here does not prove real-world identifiability."
+  ],
+  "source_draft": {
+    "filename": "SAFEPlus__Separating_Fraud_Occurrence_from_Delayed_Detection.pdf",
+    "sha256": "659cfec14825ae3faf428a476d2fc50af71879a9494061956d4ef8d8113ec41d",
+    "pages_reviewed": 3
+  }
+}
