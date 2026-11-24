@@ -9,5 +9,6 @@ its helper module, and the 18 legacy input arrays required by the runner.
 
 Use `python -m experiments.comparison.safe_baseline.run twitter` or
 `python -m experiments.comparison.safe_baseline.run wiki` from the repository root.
-The historical upstream README describes additional programs in the full
-upstream repository.
+The full upstream repository documents the other original SAFE programs.
+See the [SAFEPlus README](../../README.md#run-the-audited-safe-baseline)
+for environment setup and evaluation details.
